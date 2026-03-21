@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery — The Laurel Room</title>
+  <meta name="description" content="Explore five curated design presets at The Laurel Room. From botanical Laurel to opulent Regal, see how one room transforms into five unforgettable moods.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&family=Great+Vibes&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Page-specific enhancements -->
+  <style>
+    /* Filter bar */
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-bottom: 3rem;
+    }
+
+    .filter-bar .btn {
+      padding: 0.6rem 1.5rem;
+      font-size: 0.7rem;
+      letter-spacing: 2px;
+    }
+
+    /* Preset section spacing */
+    .preset-section {
+      margin-bottom: 5rem;
+    }
+
+    .preset-section:last-of-type {
+      margin-bottom: 3rem;
+    }
+
+    /* Preset section header */
+    .preset-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .preset-header__name {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--charcoal);
+      margin-bottom: 0.5rem;
+    }
+
+    .preset-header__description {
+      max-width: 600px;
+      margin: 0 auto;
+      color: var(--warm-gray);
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    /* Preset-specific accent colors on the divider */
+    .preset-section[data-preset="laurel"] .section-divider {
+      background: #6B8577;
+    }
+    .preset-section[data-preset="golden-hour"] .section-divider {
+      background: #B58E5E;
+    }
+    .preset-section[data-preset="blush"] .section-divider {
+      background: #D2AAA0;
+    }
+    .preset-section[data-preset="monochrome"] .section-divider {
+      background: #2C2C2C;
+    }
+    .preset-section[data-preset="regal"] .section-divider {
+      background: #581E44;
+    }
+
+    /* Details section */
+    .details-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 4px;
+    }
+
+    .details-grid .gallery-item {
+      aspect-ratio: 16/9;
+    }
+
+    @media (max-width: 768px) {
+      .details-grid {
+        grid-template-columns: 1fr;
+      }
+      .filter-bar {
+        gap: 0.5rem;
+      }
+      .filter-bar .btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.65rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============ NAVIGATION ============ -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <span class="nav__logo-text">The Laurel Room</span>
+        <span class="nav__logo-tagline">Your celebration. Our canvas.</span>
+      </a>
+
+      <div class="nav__toggle" aria-label="Toggle menu" role="button" tabindex="0">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <div class="nav__menu nav__links">
+        <a href="index.html" class="nav__link">Home</a>
+        <a href="about.html" class="nav__link">About</a>
+        <a href="packages.html" class="nav__link">Packages</a>
+        <a href="gallery.html" class="nav__link">Gallery</a>
+        <a href="contact.html" class="nav__link">Contact</a>
+        <a href="contact.html" class="nav__cta">Inquire</a>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- ============ PAGE HEADER ============ -->
+  <section class="page-header">
+    <div class="page-header__bg">
+      <img src="images/presets/blush.jpg" alt="The Laurel Room gallery — five curated design presets" loading="eager">
+    </div>
+    <div class="page-header__overlay"></div>
+    <div class="page-header__content">
+      <h1 class="page-header__title">Gallery</h1>
+      <p class="page-header__subtitle">Five moods. One unforgettable room.</p>
+    </div>
+  </section>
+
+
+  <!-- ============ PRESET FILTER ============ -->
+  <section style="background: var(--white); padding-bottom: 0;">
+    <div class="container reveal">
+      <div class="filter-bar">
+        <button class="btn btn--primary" data-filter="all">All</button>
+        <button class="btn btn--outline" data-filter="laurel">Laurel</button>
+        <button class="btn btn--outline" data-filter="golden-hour">Golden Hour</button>
+        <button class="btn btn--outline" data-filter="blush">Blush</button>
+        <button class="btn btn--outline" data-filter="monochrome">Monochrome</button>
+        <button class="btn btn--outline" data-filter="regal">Regal</button>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============ DESIGN PRESETS GALLERY ============ -->
+  <section style="background: var(--white); padding-top: 2rem;">
+    <div class="container container--wide">
+
+      <!-- LAUREL -->
+      <div class="preset-section reveal" data-preset="laurel">
+        <div class="preset-header">
+          <h2 class="preset-header__name">Laurel</h2>
+          <div class="section-divider"></div>
+          <p class="preset-header__description">
+            Botanical garden meets rustic romance. Sage green, warm cream, eucalyptus garlands, pillar candles.
+          </p>
+        </div>
+        <div class="gallery-grid">
+          <div class="gallery-item gallery-item--wide" data-lightbox="images/presets/laurel.jpg">
+            <img src="images/presets/laurel.jpg" alt="Laurel preset — wide botanical tablescape with sage green and eucalyptus" loading="lazy">
+            <div class="gallery-item__overlay">
+              <span class="gallery-item__icon">+</span>
+            </div>
+          </div>
+          <div class="gallery-item" data-lightbox="images/presets/laurel.jpg">
+            <img src="images/presets/laurel.jpg" alt="Laurel preset — warm cream linens and pillar candles" loading="lazy">
+            <div class="gallery-item__overlay">
+              <span class="gallery-item__icon">+</span>
+            </div>
+          </div>
+          <div class="gallery-item" data-lightbox="images/presets/laurel.jpg">
+            <img src="images/presets/laurel.jpg" alt="Laurel preset — rustic romantic detail with garlands" loading="lazy">
+            <div class="gallery-item__overlay">
+              <span class="gallery-item__icon">+</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- GOLDEN HOUR -->
+      <div class="preset-section reveal" data-preset="golden-hour">
+        <div class="preset-header">
+          <h2 class="preset-header__name">Golden Hour</h2>
+          <div class="section-divider"></div>
+          <p class="preset-header__description">
+            Warm amber sunset, deeply romantic. Antique brass, candlelight, moody evening atmosphere.
+          </p>
+        </div>
+        <div class="gallery-grid">
+          <div class="gallery-item" data-lightbox="images/presets/golden-hour.jpg">
+            <img src="images/presets/golden-hour.jpg" alt="Golden Hour preset — warm amber candlelight setting" loading="lazy">
+            <div class="gallery-item__overlay">
+              <span class="gallery-item__icon">+</span>
+            </div>
+          </div>
+          <div class="gallery-item gallery-item--wide" data-lightbox="images/presets/golden-hour.jpg">
+            <img src="images/presets/golden-hour.jpg" alt="Golden Hour preset — wide view of moody brass and sunset tones" loading="lazy">
+            <div class="gallery-item__overlay">
+              <span class="gallery-item__icon">+</span>
+            </div>
+          </div>
+          <div class="gallery-item" data-lightbox="images/presets/golden-hour.jpg">
+            <img src="images/presets/golden-hour.jpg" alt="Golden Hour preset — antique brass accents detail" loading="lazy">
+            <div class="gallery-item__overlay">
+              <span class="gallery-item__icon">+</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BLUSH -->
+      <div class="preset-section reveal" data-preset="blush">
+        <div class="preset-header">
+          <h2 class="preset-header__name">Blush</h2>
+          <div class="section-divider"></div>
+          <p class="preset-header__description">
+            Soft, feminine, delicately romantic. Dusty pink, cream, rose gold accents.
+          </p>
+        </div>
+        <div class="gallery-grid">
+          <div class="gallery-item" data-lightbox="images/presets/blush.jpg">
+            <img src="images/presets/blush.jpg" alt="Blush preset — soft dusty pink tablescape" loading="lazy">
+            <div class="gallery-item__overlay">
+              <span class="gallery-item__icon">+</span>
+            </div>
+          </div>
+          <div class="gallery-item" data-lightbox="images/presets/blush.jpg">
+            <img src="images/presets/blush.jpg" alt="Blush preset — cream and rose gold accents" loading="lazy">
+            <div class="gallery-item__overlay">
+              <span class="gallery-item__icon">+</span>
+            </div>
+          </div>
+          <div class="gallery-item gallery-item--wide" data-lightbox="images/presets/blush.jpg">
+            <img src="images/presets/blush.jpg" alt="Blush preset — wide view of feminine romantic room" loading="lazy">
+            <div class="gallery-item__overlay">
+              <span class="gallery-item__icon">+</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MONOCHROME -->
+      <div class="preset-section reveal" data-preset="monochrome">
+        <div class="preset-header">
+          <h2 class="preset-header__name">Monochrome</h2>
+          <div class="section-divider"></div>
+          <p class="preset-header__description">
+            Clean, modern, sleek sophistication. Black, white, silver, and clear acrylic.
+          </p>
+        </div>
+        <div class="gallery-grid">
+          <div class="gallery-item gallery-item--wide" data-lightbox="images/presets/monochrome.jpg">
+            <img src="images/presets/monochrome.jpg" alt="Monochrome preset — wide sleek black and white setting" loading="lazy">
+            <div class="gallery-item__overlay">
+              <span class="gallery-item__icon">+</span>
+            </div>
+          </div>
+          <div class="gallery-item" data-lightbox="images/presets/monochrome.jpg">
+            <img src="images/presets/monochrome.jpg" alt="Monochrome preset — silver and acrylic details" loading="lazy">
+            <div class="gallery-item__overlay">
+              <span class="gallery-item__icon">+</span>
+            </div>
+          </div>
+          <div class="gallery-item" data-lightbox="images/presets/monochrome.jpg">
+            <img src="images/presets/monochrome.jpg" alt="Monochrome preset — modern clean lines" loading="lazy">
+            <div class="gallery-item__overlay">
+              <span class="gallery-item__icon">+</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- REGAL -->
+      <div class="preset-section reveal" data-preset="regal">
+        <div class="preset-header">
+          <h2 class="preset-header__name">Regal</h2>
+          <div class="section-divider"></div>
+          <p class="preset-header__description">
+            Opulent, dramatic, grand celebration. Deep jewel tones, gold, crystal accents.
+          </p>
+        </div>
+        <div class="gallery-grid">
+          <div class="gallery-item" data-lightbox="images/presets/regal.jpg">
+            <img src="images/presets/regal.jpg" alt="Regal preset — deep jewel tones and gold" loading="lazy">
+            <div class="gallery-item__overlay">
+              <span class="gallery-item__icon">+</span>
+            </div>
+          </div>
+          <div class="gallery-item gallery-item--wide" data-lightbox="images/presets/regal.jpg">
+            <img src="images/presets/regal.jpg" alt="Regal preset — wide opulent room with crystal accents" loading="lazy">
+            <div class="gallery-item__overlay">
+              <span class="gallery-item__icon">+</span>
+            </div>
+          </div>
+          <div class="gallery-item" data-lightbox="images/presets/regal.jpg">
+            <img src="images/presets/regal.jpg" alt="Regal preset — dramatic crystal and gold detail" loading="lazy">
+            <div class="gallery-item__overlay">
+              <span class="gallery-item__icon">+</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============ DETAIL SHOTS ============ -->
+  <section style="background: var(--alabaster);">
+    <div class="container container--wide">
+      <div class="text-center mb-5 reveal">
+        <span class="section-subtitle">The Details</span>
+        <h2 class="section-title">It's All in the Details</h2>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="details-grid reveal">
+        <div class="gallery-item" data-lightbox="images/details/table-setting.jpg">
+          <img src="images/details/table-setting.jpg" alt="Close-up detail of an elegant table setting at The Laurel Room" loading="lazy">
+          <div class="gallery-item__overlay">
+            <span class="gallery-item__icon">+</span>
+          </div>
+        </div>
+        <div class="gallery-item" data-lightbox="images/details/arch.jpg">
+          <img src="images/details/arch.jpg" alt="Styled decorative arch at The Laurel Room" loading="lazy">
+          <div class="gallery-item__overlay">
+            <span class="gallery-item__icon">+</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============ CTA SECTION ============ -->
+  <section class="cta-section">
+    <div class="container reveal">
+      <span class="section-subtitle" style="color: var(--brass-light);">Love What You See?</span>
+      <h2 style="color: var(--white); margin-bottom: 1.5rem;">Your Celebration Starts Here</h2>
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <a href="packages.html" class="btn btn--brass btn--large">Explore Packages</a>
+        <a href="contact.html" class="btn btn--outline btn--large" style="color: var(--white); border-color: rgba(255,255,255,0.5);">Book a Tour</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <!-- Brand Column -->
+        <div>
+          <div class="footer__brand-name">The Laurel Room</div>
+          <div class="footer__brand-tagline">Your celebration. Our canvas.</div>
+          <p class="footer__brand-text">
+            Brampton's first industrial-romantic boutique event venue.
+            An intimate space for 50&ndash;125 guests, designed for every culture's celebrations.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <div class="footer__heading">Quick Links</div>
+          <a href="index.html" class="footer__link">Home</a>
+          <a href="about.html" class="footer__link">About</a>
+          <a href="packages.html" class="footer__link">Packages</a>
+          <a href="gallery.html" class="footer__link">Gallery</a>
+          <a href="contact.html" class="footer__link">Contact</a>
+        </div>
+
+        <!-- Visit Us -->
+        <div>
+          <div class="footer__heading">Visit Us</div>
+          <p class="footer__link">Brampton, Ontario</p>
+          <p class="footer__link">Steeles Ave East Corridor</p>
+          <p class="footer__link" style="margin-top: 0.5rem; color: var(--brass-light); font-size: 0.8rem;">
+            Opening Summer 2026
+          </p>
+        </div>
+
+        <!-- Connect -->
+        <div>
+          <div class="footer__heading">Connect</div>
+          <a href="https://instagram.com/thelaurelroom" class="footer__link" target="_blank" rel="noopener">
+            Instagram: @thelaurelroom
+          </a>
+          <a href="mailto:hello@thelaurelroom.ca" class="footer__link">
+            hello@thelaurelroom.ca
+          </a>
+          <a href="https://thelaurelroom.ca" class="footer__link" target="_blank" rel="noopener">
+            thelaurelroom.ca
+          </a>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <span>&copy; 2026 The Laurel Room Inc. All rights reserved.</span>
+        <div class="footer__social">
+          <!-- Instagram -->
+          <a href="https://instagram.com/thelaurelroom" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5"/>
+              <circle cx="12" cy="12" r="5"/>
+              <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/>
+            </svg>
+          </a>
+          <!-- Facebook -->
+          <a href="#" aria-label="Facebook">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
+            </svg>
+          </a>
+          <!-- TikTok -->
+          <a href="#" aria-label="TikTok">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 12a4 4 0 104 4V4a5 5 0 005 5"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ============ LIGHTBOX ============ -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-label="Image viewer">
+    <div class="lightbox__close" aria-label="Close">&times;</div>
+    <img src="" alt="Enlarged venue photo">
+  </div>
+
+
+  <!-- Filter Script -->
+  <script>
+    document.querySelectorAll('[data-filter]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filter = btn.dataset.filter;
+        document.querySelectorAll('[data-filter]').forEach(b => {
+          b.classList.remove('btn--primary');
+          b.classList.add('btn--outline');
+        });
+        btn.classList.add('btn--primary');
+        btn.classList.remove('btn--outline');
+        document.querySelectorAll('.preset-section').forEach(section => {
+          if (filter === 'all' || section.dataset.preset === filter) {
+            section.style.display = '';
+          } else {
+            section.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+</body>
+</html>
