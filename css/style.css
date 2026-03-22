@@ -14,17 +14,19 @@
   --blush-light: #f3ece9;
   --brass: #B58E5E;
   --brass-light: #D4B896;
+  --saffron: #C8872E;
+  --saffron-dark: #A86E1F;
   --charcoal: #2C2C2C;
   --warm-gray: #6B6560;
   --cream: #F0EDE7;
   --white: #FFFFFF;
   --black: #1a1a1a;
-  --overlay: rgba(28, 28, 28, 0.7);
+  --overlay: rgba(28, 28, 28, 0.55);
   --overlay-light: rgba(28, 28, 28, 0.3);
 
   /* Typography */
   --font-display: 'Cinzel', serif;
-  --font-script: 'Great Vibes', cursive;
+  --font-script: 'Pinyon Script', cursive;
   --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
 
   /* Spacing */
@@ -90,19 +92,19 @@ h1, h2, h3, h4 {
 
 h1 {
   font-size: clamp(2.5rem, 5vw, 4.5rem);
-  letter-spacing: 4px;
+  letter-spacing: 2px;
   text-transform: uppercase;
 }
 
 h2 {
   font-size: clamp(1.8rem, 3.5vw, 3rem);
-  letter-spacing: 3px;
+  letter-spacing: 2px;
   text-transform: uppercase;
 }
 
 h3 {
   font-size: clamp(1.2rem, 2vw, 1.6rem);
-  letter-spacing: 2px;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
 }
 
@@ -231,14 +233,14 @@ section {
 }
 
 .btn--brass {
-  background: var(--brass);
+  background: var(--saffron);
   color: var(--white);
 }
 
 .btn--brass:hover {
-  background: #9d7a4e;
+  background: var(--saffron-dark);
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(181, 142, 94, 0.3);
+  box-shadow: 0 8px 25px rgba(200, 135, 46, 0.35);
 }
 
 .btn--white {
@@ -306,7 +308,7 @@ section {
   font-family: var(--font-display);
   font-size: clamp(1rem, 1.8vw, 1.3rem);
   font-weight: 700;
-  letter-spacing: 5px;
+  letter-spacing: 3px;
   text-transform: uppercase;
   color: var(--white);
   transition: color var(--duration-fast) var(--ease);
