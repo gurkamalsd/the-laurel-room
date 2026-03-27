@@ -11,6 +11,7 @@
   <meta name="description" content="Contact The Laurel Room to book Brampton's boutique event venue for 50-125 guests. BYOC celebrations, five design presets, tours available. Inquire today.">
   <meta name="keywords" content="contact event venue Brampton, book event space, venue inquiry Brampton, BYOC venue booking, event venue tour, celebration venue contact, wedding venue inquiry, party venue Brampton, venue availability, event space 50-125 guests">
   <meta name="robots" content="index, follow">
+  <meta name="ai-content-declarations" content="venue-information, pricing, cultural-events">
   <meta name="author" content="The Laurel Room Inc.">
   <link rel="canonical" href="https://thelaurelroom.ca/contact.html">
 
@@ -35,7 +36,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&family=Pinyon+Script&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&family=Pinyon+Script&display=swap" rel="stylesheet">
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
@@ -50,7 +51,7 @@
     "url": "https://thelaurelroom.ca",
     "image": "https://thelaurelroom.ca/images/hero/hero-main.jpg",
     "email": "hello@thelaurelroom.ca",
-    "telephone": "",
+    "telephone": "+16472861161",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Steeles Ave East Corridor",
@@ -217,6 +218,14 @@
           <span class="section-subtitle">Your Event</span>
           <h2 class="section-title" style="text-align: left; font-size: clamp(1.4rem, 2.5vw, 2rem);">Tell Us About Your Celebration</h2>
           <div class="section-divider" style="margin: 1.5rem 0;"></div>
+
+          <div class="text-center reveal" style="margin-bottom: 3rem;">
+            <p style="font-size: 1.1rem; color: var(--warm-gray); margin-bottom: 1rem;">
+              Prefer to talk? Call or text Khushbu directly.
+            </p>
+            <a href="tel:6472861161" class="phone-link" style="font-size: 1.5rem; font-family: var(--font-display); font-weight: 600;">647-286-1161</a>
+          </div>
+
           <p style="color: var(--warm-gray); line-height: 1.8; margin-bottom: 2rem;">
             Fill out the form below and we'll be in touch within 24 hours.
           </p>
@@ -240,23 +249,34 @@
 
             <div class="form-group">
               <label class="form-label" for="phone">Phone Number</label>
-              <input type="tel" id="phone" name="phone" class="form-input" placeholder="(416) 000-0000" required>
+              <input type="tel" id="phone" name="phone" class="form-input" placeholder="(416) 000-0000">
             </div>
 
             <div class="form-group">
               <label class="form-label" for="event-type">Event Type</label>
               <select id="event-type" name="event_type" class="form-input form-select">
-                <option value="">Select event type</option>
-                <option value="Mehndi Night / Sangeet">Mehndi Night / Sangeet</option>
-                <option value="Baby Shower / Gender Reveal">Baby Shower / Gender Reveal</option>
+                <option value="">Select your event type</option>
+                <option value="Mehndi / Sangeet">Mehndi / Sangeet</option>
+                <option value="Baby Shower">Baby Shower</option>
                 <option value="Bridal Shower">Bridal Shower</option>
-                <option value="Intimate Wedding / Nikkah">Intimate Wedding / Nikkah</option>
-                <option value="Milestone Birthday">Milestone Birthday</option>
+                <option value="Birthday / Milestone">Birthday / Milestone</option>
+                <option value="Wedding / Nikkah">Wedding / Nikkah</option>
                 <option value="Aqiqah / Naming Ceremony">Aqiqah / Naming Ceremony</option>
                 <option value="Engagement Party">Engagement Party</option>
                 <option value="Corporate Event">Corporate Event</option>
-                <option value="Holiday Party">Holiday Party</option>
+                <option value="Holiday / Diwali / Eid">Holiday / Diwali / Eid</option>
                 <option value="Other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="guest-count">Approximate Guest Count</label>
+              <select id="guest-count" name="guest_count" class="form-input form-select">
+                <option value="">Guest count</option>
+                <option value="Under 50">Under 50</option>
+                <option value="50-75">50–75</option>
+                <option value="75-100">75–100</option>
+                <option value="100-125">100–125</option>
               </select>
             </div>
 
@@ -266,22 +286,11 @@
             </div>
 
             <div class="form-group">
-              <label class="form-label" for="guest-count">Estimated Guest Count</label>
-              <select id="guest-count" name="guest_count" class="form-input form-select">
-                <option value="">Select guest count</option>
-                <option value="Under 50">Under 50</option>
-                <option value="50-75">50–75</option>
-                <option value="75-100">75–100</option>
-                <option value="100-125">100–125</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label class="form-label" for="vision">Tell Us About Your Vision</label>
+              <label class="form-label" for="vision">Message</label>
               <textarea id="vision" name="message" class="form-input form-textarea" placeholder="Describe your celebration, any special requirements, cultural traditions, or questions you have..."></textarea>
             </div>
 
-            <button type="submit" class="btn btn--primary" style="width: 100%;">Plan My Event</button>
+            <button type="submit" class="btn btn--brass" style="width: 100%;">Plan My Event</button>
           </form>
         </div>
 
@@ -483,6 +492,7 @@
         <!-- Connect -->
         <div>
           <div class="footer__heading">Connect</div>
+          <a href="tel:6472861161" class="footer__link">647-286-1161</a>
           <a href="https://instagram.com/thelaurelroom" class="footer__link" target="_blank" rel="noopener">
             Instagram: @thelaurelroom
           </a>
