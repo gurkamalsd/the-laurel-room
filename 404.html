@@ -7,35 +7,62 @@
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/brand/favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/brand/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/brand/apple-touch-icon.png">
   <title>Page not found — The Laurel Room</title>
+  <meta name="description" content="This page doesn't exist. The venue doesn't yet either — The Laurel Room is a 2,000 sq ft Brampton event venue for 50–125 guests, bring your own caterer, opening 2027 (construction estimate).">
   <meta name="robots" content="noindex">
-  <link rel="stylesheet" href="/css/fonts.css?v=3">
-  <link rel="stylesheet" href="/css/style.css?v=3">
-  <script src="/js/main.js?v=3" defer></script>
+  <meta name="ai-content-declarations" content="venue-information">
+  <meta name="author" content="The Laurel Room Inc.">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#F7F2E6">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#221D14">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Page not found — The Laurel Room">
+  <meta property="og:description" content="Wrong turn. The room itself — 50–125 guests, bring your own caterer, Brampton — is still where we left it: opening 2027 (construction estimate).">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://thelaurelroom.ca/images/brand/og-image.png">
+  <meta property="og:site_name" content="The Laurel Room">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Page not found — The Laurel Room">
+  <meta name="twitter:description" content="Wrong turn. The Brampton venue for 50–125 guests is still on its way — opening 2027 (construction estimate).">
+  <meta name="twitter:image" content="https://thelaurelroom.ca/images/brand/og-image.png">
+
+  <!-- Performance -->
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/fraunces-normal-latin.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/aneklatin-normal-latin.woff2" crossorigin>
+
+  <!-- Fonts (self-hosted) + stylesheet -->
+  <link rel="stylesheet" href="/css/fonts.css?v=4">
+  <link rel="stylesheet" href="/css/style.css?v=4">
+  <script src="/js/main.js?v=4" defer></script>
 </head>
 <body>
 
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <header class="nav nav--solid" data-nav>
+  <!-- ============ NAVIGATION ============ -->
+  <header class="nav" data-nav>
     <div class="nav__inner">
-      <a class="nav__logo" href="/">The Laurel Room</a>
+      <a class="wordmark" href="/">The Laurel Room</a>
       <nav class="nav__links" aria-label="Primary">
-        <a class="nav__link" href="/about.html">About</a>
-        <a class="nav__link" href="/gallery.html">Gallery</a>
+        <a class="nav__link" href="/about.html">The story</a>
+        <a class="nav__link" href="/gallery.html">The room</a>
         <a class="nav__link" href="/packages.html">Pricing</a>
-        <a class="nav__link" href="/contact.html">Contact</a>
+        <a class="nav__link" href="/contact.html">Plan an event</a>
       </nav>
-      <a class="btn btn--outline nav__cta" href="/contact.html" data-text="Plan your event">Plan your event</a>
+      <a class="btn nav__cta" href="/#founding">Founding families</a>
       <button class="nav__toggle" data-nav-toggle aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu"><span></span><span></span></button>
     </div>
     <div class="nav__mobile" id="mobile-menu" data-nav-menu>
       <nav aria-label="Mobile">
         <a class="nav__mobile-link" href="/">Home</a>
-        <a class="nav__mobile-link" href="/about.html">About</a>
-        <a class="nav__mobile-link" href="/gallery.html">Gallery</a>
+        <a class="nav__mobile-link" href="/about.html">The story</a>
+        <a class="nav__mobile-link" href="/gallery.html">The room</a>
         <a class="nav__mobile-link" href="/packages.html">Pricing</a>
-        <a class="nav__mobile-link" href="/contact.html"><em>Plan your event</em></a>
+        <a class="nav__mobile-link" href="/contact.html">Plan an event</a>
       </nav>
       <div class="nav__mobile-foot">
         <a href="tel:6472861161">647-286-1161</a>
@@ -46,22 +73,51 @@
   </header>
 
   <main id="main">
-    <section class="masthead">
-      <div class="container">
-        <p class="kicker"><span class="kicker__no">404</span><span>Page not found</span></p>
-        <h1 class="display-1 masthead__title" data-split>Wrong <em>turn</em>.</h1>
-        <p class="lead masthead__dek" data-reveal>
-          This page doesn&rsquo;t exist &mdash; or it moved while we were redecorating.
-          The rest of the room is right where you left it.
-        </p>
-        <div class="split__actions" data-reveal data-reveal-delay="1">
-          <a class="btn btn--solid" href="/" data-text="Back to the room">Back to the room</a>
-          <a class="btn btn--outline" href="/contact.html" data-text="Plan your event">Plan your event</a>
-        </div>
-        <hr class="rule masthead__rule">
+
+  <!-- ============ TITLEBLOCK · 404 ============ -->
+  <section class="titleblock">
+    <div class="container">
+      <div class="titleblock__meta">
+        <span>Dossier &middot; <strong>The Laurel Room</strong></span>
+        <span>Sheet &middot; <strong>404</strong></span>
+        <span class="spacer"></span>
+        <span>Status &middot; <strong>Page not found</strong></span>
       </div>
-    </section>
+
+      <h1 class="display-1">Wrong turn.</h1>
+      <p class="lead titleblock__dek">
+        This page doesn&rsquo;t exist &mdash; much like the venue,
+        but the venue at least has drawings.
+      </p>
+      <div class="hero__actions">
+        <a class="btn" href="/">Back to the room</a>
+        <a class="linkline" href="/contact.html">Plan an event</a>
+      </div>
+    </div>
+  </section>
+
   </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__row">
+        <a class="wordmark" href="/">The Laurel Room</a>
+        <nav class="footer__links" aria-label="Footer">
+          <a href="/about.html">The story</a>
+          <a href="/gallery.html">The room</a>
+          <a href="/packages.html">Pricing</a>
+          <a href="/contact.html">Plan an event</a>
+          <a href="https://instagram.com/thelaurelroom" target="_blank" rel="noopener">@thelaurelroom</a>
+        </nav>
+      </div>
+      <div class="footer__colophon">
+        <span>&copy; <span data-year>2026</span> The Laurel Room Inc. &middot; Brampton, Ontario</span>
+        <span>Drawings by us. Room by 2027.</span>
+        <span><a href="tel:6472861161">647-286-1161</a> &middot; <a href="mailto:hello@thelaurelroom.ca">hello@thelaurelroom.ca</a></span>
+      </div>
+    </div>
+  </footer>
 
 </body>
 </html>

@@ -8,16 +8,19 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/brand/favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/brand/favicon-16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/brand/apple-touch-icon.png">
-  <title>Gallery — One Room, Five Moods | The Laurel Room, Brampton</title>
-  <meta name="description" content="One room, five looks — Laurel, Golden Hour, Blush, Monochrome, Regal. Design renderings of The Laurel Room, a Brampton venue for 50–125 guests. Now booking 2027 celebrations.">
+  <title>The Room — Floor Plan &amp; Five Looks, Zero Photos | The Laurel Room, Brampton, Opening 2027</title>
+  <meta name="description" content="The floor plan of a 2,000 sq ft Brampton event venue for 50–125 guests, drawn honestly: banquet seats 125 at 12 harvest tables, floor seating for mehndi nights. Five looks — Laurel, Golden Hour, Blush, Monochrome, Regal — in swatches and materials, not renders. Photos when the paint dries. Opening 2027 (construction estimate).">
   <meta name="robots" content="index, follow">
   <meta name="ai-content-declarations" content="venue-information, pricing, cultural-events">
   <meta name="author" content="The Laurel Room Inc.">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#F7F2E6">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#221D14">
   <link rel="canonical" href="https://thelaurelroom.ca/gallery.html">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Gallery — One Room, Five Moods | The Laurel Room">
-  <meta property="og:description" content="Laurel, Golden Hour, Blush, Monochrome, Regal. Design renderings of a Brampton venue for 50–125 guests — the real room is going up now.">
+  <meta property="og:title" content="The room, drawn — five looks, zero photos, opening 2027">
+  <meta property="og:description" content="We won't pretend with renders. The honest floor plan of a Brampton venue for 50–125 guests, plus five looks in swatches and materials. Photos arrive when the paint does.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://thelaurelroom.ca/gallery.html">
   <meta property="og:image" content="https://thelaurelroom.ca/images/brand/og-image.png">
@@ -25,81 +28,45 @@
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Gallery — One Room, Five Moods | The Laurel Room">
-  <meta name="twitter:description" content="Laurel, Golden Hour, Blush, Monochrome, Regal. Design renderings of a Brampton venue for 50–125 guests — the real room is going up now.">
+  <meta name="twitter:title" content="The room, drawn — five looks, zero photos, opening 2027">
+  <meta name="twitter:description" content="The honest floor plan of a Brampton venue for 50–125 guests, plus five looks in swatches and materials. Photos arrive when the paint does.">
   <meta name="twitter:image" content="https://thelaurelroom.ca/images/brand/og-image.png">
 
   <!-- Performance -->
   <link rel="preload" as="font" type="font/woff2" href="fonts/fraunces-normal-latin.woff2" crossorigin>
-  <link rel="preload" as="font" type="font/woff2" href="fonts/dmsans-normal-latin.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="fonts/aneklatin-normal-latin.woff2" crossorigin>
 
   <!-- Fonts (self-hosted) + stylesheet -->
-  <link rel="stylesheet" href="css/fonts.css?v=3">
-  <link rel="stylesheet" href="css/style.css?v=3">
-  <script src="js/main.js?v=3" defer></script>
+  <link rel="stylesheet" href="css/fonts.css?v=4">
+  <link rel="stylesheet" href="css/style.css?v=4">
+  <script src="js/main.js?v=4" defer></script>
 
-  <style>
-    /* page: gallery */
-    .gallery-tabs {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0 1.9rem;
-      border-bottom: 1px solid var(--line);
-    }
-    .gallery-tabs .tab {
-      position: relative;
-      padding: 0.4rem 0 1rem;
-      font-size: 0.75rem;
-      font-weight: 500;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--ink-mute);
-      transition: color var(--t-fast) var(--ease);
-    }
-    .gallery-tabs .tab::after {
-      content: '';
-      position: absolute;
-      inset: auto 0 -1px;
-      height: 2px;
-      background: var(--brass);
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.45s var(--ease-out);
-    }
-    .gallery-tabs .tab:hover,
-    .gallery-tabs .tab[aria-pressed="true"] { color: var(--ink); }
-    .gallery-tabs .tab[aria-pressed="true"]::after { transform: scaleX(1); }
-
-    .details-duo {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: clamp(1rem, 2vw, 1.8rem);
-    }
-    .details-duo .frame { aspect-ratio: 4 / 5; cursor: zoom-in; }
-    @media (max-width: 720px) {
-      .details-duo { grid-template-columns: 1fr; }
-    }
-  </style>
-
-  <!-- Structured Data — ImageGallery -->
+  <!-- Structured Data — WebPage (no images on this page, on purpose) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "ImageGallery",
-    "name": "The Laurel Room — Gallery",
-    "description": "Design renderings of the five preset looks — Laurel, Golden Hour, Blush, Monochrome, and Regal — at The Laurel Room, a boutique event venue in Brampton for 50–125 guests. Opening for events in 2027.",
+    "@type": "WebPage",
+    "name": "The Room — floor plan and five looks",
+    "description": "The floor plan and five design looks of The Laurel Room, an event venue for 50–125 guests under construction in Brampton, Ontario. Shown as drawings, swatches, and materials — no photographs until the room is real. Opening 2027 (construction estimate).",
     "url": "https://thelaurelroom.ca/gallery.html",
-    "image": [
-      "https://thelaurelroom.ca/images/presets/laurel.jpg",
-      "https://thelaurelroom.ca/images/presets/golden-hour.jpg",
-      "https://thelaurelroom.ca/images/presets/blush.jpg",
-      "https://thelaurelroom.ca/images/presets/monochrome.jpg",
-      "https://thelaurelroom.ca/images/presets/regal.jpg"
-    ],
     "isPartOf": {
       "@type": "WebSite",
       "name": "The Laurel Room",
       "url": "https://thelaurelroom.ca"
+    },
+    "about": {
+      "@type": "EventVenue",
+      "name": "The Laurel Room",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Brampton",
+        "addressRegion": "ON",
+        "addressCountry": "CA"
+      },
+      "maximumAttendeeCapacity": 125,
+      "telephone": "+16472861161",
+      "email": "hello@thelaurelroom.ca",
+      "sameAs": ["https://instagram.com/thelaurelroom"]
     }
   }
   </script>
@@ -109,25 +76,25 @@
   <a class="skip-link" href="#main">Skip to content</a>
 
   <!-- ============ NAVIGATION ============ -->
-  <header class="nav nav--solid" data-nav>
+  <header class="nav" data-nav>
     <div class="nav__inner">
-      <a class="nav__logo" href="index.html">The Laurel Room</a>
+      <a class="wordmark" href="index.html">The Laurel Room</a>
       <nav class="nav__links" aria-label="Primary">
-        <a class="nav__link" href="about.html">About</a>
-        <a class="nav__link nav__link--current" href="gallery.html" aria-current="page">Gallery</a>
+        <a class="nav__link" href="about.html">The story</a>
+        <a class="nav__link nav__link--current" href="gallery.html" aria-current="page">The room</a>
         <a class="nav__link" href="packages.html">Pricing</a>
-        <a class="nav__link" href="contact.html">Contact</a>
+        <a class="nav__link" href="contact.html">Plan an event</a>
       </nav>
-      <a class="btn btn--outline nav__cta" href="contact.html" data-text="Plan your event">Plan your event</a>
+      <a class="btn nav__cta" href="index.html#founding">Founding families</a>
       <button class="nav__toggle" data-nav-toggle aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu"><span></span><span></span></button>
     </div>
     <div class="nav__mobile" id="mobile-menu" data-nav-menu>
       <nav aria-label="Mobile">
         <a class="nav__mobile-link" href="index.html">Home</a>
-        <a class="nav__mobile-link" href="about.html">About</a>
-        <a class="nav__mobile-link" href="gallery.html">Gallery</a>
+        <a class="nav__mobile-link" href="about.html">The story</a>
+        <a class="nav__mobile-link" href="gallery.html" aria-current="page">The room</a>
         <a class="nav__mobile-link" href="packages.html">Pricing</a>
-        <a class="nav__mobile-link" href="contact.html"><em>Plan your event</em></a>
+        <a class="nav__mobile-link" href="contact.html">Plan an event</a>
       </nav>
       <div class="nav__mobile-foot">
         <a href="tel:6472861161">647-286-1161</a>
@@ -139,246 +106,479 @@
 
   <main id="main">
 
-  <!-- ============ MASTHEAD ============ -->
-  <section class="masthead">
+  <!-- ============ TITLEBLOCK ============ -->
+  <section class="titleblock">
     <div class="container">
-      <p class="kicker"><span>Gallery</span></p>
-      <h1 class="display-1 masthead__title" data-split>One room. Five <em>moods</em>.</h1>
-      <p class="lead masthead__dek" data-reveal>
-        Laurel, Golden Hour, Blush, Monochrome, Regal. Same 2,000 square feet &mdash;
-        the linens, lighting, centrepieces, and arch all change as one set.
-      </p>
-      <p class="small mt-2" data-reveal data-reveal-delay="1">
-        These are our design renderings &mdash; the real room is going up now.
-        <a class="text-brass" href="https://instagram.com/thelaurelroom" target="_blank" rel="noopener">Follow the build on Instagram</a>.
+      <div class="titleblock__meta">
+        <span>Dossier &middot; <strong>The Laurel Room</strong></span>
+        <span>Sheet &middot; The room</span>
+        <span class="spacer"></span>
+        <span>Photographs &middot; <strong>Zero</strong></span>
+        <span>Opening &middot; <strong>2027</strong></span>
+      </div>
+
+      <h1 class="display-1">One room. Five looks. Zero photos&nbsp;&mdash; on&nbsp;purpose.</h1>
+      <p class="lead titleblock__dek">
+        The room is unbuilt, and we won&rsquo;t pretend otherwise with renders.
+        Drawings are honest: they show what&rsquo;s decided, not what&rsquo;s dressed up.
+        Photos arrive when the paint does.
       </p>
     </div>
   </section>
 
-  <!-- ============ 01 · THE PRESETS ============ -->
-  <section class="section band--paper">
-    <div class="container container--wide">
-      <p class="kicker" data-reveal><span class="kicker__no">01</span><span>The presets</span></p>
-
-      <div class="gallery-tabs" data-filter-group role="group" aria-label="Filter presets" data-reveal>
-        <button class="tab" type="button" data-filter="all" aria-pressed="true">All five</button>
-        <button class="tab" type="button" data-filter="laurel" aria-pressed="false">Laurel</button>
-        <button class="tab" type="button" data-filter="golden-hour" aria-pressed="false">Golden Hour</button>
-        <button class="tab" type="button" data-filter="blush" aria-pressed="false">Blush</button>
-        <button class="tab" type="button" data-filter="monochrome" aria-pressed="false">Monochrome</button>
-        <button class="tab" type="button" data-filter="regal" aria-pressed="false">Regal</button>
+  <!-- ============ SHEET A-101 · THE PLAN ============ -->
+  <section class="section" id="plan">
+    <div class="container relative">
+      <span class="annotation annotation--margin" aria-hidden="true">photos when the paint dries, not before</span>
+      <div class="section-head">
+        <h2 class="display-2">The floor plan, before the floor exists.</h2>
+        <p class="lead">
+          Drawing A-101, pinned here in its laurel state. Fifty feet by forty,
+          twelve harvest tables, the arch inside the top wall, step-free at the
+          door. The five looks below recolour everything soft in this room &mdash;
+          the walls don&rsquo;t move.
+        </p>
       </div>
 
-      <!-- i. Laurel -->
-      <article class="preset-feature" data-filter-item data-tags="laurel">
-        <div class="preset-feature__head" data-reveal>
-          <span class="preset-feature__no">i.</span>
-          <h2 class="preset-feature__name">Laurel</h2>
-          <span class="preset__palette" aria-hidden="true">
-            <span class="dot" style="background:#6B8577"></span>
-            <span class="dot" style="background:#E8E4D8"></span>
-            <span class="dot" style="background:#A8C0B4"></span>
-          </span>
+      <div class="sheet" data-preset="laurel">
+        <div class="sheet__bar">
+          <span>Drawing <strong>A-101</strong></span>
+          <span>Plan view</span>
+          <span class="spacer"></span>
+          <span>Seats <strong>125</strong></span>
+          <span>Aug 2026</span>
         </div>
-        <p class="preset-feature__desc" data-reveal data-reveal-delay="1">
-          Sage and cream linens, eucalyptus laid down the centre of every harvest
-          table, pillar candles grouped in threes. Soft green uplighting carries
-          the palette up the walls.
-        </p>
-        <figure data-reveal data-reveal-delay="2">
-          <a class="frame" href="images/presets/laurel.jpg" data-lightbox="images/presets/laurel.jpg">
-            <img src="images/presets/laurel.jpg" alt="Design rendering of the Laurel preset — harvest tables in sage and cream linens with eucalyptus runners and pillar candles" loading="lazy">
-          </a>
-        </figure>
-      </article>
 
-      <!-- ii. Golden Hour -->
-      <article class="preset-feature" data-filter-item data-tags="golden-hour">
-        <div class="preset-feature__head" data-reveal>
-          <span class="preset-feature__no">ii.</span>
-          <h2 class="preset-feature__name">Golden Hour</h2>
-          <span class="preset__palette" aria-hidden="true">
-            <span class="dot" style="background:#B58E5E"></span>
-            <span class="dot" style="background:#D4B896"></span>
-            <span class="dot" style="background:#4A3826"></span>
-          </span>
-        </div>
-        <p class="preset-feature__desc" data-reveal data-reveal-delay="1">
-          Antique brass candlesticks, amber uplighting, and more candle flame than
-          overhead light. The room holds that 7 PM warmth for the whole evening.
-        </p>
-        <figure data-reveal data-reveal-delay="2">
-          <a class="frame" href="images/presets/golden-hour.jpg" data-lightbox="images/presets/golden-hour.jpg">
-            <img src="images/presets/golden-hour.jpg" alt="Design rendering of the Golden Hour preset — amber-lit tables with antique brass candlesticks and candlelight" loading="lazy">
-          </a>
-        </figure>
-      </article>
+        <svg class="drawing" viewBox="0 0 1000 820" role="img" aria-label="Floor plan: a 50 by 40 foot hall seating 125 at twelve harvest tables, with a statement arch, kitchenette, washrooms, step-free entry, and a fairy-light canopy overhead">
+          <!-- canopy wash, clipped to the hall -->
+          <rect class="d-wash" x="140" y="210" width="540" height="470" rx="2"/>
+          <rect class="d-wash" x="680" y="250" width="180" height="320" rx="2"/>
+          <g class="d-acc" stroke-width="1" stroke-dasharray="1 7" opacity=".9">
+            <path d="M140 240 Q 500 300 860 260"/>
+            <path d="M140 340 Q 500 400 860 360"/>
+            <path d="M140 440 Q 500 500 860 460"/>
+            <path d="M140 540 Q 500 600 860 560"/>
+          </g>
 
-      <!-- iii. Blush -->
-      <article class="preset-feature" data-filter-item data-tags="blush">
-        <div class="preset-feature__head" data-reveal>
-          <span class="preset-feature__no">iii.</span>
-          <h2 class="preset-feature__name">Blush</h2>
-          <span class="preset__palette" aria-hidden="true">
-            <span class="dot" style="background:#D2AAA0"></span>
-            <span class="dot" style="background:#F3ECE9"></span>
-            <span class="dot" style="background:#C9927F"></span>
-          </span>
-        </div>
-        <p class="preset-feature__desc" data-reveal data-reveal-delay="1">
-          Dusty pink linens with cream cloth napkins, rose gold charger plates, and
-          soft florals on every table. Made for bridal showers, engagements, and
-          anything that will be photographed a hundred times.
-        </p>
-        <figure data-reveal data-reveal-delay="2">
-          <a class="frame" href="images/presets/blush.jpg" data-lightbox="images/presets/blush.jpg">
-            <img src="images/presets/blush.jpg" alt="Design rendering of the Blush preset — dusty pink linens, cream napkins, and rose gold charger plates" loading="lazy">
-          </a>
-        </figure>
-      </article>
+          <!-- walls -->
+          <rect class="d-heavy" x="100" y="90" width="800" height="640"/>
+          <rect class="d-line" x="112" y="102" width="776" height="616"/>
 
-      <!-- iv. Monochrome -->
-      <article class="preset-feature" data-filter-item data-tags="monochrome">
-        <div class="preset-feature__head" data-reveal>
-          <span class="preset-feature__no">iv.</span>
-          <h2 class="preset-feature__name">Monochrome</h2>
-          <span class="preset__palette" aria-hidden="true">
-            <span class="dot" style="background:#2C2C2C"></span>
-            <span class="dot" style="background:#F5F5F3"></span>
-            <span class="dot" style="background:#9B9B98"></span>
-          </span>
-        </div>
-        <p class="preset-feature__desc" data-reveal data-reveal-delay="1">
-          Black and white linens, silver accents, clear acrylic centrepieces under
-          clean white light. The sharpest of the five &mdash; pick it when you want
-          a milestone birthday to read like a gala.
-        </p>
-        <figure data-reveal data-reveal-delay="2">
-          <a class="frame" href="images/presets/monochrome.jpg" data-lightbox="images/presets/monochrome.jpg">
-            <img src="images/presets/monochrome.jpg" alt="Design rendering of the Monochrome preset — black and white tables with silver accents and clear acrylic centrepieces" loading="lazy">
-          </a>
-        </figure>
-      </article>
+          <!-- entry: gap + swing, bottom center-left -->
+          <line class="d-paper" x1="330" y1="730" x2="410" y2="730" stroke-width="7"/>
+          <path class="d-line" d="M330 730 A 80 80 0 0 1 410 650"/>
+          <line class="d-line" x1="330" y1="730" x2="330" y2="650"/>
 
-      <!-- v. Regal -->
-      <article class="preset-feature" data-filter-item data-tags="regal">
-        <div class="preset-feature__head" data-reveal>
-          <span class="preset-feature__no">v.</span>
-          <h2 class="preset-feature__name">Regal</h2>
-          <span class="preset__palette" aria-hidden="true">
-            <span class="dot" style="background:#581E44"></span>
-            <span class="dot" style="background:#A8845A"></span>
-            <span class="dot" style="background:#2E1430"></span>
-          </span>
-        </div>
-        <p class="preset-feature__desc" data-reveal data-reveal-delay="1">
-          Jewel-tone linens, gold charger plates, crystal in the centrepieces, and
-          the arch dressed to match. The full-production option for sangeets,
-          receptions, and hundred-guest birthdays.
-        </p>
-        <figure data-reveal data-reveal-delay="2">
-          <a class="frame" href="images/presets/regal.jpg" data-lightbox="images/presets/regal.jpg">
-            <img src="images/presets/regal.jpg" alt="Design rendering of the Regal preset — jewel-tone linens with gold charger plates and crystal centrepieces" loading="lazy">
-          </a>
-        </figure>
-      </article>
+          <!-- kitchenette, top-right -->
+          <rect class="d-line" x="696" y="102" width="192" height="128"/>
+          <g class="d-thin">
+            <line x1="696" y1="134" x2="888" y2="134"/>
+            <circle cx="730" cy="118" r="9"/>
+            <circle cx="762" cy="118" r="9"/>
+            <rect x="800" y="108" width="40" height="20"/>
+          </g>
 
-      <div class="section-foot" data-reveal>
-        <a class="text-link" href="packages.html">See what each package includes</a>
-        <p class="small">Presets included with The Styled Experience and up.</p>
+          <!-- washrooms, bottom-right -->
+          <rect class="d-line" x="760" y="590" width="128" height="128"/>
+          <line class="d-thin" x1="824" y1="590" x2="824" y2="718"/>
+
+          <!-- statement arch, inside the top wall -->
+          <path class="d-acc" stroke-width="3" d="M410 186 A 90 62 0 0 1 590 186"/>
+          <path class="d-acc" stroke-width="1.2" opacity=".55" d="M424 186 A 76 50 0 0 1 576 186"/>
+          <circle class="d-accfill" cx="410" cy="186" r="4"/>
+          <circle class="d-accfill" cx="590" cy="186" r="4"/>
+
+          <!-- head table under the arch -->
+          <rect class="d-line" x="420" y="204" width="160" height="34"/>
+          <g class="d-dot">
+            <circle cx="440" cy="250" r="3.4"/><circle cx="470" cy="250" r="3.4"/><circle cx="500" cy="250" r="3.4"/><circle cx="530" cy="250" r="3.4"/><circle cx="560" cy="250" r="3.4"/>
+          </g>
+
+          <!-- harvest tables: 11 + head table = 12 -->
+          <g id="tables">
+            <g transform="translate(170,300)"><rect class="d-line" width="128" height="48"/><g class="d-dot"><circle cx="18" cy="-10" r="3.4"/><circle cx="46" cy="-10" r="3.4"/><circle cx="74" cy="-10" r="3.4"/><circle cx="102" cy="-10" r="3.4"/><circle cx="18" cy="58" r="3.4"/><circle cx="46" cy="58" r="3.4"/><circle cx="74" cy="58" r="3.4"/><circle cx="102" cy="58" r="3.4"/><circle cx="-10" cy="24" r="3.4"/><circle cx="138" cy="24" r="3.4"/></g></g>
+            <g transform="translate(170,410)"><rect class="d-line" width="128" height="48"/><g class="d-dot"><circle cx="18" cy="-10" r="3.4"/><circle cx="46" cy="-10" r="3.4"/><circle cx="74" cy="-10" r="3.4"/><circle cx="102" cy="-10" r="3.4"/><circle cx="18" cy="58" r="3.4"/><circle cx="46" cy="58" r="3.4"/><circle cx="74" cy="58" r="3.4"/><circle cx="102" cy="58" r="3.4"/><circle cx="-10" cy="24" r="3.4"/><circle cx="138" cy="24" r="3.4"/></g></g>
+            <g transform="translate(170,520)"><rect class="d-line" width="128" height="48"/><g class="d-dot"><circle cx="18" cy="-10" r="3.4"/><circle cx="46" cy="-10" r="3.4"/><circle cx="74" cy="-10" r="3.4"/><circle cx="102" cy="-10" r="3.4"/><circle cx="18" cy="58" r="3.4"/><circle cx="46" cy="58" r="3.4"/><circle cx="74" cy="58" r="3.4"/><circle cx="102" cy="58" r="3.4"/><circle cx="-10" cy="24" r="3.4"/><circle cx="138" cy="24" r="3.4"/></g></g>
+            <g transform="translate(170,630)"><rect class="d-line" width="128" height="48"/><g class="d-dot"><circle cx="18" cy="-10" r="3.4"/><circle cx="46" cy="-10" r="3.4"/><circle cx="74" cy="-10" r="3.4"/><circle cx="102" cy="-10" r="3.4"/><circle cx="-10" cy="24" r="3.4"/><circle cx="138" cy="24" r="3.4"/></g></g>
+            <g transform="translate(436,300)"><rect class="d-line" width="128" height="48"/><g class="d-dot"><circle cx="18" cy="-10" r="3.4"/><circle cx="46" cy="-10" r="3.4"/><circle cx="74" cy="-10" r="3.4"/><circle cx="102" cy="-10" r="3.4"/><circle cx="18" cy="58" r="3.4"/><circle cx="46" cy="58" r="3.4"/><circle cx="74" cy="58" r="3.4"/><circle cx="102" cy="58" r="3.4"/><circle cx="-10" cy="24" r="3.4"/><circle cx="138" cy="24" r="3.4"/></g></g>
+            <g transform="translate(436,410)"><rect class="d-line" width="128" height="48"/><g class="d-dot"><circle cx="18" cy="-10" r="3.4"/><circle cx="46" cy="-10" r="3.4"/><circle cx="74" cy="-10" r="3.4"/><circle cx="102" cy="-10" r="3.4"/><circle cx="18" cy="58" r="3.4"/><circle cx="46" cy="58" r="3.4"/><circle cx="74" cy="58" r="3.4"/><circle cx="102" cy="58" r="3.4"/><circle cx="-10" cy="24" r="3.4"/><circle cx="138" cy="24" r="3.4"/></g></g>
+            <g transform="translate(436,520)"><rect class="d-line" width="128" height="48"/><g class="d-dot"><circle cx="18" cy="-10" r="3.4"/><circle cx="46" cy="-10" r="3.4"/><circle cx="74" cy="-10" r="3.4"/><circle cx="102" cy="-10" r="3.4"/><circle cx="18" cy="58" r="3.4"/><circle cx="46" cy="58" r="3.4"/><circle cx="74" cy="58" r="3.4"/><circle cx="102" cy="58" r="3.4"/><circle cx="-10" cy="24" r="3.4"/><circle cx="138" cy="24" r="3.4"/></g></g>
+            <g transform="translate(436,630)"><rect class="d-line" width="128" height="48"/><g class="d-dot"><circle cx="18" cy="-10" r="3.4"/><circle cx="46" cy="-10" r="3.4"/><circle cx="74" cy="-10" r="3.4"/><circle cx="102" cy="-10" r="3.4"/><circle cx="-10" cy="24" r="3.4"/><circle cx="138" cy="24" r="3.4"/></g></g>
+            <g transform="translate(702,300)"><rect class="d-line" width="128" height="48"/><g class="d-dot"><circle cx="18" cy="-10" r="3.4"/><circle cx="46" cy="-10" r="3.4"/><circle cx="74" cy="-10" r="3.4"/><circle cx="102" cy="-10" r="3.4"/><circle cx="18" cy="58" r="3.4"/><circle cx="46" cy="58" r="3.4"/><circle cx="74" cy="58" r="3.4"/><circle cx="102" cy="58" r="3.4"/><circle cx="-10" cy="24" r="3.4"/><circle cx="138" cy="24" r="3.4"/></g></g>
+            <g transform="translate(702,410)"><rect class="d-line" width="128" height="48"/><g class="d-dot"><circle cx="18" cy="-10" r="3.4"/><circle cx="46" cy="-10" r="3.4"/><circle cx="74" cy="-10" r="3.4"/><circle cx="102" cy="-10" r="3.4"/><circle cx="18" cy="58" r="3.4"/><circle cx="46" cy="58" r="3.4"/><circle cx="74" cy="58" r="3.4"/><circle cx="102" cy="58" r="3.4"/><circle cx="-10" cy="24" r="3.4"/><circle cx="138" cy="24" r="3.4"/></g></g>
+            <g transform="translate(702,520)"><rect class="d-line" width="128" height="48"/><g class="d-dot"><circle cx="18" cy="-10" r="3.4"/><circle cx="46" cy="-10" r="3.4"/><circle cx="74" cy="-10" r="3.4"/><circle cx="102" cy="-10" r="3.4"/><circle cx="18" cy="58" r="3.4"/><circle cx="46" cy="58" r="3.4"/><circle cx="74" cy="58" r="3.4"/><circle cx="102" cy="58" r="3.4"/><circle cx="-10" cy="24" r="3.4"/><circle cx="138" cy="24" r="3.4"/></g></g>
+          </g>
+
+          <!-- dimensions -->
+          <g class="d-thin">
+            <line x1="100" y1="768" x2="900" y2="768"/>
+            <line x1="100" y1="760" x2="100" y2="776"/>
+            <line x1="900" y1="760" x2="900" y2="776"/>
+            <line x1="62" y1="90" x2="62" y2="730"/>
+            <line x1="54" y1="90" x2="70" y2="90"/>
+            <line x1="54" y1="730" x2="70" y2="730"/>
+          </g>
+          <text class="d-dim" x="500" y="790" text-anchor="middle">50 FT</text>
+          <text class="d-dim" x="46" y="414" text-anchor="middle" transform="rotate(-90 46 414)">40 FT</text>
+
+          <!-- labels -->
+          <g class="d-thin">
+            <line x1="500" y1="120" x2="500" y2="70"/>
+            <line x1="792" y1="96" x2="792" y2="70"/>
+          </g>
+          <text class="d-note" x="500" y="60" text-anchor="middle">the statement arch</text>
+          <text class="d-lbl" x="792" y="60" text-anchor="middle">KITCHENETTE</text>
+          <text class="d-lbl" x="843" y="660" text-anchor="middle" transform="rotate(-90 843 660)">WASHROOMS</text>
+          <text class="d-lbl" x="330" y="758">STEP-FREE ENTRY</text>
+          <text class="d-note" x="150" y="252">fairy lights overhead, wall to wall</text>
+          <text class="d-lbl" x="850" y="758" text-anchor="end">12 HARVEST TABLES &middot; SEATS 125</text>
+        </svg>
       </div>
+
+      <p class="prose mt-2">
+        Banquet seats 125 at twelve harvest tables &mdash; that&rsquo;s the layout drawn
+        above. Theatre, cocktail, and floor seating for mehndi nights are layout
+        options too; each gets a confirmed capacity when we open in 2027
+        (construction estimate), not an invented number now.
+      </p>
     </div>
   </section>
 
-  <!-- ============ 02 · THE DETAILS ============ -->
-  <section class="section band--bone2">
+  <!-- ============ THE FIVE LOOKS ============ -->
+  <section class="section" id="looks">
     <div class="container">
       <div class="section-head">
-        <p class="kicker" data-reveal><span class="kicker__no">02</span><span>The details</span></p>
-        <h2 class="display-2" data-reveal>The table, up <em>close</em>.</h2>
-        <p class="lead" data-reveal data-reveal-delay="1">
-          Every preset is set to the same standard: pressed linens, cloth napkins,
-          gold or brass charger plates, and a statement arch dressed to match &mdash;
-          the parts your guests will photograph first.
+        <h2 class="display-2">The five looks, in swatches instead of renders.</h2>
+        <p class="lead">
+          A look commits the uplighting colour, the linens, the centrepieces, and
+          the arch dressing to one palette. Here is each one as the materials
+          we&rsquo;ll actually buy &mdash; not a render of a room that doesn&rsquo;t
+          exist yet.
         </p>
       </div>
-      <div class="details-duo" data-reveal-stagger>
-        <figure>
-          <a class="frame" href="images/details/table-setting.jpg" data-lightbox="images/details/table-setting.jpg">
-            <img src="images/details/table-setting.jpg" alt="Design rendering of a single place setting — charger plate, cloth napkin, and taper candles" loading="lazy">
-          </a>
-          <figcaption>Design rendering &mdash; a place setting from The Styled Experience.</figcaption>
-        </figure>
-        <figure>
-          <a class="frame" href="images/details/arch.jpg" data-lightbox="images/details/arch.jpg">
-            <img src="images/details/arch.jpg" alt="Design rendering of the statement backdrop arch, dressed with florals" loading="lazy">
-          </a>
-          <figcaption>Design rendering &mdash; the backdrop arch, dressed in your preset&rsquo;s palette.</figcaption>
-        </figure>
-      </div>
-    </div>
-  </section>
 
-  <!-- ============ 03 · THE STARTING POINT ============ -->
-  <section class="section">
-    <div class="container">
-      <div class="split split--flip">
-        <div class="split__body">
-          <p class="kicker" data-reveal><span class="kicker__no">03</span><span>The build</span></p>
-          <h2 class="display-2" data-reveal>The honest <em>starting point</em>.</h2>
-          <div data-reveal data-reveal-delay="1">
-            <p>
-              Concrete floor, exposed ceiling, 2,000 square feet on the Steeles Ave
-              East corridor. Every render on this page starts here.
-            </p>
-            <p>
-              Crews are in the space now &mdash; drywall, then warm wood floors,
-              then the fairy-light canopy. We post each step as it happens,
-              unstyled and unfiltered.
-            </p>
-          </div>
-          <div class="split__actions" data-reveal data-reveal-delay="2">
-            <a class="btn btn--outline" href="https://instagram.com/thelaurelroom" target="_blank" rel="noopener" data-text="Follow the build">Follow the build</a>
-          </div>
+      <!-- i · Laurel -->
+      <article class="look" data-preset="laurel">
+        <div class="look__head">
+          <span class="look__no">i</span>
+          <h3 class="look__name">Laurel</h3>
+          <span class="look__mood">sage and cream, eucalyptus down every table</span>
         </div>
-        <div class="split__media" data-reveal>
-          <figure>
-            <div class="frame" style="aspect-ratio: 4/3;" data-parallax="soft">
-              <img src="images/hero/raw-space.jpg" alt="The actual space mid-buildout — bare concrete floor and exposed industrial ceiling" loading="lazy">
+        <div class="look__grid">
+          <div>
+            <div class="swatches" aria-hidden="true">
+              <span style="background:#45584A"></span>
+              <span style="background:#6B8577"></span>
+              <span style="background:#A8C0B4"></span>
+              <span style="background:#E8E4D8"></span>
             </div>
-            <figcaption>Not a rendering &mdash; the actual space, mid-buildout.</figcaption>
-          </figure>
+            <ul class="chips" role="list">
+              <li class="chip"><i style="background:#6B8577"></i>sage linen</li>
+              <li class="chip"><i style="background:#E8E4D8"></i>cream runners</li>
+              <li class="chip"><i style="background:#A8C0B4"></i>eucalyptus</li>
+              <li class="chip"><i style="background:#EFE8D6"></i>pillar candles</li>
+            </ul>
+          </div>
+          <div>
+            <svg class="drawing" viewBox="0 0 500 400" role="img" aria-label="The same floor plan recolored in the Laurel palette">
+              <rect class="d-wash" x="70" y="100" width="290" height="240"/>
+              <g class="d-acc" stroke-width="0.8" stroke-dasharray="1 5" opacity=".9">
+                <path d="M70 115 Q 250 150 430 120"/>
+                <path d="M70 185 Q 250 220 430 190"/>
+                <path d="M70 255 Q 250 290 430 260"/>
+              </g>
+              <rect class="d-heavy" x="50" y="45" width="400" height="320"/>
+              <rect class="d-line" x="57" y="52" width="386" height="306"/>
+              <path class="d-acc" stroke-width="2" d="M205 92 A 45 30 0 0 1 295 92"/>
+              <rect class="d-line" x="210" y="100" width="80" height="17"/>
+              <g class="d-line">
+                <rect x="85" y="150" width="64" height="24"/><rect x="85" y="215" width="64" height="24"/><rect x="85" y="280" width="64" height="24"/>
+                <rect x="218" y="150" width="64" height="24"/><rect x="218" y="215" width="64" height="24"/><rect x="218" y="280" width="64" height="24"/>
+                <rect x="351" y="150" width="64" height="24"/><rect x="351" y="215" width="64" height="24"/><rect x="351" y="280" width="64" height="24"/>
+              </g>
+              <g class="d-dot">
+                <circle cx="100" cy="142" r="2"/><circle cx="117" cy="142" r="2"/><circle cx="134" cy="142" r="2"/>
+                <circle cx="233" cy="142" r="2"/><circle cx="250" cy="142" r="2"/><circle cx="267" cy="142" r="2"/>
+                <circle cx="366" cy="142" r="2"/><circle cx="383" cy="142" r="2"/><circle cx="400" cy="142" r="2"/>
+                <circle cx="100" cy="207" r="2"/><circle cx="117" cy="207" r="2"/><circle cx="134" cy="207" r="2"/>
+                <circle cx="233" cy="207" r="2"/><circle cx="250" cy="207" r="2"/><circle cx="267" cy="207" r="2"/>
+                <circle cx="366" cy="207" r="2"/><circle cx="383" cy="207" r="2"/><circle cx="400" cy="207" r="2"/>
+                <circle cx="100" cy="272" r="2"/><circle cx="117" cy="272" r="2"/><circle cx="134" cy="272" r="2"/>
+                <circle cx="233" cy="272" r="2"/><circle cx="250" cy="272" r="2"/><circle cx="267" cy="272" r="2"/>
+                <circle cx="366" cy="272" r="2"/><circle cx="383" cy="272" r="2"/><circle cx="400" cy="272" r="2"/>
+              </g>
+            </svg>
+            <p class="prose mt-2">
+            The uplighting goes soft green, and the twelve harvest tables get sage
+            linen with cream runners, eucalyptus laid down the middle, pillar
+            candles between the place settings. The arch is dressed in greenery to
+            match. The tables, the layout, and the 20-plus parking spaces stay
+            exactly where the drawing puts them.
+          </p>
+          </div>
         </div>
+      </article>
+
+      <!-- ii · Golden Hour -->
+      <article class="look" data-preset="golden">
+        <div class="look__head">
+          <span class="look__no">ii</span>
+          <h3 class="look__name">Golden Hour</h3>
+          <span class="look__mood">7 PM warmth, held for the whole evening</span>
+        </div>
+        <div class="look__grid">
+          <div>
+            <div class="swatches" aria-hidden="true">
+              <span style="background:#4A3826"></span>
+              <span style="background:#A06C24"></span>
+              <span style="background:#B58E5E"></span>
+              <span style="background:#D4B896"></span>
+              <span style="background:#E4B15A"></span>
+            </div>
+            <ul class="chips" role="list">
+              <li class="chip"><i style="background:#E4B15A"></i>amber uplight</li>
+              <li class="chip"><i style="background:#A06C24"></i>antique brass</li>
+              <li class="chip"><i style="background:#D4B896"></i>taper candles</li>
+            </ul>
+          </div>
+          <div>
+            <svg class="drawing" viewBox="0 0 500 400" role="img" aria-label="The same floor plan recolored in the Golden Hour palette">
+              <rect class="d-wash" x="70" y="100" width="290" height="240"/>
+              <g class="d-acc" stroke-width="0.8" stroke-dasharray="1 5" opacity=".9">
+                <path d="M70 115 Q 250 150 430 120"/>
+                <path d="M70 185 Q 250 220 430 190"/>
+                <path d="M70 255 Q 250 290 430 260"/>
+              </g>
+              <rect class="d-heavy" x="50" y="45" width="400" height="320"/>
+              <rect class="d-line" x="57" y="52" width="386" height="306"/>
+              <path class="d-acc" stroke-width="2" d="M205 92 A 45 30 0 0 1 295 92"/>
+              <rect class="d-line" x="210" y="100" width="80" height="17"/>
+              <g class="d-line">
+                <rect x="85" y="150" width="64" height="24"/><rect x="85" y="215" width="64" height="24"/><rect x="85" y="280" width="64" height="24"/>
+                <rect x="218" y="150" width="64" height="24"/><rect x="218" y="215" width="64" height="24"/><rect x="218" y="280" width="64" height="24"/>
+                <rect x="351" y="150" width="64" height="24"/><rect x="351" y="215" width="64" height="24"/><rect x="351" y="280" width="64" height="24"/>
+              </g>
+              <g class="d-dot">
+                <circle cx="100" cy="142" r="2"/><circle cx="117" cy="142" r="2"/><circle cx="134" cy="142" r="2"/>
+                <circle cx="233" cy="142" r="2"/><circle cx="250" cy="142" r="2"/><circle cx="267" cy="142" r="2"/>
+                <circle cx="366" cy="142" r="2"/><circle cx="383" cy="142" r="2"/><circle cx="400" cy="142" r="2"/>
+                <circle cx="100" cy="207" r="2"/><circle cx="117" cy="207" r="2"/><circle cx="134" cy="207" r="2"/>
+                <circle cx="233" cy="207" r="2"/><circle cx="250" cy="207" r="2"/><circle cx="267" cy="207" r="2"/>
+                <circle cx="366" cy="207" r="2"/><circle cx="383" cy="207" r="2"/><circle cx="400" cy="207" r="2"/>
+                <circle cx="100" cy="272" r="2"/><circle cx="117" cy="272" r="2"/><circle cx="134" cy="272" r="2"/>
+                <circle cx="233" cy="272" r="2"/><circle cx="250" cy="272" r="2"/><circle cx="267" cy="272" r="2"/>
+                <circle cx="366" cy="272" r="2"/><circle cx="383" cy="272" r="2"/><circle cx="400" cy="272" r="2"/>
+              </g>
+            </svg>
+            <p class="prose mt-2">
+            The LED uplighting turns amber and the overhead light steps back &mdash;
+            antique brass candlesticks and taper candles do most of the work. The
+            centrepieces and the arch dressing warm up to match. Nothing structural
+            moves: the same tables, the same floor plan, the same parking.
+          </p>
+          </div>
+        </div>
+      </article>
+
+      <!-- iii · Blush -->
+      <article class="look" data-preset="blush">
+        <div class="look__head">
+          <span class="look__no">iii</span>
+          <h3 class="look__name">Blush</h3>
+          <span class="look__mood">dusty pink on cream, rose-gold at every seat</span>
+        </div>
+        <div class="look__grid">
+          <div>
+            <div class="swatches" aria-hidden="true">
+              <span style="background:#A85B4E"></span>
+              <span style="background:#C9927F"></span>
+              <span style="background:#D2AAA0"></span>
+              <span style="background:#E2A492"></span>
+              <span style="background:#F3ECE9"></span>
+            </div>
+            <ul class="chips" role="list">
+              <li class="chip"><i style="background:#D2AAA0"></i>dusty-pink linen</li>
+              <li class="chip"><i style="background:#F3ECE9"></i>cream</li>
+              <li class="chip"><i style="background:#C9927F"></i>rose-gold chargers</li>
+            </ul>
+          </div>
+          <div>
+            <svg class="drawing" viewBox="0 0 500 400" role="img" aria-label="The same floor plan recolored in the Blush palette">
+              <rect class="d-wash" x="70" y="100" width="290" height="240"/>
+              <g class="d-acc" stroke-width="0.8" stroke-dasharray="1 5" opacity=".9">
+                <path d="M70 115 Q 250 150 430 120"/>
+                <path d="M70 185 Q 250 220 430 190"/>
+                <path d="M70 255 Q 250 290 430 260"/>
+              </g>
+              <rect class="d-heavy" x="50" y="45" width="400" height="320"/>
+              <rect class="d-line" x="57" y="52" width="386" height="306"/>
+              <path class="d-acc" stroke-width="2" d="M205 92 A 45 30 0 0 1 295 92"/>
+              <rect class="d-line" x="210" y="100" width="80" height="17"/>
+              <g class="d-line">
+                <rect x="85" y="150" width="64" height="24"/><rect x="85" y="215" width="64" height="24"/><rect x="85" y="280" width="64" height="24"/>
+                <rect x="218" y="150" width="64" height="24"/><rect x="218" y="215" width="64" height="24"/><rect x="218" y="280" width="64" height="24"/>
+                <rect x="351" y="150" width="64" height="24"/><rect x="351" y="215" width="64" height="24"/><rect x="351" y="280" width="64" height="24"/>
+              </g>
+              <g class="d-dot">
+                <circle cx="100" cy="142" r="2"/><circle cx="117" cy="142" r="2"/><circle cx="134" cy="142" r="2"/>
+                <circle cx="233" cy="142" r="2"/><circle cx="250" cy="142" r="2"/><circle cx="267" cy="142" r="2"/>
+                <circle cx="366" cy="142" r="2"/><circle cx="383" cy="142" r="2"/><circle cx="400" cy="142" r="2"/>
+                <circle cx="100" cy="207" r="2"/><circle cx="117" cy="207" r="2"/><circle cx="134" cy="207" r="2"/>
+                <circle cx="233" cy="207" r="2"/><circle cx="250" cy="207" r="2"/><circle cx="267" cy="207" r="2"/>
+                <circle cx="366" cy="207" r="2"/><circle cx="383" cy="207" r="2"/><circle cx="400" cy="207" r="2"/>
+                <circle cx="100" cy="272" r="2"/><circle cx="117" cy="272" r="2"/><circle cx="134" cy="272" r="2"/>
+                <circle cx="233" cy="272" r="2"/><circle cx="250" cy="272" r="2"/><circle cx="267" cy="272" r="2"/>
+                <circle cx="366" cy="272" r="2"/><circle cx="383" cy="272" r="2"/><circle cx="400" cy="272" r="2"/>
+              </g>
+            </svg>
+            <p class="prose mt-2">
+            Dusty-pink linen with cream cloth napkins, a rose-gold charger at each
+            place, and centrepieces and arch florals in the same soft range. The
+            uplighting shifts to a warm pink. Underneath it all, the room is the
+            same drawing: twelve tables, one arch, step-free at the door.
+          </p>
+          </div>
+        </div>
+      </article>
+
+      <!-- iv · Monochrome -->
+      <article class="look" data-preset="mono">
+        <div class="look__head">
+          <span class="look__no">iv</span>
+          <h3 class="look__name">Monochrome</h3>
+          <span class="look__mood">black, white, and silver under clean light</span>
+        </div>
+        <div class="look__grid">
+          <div>
+            <div class="swatches" aria-hidden="true">
+              <span style="background:#2C2C2C"></span>
+              <span style="background:#4A4A46"></span>
+              <span style="background:#9B9B98"></span>
+              <span style="background:#F5F5F3"></span>
+            </div>
+            <ul class="chips" role="list">
+              <li class="chip"><i style="background:#2C2C2C"></i>black + white linen</li>
+              <li class="chip"><i style="background:#9B9B98"></i>silver</li>
+              <li class="chip"><i style="background:#E8E8E4"></i>clear acrylic</li>
+            </ul>
+          </div>
+          <div>
+            <svg class="drawing" viewBox="0 0 500 400" role="img" aria-label="The same floor plan recolored in the Monochrome palette">
+              <rect class="d-wash" x="70" y="100" width="290" height="240"/>
+              <g class="d-acc" stroke-width="0.8" stroke-dasharray="1 5" opacity=".9">
+                <path d="M70 115 Q 250 150 430 120"/>
+                <path d="M70 185 Q 250 220 430 190"/>
+                <path d="M70 255 Q 250 290 430 260"/>
+              </g>
+              <rect class="d-heavy" x="50" y="45" width="400" height="320"/>
+              <rect class="d-line" x="57" y="52" width="386" height="306"/>
+              <path class="d-acc" stroke-width="2" d="M205 92 A 45 30 0 0 1 295 92"/>
+              <rect class="d-line" x="210" y="100" width="80" height="17"/>
+              <g class="d-line">
+                <rect x="85" y="150" width="64" height="24"/><rect x="85" y="215" width="64" height="24"/><rect x="85" y="280" width="64" height="24"/>
+                <rect x="218" y="150" width="64" height="24"/><rect x="218" y="215" width="64" height="24"/><rect x="218" y="280" width="64" height="24"/>
+                <rect x="351" y="150" width="64" height="24"/><rect x="351" y="215" width="64" height="24"/><rect x="351" y="280" width="64" height="24"/>
+              </g>
+              <g class="d-dot">
+                <circle cx="100" cy="142" r="2"/><circle cx="117" cy="142" r="2"/><circle cx="134" cy="142" r="2"/>
+                <circle cx="233" cy="142" r="2"/><circle cx="250" cy="142" r="2"/><circle cx="267" cy="142" r="2"/>
+                <circle cx="366" cy="142" r="2"/><circle cx="383" cy="142" r="2"/><circle cx="400" cy="142" r="2"/>
+                <circle cx="100" cy="207" r="2"/><circle cx="117" cy="207" r="2"/><circle cx="134" cy="207" r="2"/>
+                <circle cx="233" cy="207" r="2"/><circle cx="250" cy="207" r="2"/><circle cx="267" cy="207" r="2"/>
+                <circle cx="366" cy="207" r="2"/><circle cx="383" cy="207" r="2"/><circle cx="400" cy="207" r="2"/>
+                <circle cx="100" cy="272" r="2"/><circle cx="117" cy="272" r="2"/><circle cx="134" cy="272" r="2"/>
+                <circle cx="233" cy="272" r="2"/><circle cx="250" cy="272" r="2"/><circle cx="267" cy="272" r="2"/>
+                <circle cx="366" cy="272" r="2"/><circle cx="383" cy="272" r="2"/><circle cx="400" cy="272" r="2"/>
+              </g>
+            </svg>
+            <p class="prose mt-2">
+            Linens go black and white, accents go silver, and the centrepieces are
+            clear acrylic under neutral light &mdash; no colour wash at all. The
+            arch is stripped back to match. The plan doesn&rsquo;t change; the same
+            twelve tables just read sharper in this palette.
+          </p>
+          </div>
+        </div>
+      </article>
+
+      <!-- v · Regal -->
+      <article class="look" data-preset="regal">
+        <div class="look__head">
+          <span class="look__no">v</span>
+          <h3 class="look__name">Regal</h3>
+          <span class="look__mood">jewel tones, gold, and crystal &mdash; the full production</span>
+        </div>
+        <div class="look__grid">
+          <div>
+            <div class="swatches" aria-hidden="true">
+              <span style="background:#2E1430"></span>
+              <span style="background:#581E44"></span>
+              <span style="background:#6E3A5C"></span>
+              <span style="background:#A8845A"></span>
+              <span style="background:#C99BB6"></span>
+            </div>
+            <ul class="chips" role="list">
+              <li class="chip"><i style="background:#581E44"></i>jewel-tone linen</li>
+              <li class="chip"><i style="background:#A8845A"></i>gold chargers</li>
+              <li class="chip"><i style="background:#C99BB6"></i>crystal</li>
+            </ul>
+          </div>
+          <div>
+            <svg class="drawing" viewBox="0 0 500 400" role="img" aria-label="The same floor plan recolored in the Regal palette">
+              <rect class="d-wash" x="70" y="100" width="290" height="240"/>
+              <g class="d-acc" stroke-width="0.8" stroke-dasharray="1 5" opacity=".9">
+                <path d="M70 115 Q 250 150 430 120"/>
+                <path d="M70 185 Q 250 220 430 190"/>
+                <path d="M70 255 Q 250 290 430 260"/>
+              </g>
+              <rect class="d-heavy" x="50" y="45" width="400" height="320"/>
+              <rect class="d-line" x="57" y="52" width="386" height="306"/>
+              <path class="d-acc" stroke-width="2" d="M205 92 A 45 30 0 0 1 295 92"/>
+              <rect class="d-line" x="210" y="100" width="80" height="17"/>
+              <g class="d-line">
+                <rect x="85" y="150" width="64" height="24"/><rect x="85" y="215" width="64" height="24"/><rect x="85" y="280" width="64" height="24"/>
+                <rect x="218" y="150" width="64" height="24"/><rect x="218" y="215" width="64" height="24"/><rect x="218" y="280" width="64" height="24"/>
+                <rect x="351" y="150" width="64" height="24"/><rect x="351" y="215" width="64" height="24"/><rect x="351" y="280" width="64" height="24"/>
+              </g>
+              <g class="d-dot">
+                <circle cx="100" cy="142" r="2"/><circle cx="117" cy="142" r="2"/><circle cx="134" cy="142" r="2"/>
+                <circle cx="233" cy="142" r="2"/><circle cx="250" cy="142" r="2"/><circle cx="267" cy="142" r="2"/>
+                <circle cx="366" cy="142" r="2"/><circle cx="383" cy="142" r="2"/><circle cx="400" cy="142" r="2"/>
+                <circle cx="100" cy="207" r="2"/><circle cx="117" cy="207" r="2"/><circle cx="134" cy="207" r="2"/>
+                <circle cx="233" cy="207" r="2"/><circle cx="250" cy="207" r="2"/><circle cx="267" cy="207" r="2"/>
+                <circle cx="366" cy="207" r="2"/><circle cx="383" cy="207" r="2"/><circle cx="400" cy="207" r="2"/>
+                <circle cx="100" cy="272" r="2"/><circle cx="117" cy="272" r="2"/><circle cx="134" cy="272" r="2"/>
+                <circle cx="233" cy="272" r="2"/><circle cx="250" cy="272" r="2"/><circle cx="267" cy="272" r="2"/>
+                <circle cx="366" cy="272" r="2"/><circle cx="383" cy="272" r="2"/><circle cx="400" cy="272" r="2"/>
+              </g>
+            </svg>
+            <p class="prose mt-2">
+            Jewel-tone linen, gold chargers, crystal in the centrepieces, and the
+            arch dressed the heaviest of the five looks. The uplighting deepens
+            toward the linen colour. Tables, layout, and parking are untouched
+            &mdash; this is dressing, not renovation.
+          </p>
+          </div>
+        </div>
+      </article>
+
+      <div class="section-foot">
+        <a class="linkline" href="packages.html">Any look is included with The Styled Experience and up</a>
+        <p class="small">The Space is the blank-canvas package &mdash; bring your own decorator if you&rsquo;d rather.</p>
       </div>
     </div>
   </section>
 
-  <!-- ============ CTA BAND ============ -->
-  <section class="section band--dark cta-band">
+  <!-- ============ HARD-HAT BAND ============ -->
+  <section class="section band band--laurel">
     <div class="container">
-      <div class="cta-band__grid">
-        <div>
-          <p class="kicker" data-reveal><span class="kicker__no">04</span><span>Founding offer</span></p>
-          <h2 class="display-2" data-reveal>Put your date in the book.</h2>
-          <p data-reveal data-reveal-delay="1">
-            Reserve any 2027 date before we open and take 10% off. Founding clients
-            get first pick of the calendar &mdash; Saturdays go earliest.
-          </p>
-        </div>
-        <div data-reveal data-reveal-delay="2">
-          <form class="capture" action="https://api.web3forms.com/submit" method="POST">
-            <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY">
-            <input type="hidden" name="subject" value="Founding client signup — The Laurel Room">
-            <input type="hidden" name="from_name" value="The Laurel Room Website">
-            <label class="visually-hidden" for="capture-email">Email address</label>
-            <input class="input" type="email" id="capture-email" name="email" placeholder="you@email.com" required>
-            <button type="submit" class="btn btn--light" data-text="Save my spot">Save my spot</button>
-          </form>
-          <p class="small mt-1">
-            One email when booking opens wider, plus your tour invitation. That&rsquo;s it.
-          </p>
-        </div>
-      </div>
+      <h2 class="band__huge">Pick the look on a hard-hat tour.</h2>
+      <p class="mt-2" style="max-width: 38em;">
+        Founding families walk the room before it&rsquo;s pretty: the first
+        hard-hat walk-through, first pick of the 2027 calendar, and 10% off any
+        2027 date. Swatches look different standing under 18 feet of ceiling.
+      </p>
+      <p class="mt-3"><a class="linkline" href="index.html#founding">Join the founding families</a></p>
     </div>
   </section>
 
@@ -386,53 +586,24 @@
 
   <!-- ============ FOOTER ============ -->
   <footer class="footer">
-    <div class="container container--wide">
-      <p class="footer__word">The Laurel <em>Room</em></p>
-      <div class="footer__cols">
-        <div>
-          <p class="footer__tag">
-            A boutique event venue in Brampton for 50&ndash;125 guests.
-            Bring your own caterer; we&rsquo;ll have the room ready.
-          </p>
-          <p class="status">Now booking 2027 celebrations</p>
-        </div>
-        <div>
-          <p class="footer__head">Visit</p>
-          <p class="footer__link">Brampton, Ontario</p>
-          <p class="footer__link">Steeles Ave East corridor</p>
-          <p class="footer__link">Opening for events in 2027</p>
-        </div>
-        <div>
-          <p class="footer__head">Talk</p>
-          <a class="footer__link" href="tel:6472861161">647-286-1161 (call or text)</a>
-          <a class="footer__link" href="mailto:hello@thelaurelroom.ca">hello@thelaurelroom.ca</a>
-          <a class="footer__link" href="https://instagram.com/thelaurelroom" target="_blank" rel="noopener">@thelaurelroom</a>
-        </div>
-        <div>
-          <p class="footer__head">Pages</p>
-          <a class="footer__link" href="about.html">About</a>
-          <a class="footer__link" href="gallery.html">Gallery</a>
-          <a class="footer__link" href="packages.html">Pricing</a>
-          <a class="footer__link" href="contact.html">Contact</a>
-        </div>
+    <div class="container">
+      <div class="footer__row">
+        <a class="wordmark" href="index.html">The Laurel Room</a>
+        <nav class="footer__links" aria-label="Footer">
+          <a href="about.html">The story</a>
+          <a href="gallery.html">The room</a>
+          <a href="packages.html">Pricing</a>
+          <a href="contact.html">Plan an event</a>
+          <a href="https://instagram.com/thelaurelroom" target="_blank" rel="noopener">@thelaurelroom</a>
+        </nav>
       </div>
-      <div class="footer__bottom">
-        <span>&copy; <span data-year>2026</span> The Laurel Room Inc. All rights reserved.</span>
-        <span>Made in Brampton</span>
+      <div class="footer__colophon">
+        <span>&copy; <span data-year>2026</span> The Laurel Room Inc. &middot; Brampton, Ontario</span>
+        <span>Drawings by us. Room by 2027.</span>
+        <span><a href="tel:6472861161">647-286-1161</a> &middot; <a href="mailto:hello@thelaurelroom.ca">hello@thelaurelroom.ca</a></span>
       </div>
     </div>
   </footer>
-
-  <!-- ============ STICKY MOBILE CTA ============ -->
-  <div class="sticky-cta">
-    <a class="btn btn--solid" href="contact.html" data-text="Check 2027 availability">Check 2027 availability</a>
-  </div>
-
-  <!-- ============ LIGHTBOX ============ -->
-  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Enlarged image">
-    <button class="lightbox__close" type="button" aria-label="Close">&times;</button>
-    <img src="" alt="">
-  </div>
 
 </body>
 </html>
