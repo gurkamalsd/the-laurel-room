@@ -2,22 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/brand/favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/brand/favicon-16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/brand/apple-touch-icon.png">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Us | The Laurel Room Brampton Event Venue</title>
-  <meta name="description" content="Contact The Laurel Room to book Brampton's boutique event venue for 50-125 guests. BYOC celebrations, five design presets, tours available. Inquire today.">
-  <meta name="keywords" content="contact event venue Brampton, book event space, venue inquiry Brampton, BYOC venue booking, event venue tour, celebration venue contact, wedding venue inquiry, party venue Brampton, venue availability, event space 50-125 guests">
+  <title>Plan Your Event — The Laurel Room | Now Booking 2027 Celebrations</title>
+  <meta name="description" content="Tell us what you’re planning in four quick steps — we reply within 24 hours, usually faster. The Laurel Room is a boutique Brampton venue for 50–125 guests. Now booking 2027 celebrations.">
   <meta name="robots" content="index, follow">
   <meta name="ai-content-declarations" content="venue-information, pricing, cultural-events">
   <meta name="author" content="The Laurel Room Inc.">
   <link rel="canonical" href="https://thelaurelroom.ca/contact.html">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Contact Us | The Laurel Room Brampton Event Venue">
-  <meta property="og:description" content="Contact The Laurel Room to book Brampton's boutique event venue for 50-125 guests. BYOC celebrations, five design presets.">
+  <meta property="og:title" content="Plan Your Event — The Laurel Room">
+  <meta property="og:description" content="Four quick steps and a reply within 24 hours. Call or text 647-286-1161, or start the plan online. Now booking 2027 celebrations in Brampton.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://thelaurelroom.ca/contact.html">
   <meta property="og:image" content="https://thelaurelroom.ca/images/brand/og-image.png">
@@ -25,29 +24,35 @@
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Contact Us | The Laurel Room Brampton Event Venue">
-  <meta name="twitter:description" content="Contact The Laurel Room to book Brampton's boutique event venue for 50-125 guests. BYOC celebrations, five design presets.">
+  <meta name="twitter:title" content="Plan Your Event — The Laurel Room">
+  <meta name="twitter:description" content="Four quick steps and a reply within 24 hours. A boutique Brampton venue for 50–125 guests. Now booking 2027 celebrations.">
   <meta name="twitter:image" content="https://thelaurelroom.ca/images/brand/og-image.png">
 
   <!-- Performance -->
-  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-  <link rel="preload" as="image" href="images/details/arch.jpg">
+  <link rel="preload" as="font" type="font/woff2" href="fonts/fraunces-normal-latin.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="fonts/dmsans-normal-latin.woff2" crossorigin>
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&family=Pinyon+Script&display=swap" rel="stylesheet">
-
-  <!-- Stylesheet -->
+  <!-- Fonts (self-hosted) + stylesheet -->
+  <link rel="stylesheet" href="css/fonts.css">
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
 
-  <!-- Structured Data -- LocalBusiness -->
+  <style>
+    /* page: contact */
+    .plan__loc {
+      font-size: 0.8rem;
+      color: var(--ink-mute);
+      line-height: 1.7;
+    }
+  </style>
+
+  <!-- Structured Data — LocalBusiness -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "The Laurel Room",
-    "description": "Boutique event venue for intimate celebrations of 50-125 guests in Brampton, Ontario. Five curated design presets, BYOC flexibility, and full-service coordination.",
+    "description": "Boutique event venue for celebrations of 50–125 guests in Brampton, Ontario. Bring-your-own-caterer model, five design presets. Opening for events in 2027 — now booking late 2026 and 2027 dates.",
     "url": "https://thelaurelroom.ca",
     "image": "https://thelaurelroom.ca/images/hero/hero-main.jpg",
     "email": "hello@thelaurelroom.ca",
@@ -59,396 +64,376 @@
       "addressRegion": "ON",
       "addressCountry": "CA"
     },
-    "openingHours": "Mo-Su 10:00-23:00",
     "priceRange": "$895-$2995",
     "sameAs": [
       "https://instagram.com/thelaurelroom"
     ]
   }
   </script>
-
-  <!-- Page-specific styles -->
-  <style>
-    /* FAQ Accordion */
-    .faq-item {
-      border-bottom: 1px solid var(--cream);
-    }
-
-    .faq-question {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1.5rem 0;
-      cursor: pointer;
-      font-family: var(--font-display);
-      font-size: clamp(0.85rem, 1.2vw, 1rem);
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      color: var(--charcoal);
-      user-select: none;
-      transition: color var(--duration-fast) var(--ease);
-    }
-
-    .faq-question:hover {
-      color: var(--brass);
-    }
-
-    .faq-indicator {
-      font-size: 1.4rem;
-      font-weight: 300;
-      color: var(--laurel);
-      transition: transform var(--duration-fast) var(--ease);
-      flex-shrink: 0;
-      margin-left: 1rem;
-    }
-
-    .faq-item.active .faq-indicator {
-      transform: rotate(45deg);
-    }
-
-    .faq-answer {
-      display: none;
-      padding: 0 0 1.5rem;
-      color: var(--warm-gray);
-      font-size: 0.95rem;
-      line-height: 1.8;
-      max-width: 700px;
-    }
-
-    .faq-item.active .faq-answer {
-      display: block;
-    }
-
-    /* Map placeholder */
-    .map-placeholder {
-      font-family: var(--font-display);
-      font-size: 0.8rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-
-    /* Tour card styling */
-    .tour-card {
-      background: var(--alabaster);
-      border: 1px solid var(--cream);
-      padding: 2.5rem 2rem;
-      margin-bottom: 2.5rem;
-    }
-
-    .tour-card h3 {
-      font-size: 0.85rem;
-      letter-spacing: 2px;
-      margin-bottom: 1rem;
-    }
-
-    .tour-card p {
-      color: var(--warm-gray);
-      font-size: 0.95rem;
-      line-height: 1.8;
-      margin-bottom: 1.5rem;
-    }
-
-    .tour-note {
-      font-size: 0.8rem;
-      color: var(--warm-gray);
-      margin-top: 0.75rem;
-      font-style: italic;
-    }
-
-    /* Contact info section heading */
-    .contact-info-heading {
-      font-size: 0.85rem;
-      letter-spacing: 2px;
-      margin-bottom: 1.5rem;
-      padding-bottom: 0.75rem;
-      border-bottom: 2px solid var(--laurel);
-      display: inline-block;
-    }
-  </style>
 </head>
 <body>
 
+  <a class="skip-link" href="#main">Skip to content</a>
+
   <!-- ============ NAVIGATION ============ -->
-  <nav class="nav" role="navigation" aria-label="Main navigation">
+  <header class="nav nav--solid" data-nav>
     <div class="nav__inner">
-      <a href="index.html" class="nav__logo">
-        <span class="nav__logo-text">The Laurel Room</span>
-        <span class="nav__logo-tagline">Your celebration. Our canvas.</span>
-      </a>
-
-      <div class="nav__toggle" aria-label="Toggle menu" role="button" tabindex="0">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-
-      <div class="nav__menu nav__links">
-        <a href="index.html" class="nav__link">Home</a>
-        <a href="about.html" class="nav__link">About</a>
-        <a href="packages.html" class="nav__link">Packages</a>
-        <a href="gallery.html" class="nav__link">Gallery</a>
-        <a href="contact.html" class="nav__link nav__link--active">Contact</a>
-        <a href="contact.html" class="nav__cta">Book a Tour</a>
+      <a class="nav__logo" href="index.html">The Laurel Room</a>
+      <nav class="nav__links" aria-label="Primary">
+        <a class="nav__link" href="about.html">About</a>
+        <a class="nav__link" href="gallery.html">Gallery</a>
+        <a class="nav__link" href="packages.html">Pricing</a>
+        <a class="nav__link nav__link--current" href="contact.html" aria-current="page">Contact</a>
+      </nav>
+      <a class="btn btn--outline nav__cta" href="contact.html" data-text="Plan your event">Plan your event</a>
+      <button class="nav__toggle" data-nav-toggle aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu"><span></span><span></span></button>
+    </div>
+    <div class="nav__mobile" id="mobile-menu" data-nav-menu>
+      <nav aria-label="Mobile">
+        <a class="nav__mobile-link" href="index.html">Home</a>
+        <a class="nav__mobile-link" href="about.html">About</a>
+        <a class="nav__mobile-link" href="gallery.html">Gallery</a>
+        <a class="nav__mobile-link" href="packages.html">Pricing</a>
+        <a class="nav__mobile-link" href="contact.html" aria-current="page"><em>Plan your event</em></a>
+      </nav>
+      <div class="nav__mobile-foot">
+        <a href="tel:6472861161">647-286-1161</a>
+        <a href="mailto:hello@thelaurelroom.ca">hello@thelaurelroom.ca</a>
+        <a href="https://instagram.com/thelaurelroom" target="_blank" rel="noopener">@thelaurelroom</a>
       </div>
     </div>
-  </nav>
+  </header>
 
+  <main id="main">
 
-  <main>
-  <!-- ============ PAGE HEADER ============ -->
-  <section class="page-header">
-    <div class="page-header__bg">
-      <img src="images/details/arch.jpg" alt="Decorative arch at The Laurel Room" loading="eager">
-    </div>
-    <div class="page-header__overlay"></div>
-    <div class="page-header__content">
-      <h1 class="page-header__title">Get In Touch</h1>
-      <p class="page-header__subtitle">Let's plan something beautiful</p>
+  <!-- ============ MASTHEAD ============ -->
+  <section class="masthead">
+    <div class="container">
+      <p class="kicker"><span>Plan</span></p>
+      <h1 class="display-1 masthead__title" data-split>Tell us what you&rsquo;re <em>planning</em>.</h1>
+      <p class="lead masthead__dek" data-reveal>
+        Four quick steps. We reply within 24 hours &mdash; usually faster.
+      </p>
     </div>
   </section>
 
-
-  <!-- ============ CONTACT GRID ============ -->
-  <section style="background: var(--white);">
+  <!-- ============ 01 · THE PLAN ============ -->
+  <section class="section section--tight band--paper plan">
     <div class="container">
-      <div class="contact-grid reveal">
+      <p class="kicker" data-reveal><span class="kicker__no">01</span><span>The plan</span></p>
 
-        <!-- LEFT COLUMN — Inquiry Form -->
-        <div>
-          <span class="section-subtitle">Your Event</span>
-          <h2 class="section-title" style="text-align: left; font-size: clamp(1.4rem, 2.5vw, 2rem);">Tell Us About Your Celebration</h2>
-          <div class="section-divider" style="margin: 1.5rem 0;"></div>
+      <div class="plan__layout mt-4">
 
-          <div class="text-center reveal" style="margin-bottom: 3rem;">
-            <p style="font-size: 1.1rem; color: var(--warm-gray); margin-bottom: 1rem;">
-              Prefer to talk? Call or text Khushbu directly.
-            </p>
-            <a href="tel:6472861161" class="phone-link" style="font-size: 1.5rem; font-family: var(--font-display); font-weight: 600;">647-286-1161</a>
+        <!-- LEFT — guided flow -->
+        <form id="plan-form" class="plan__form" novalidate data-reveal>
+          <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY">
+          <input type="hidden" name="subject" value="New event inquiry — The Laurel Room">
+          <input type="hidden" name="from_name" value="The Laurel Room Website">
+          <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+          <ol class="plan__steps" data-plan-steps>
+            <li data-step-dot><span>Event</span></li>
+            <li data-step-dot><span>Date &amp; guests</span></li>
+            <li data-step-dot><span>Package</span></li>
+            <li data-step-dot><span>You</span></li>
+          </ol>
+
+          <!-- Step 1 — event type -->
+          <fieldset class="plan__step" data-step="1">
+            <legend>What are you celebrating?</legend>
+            <div class="choice-grid">
+              <label class="choice">
+                <input type="radio" name="event_type" value="Mehndi or sangeet" required>
+                <span class="choice__title">Mehndi or sangeet</span>
+              </label>
+              <label class="choice">
+                <input type="radio" name="event_type" value="Nikkah or intimate wedding">
+                <span class="choice__title">Nikkah or intimate wedding</span>
+              </label>
+              <label class="choice">
+                <input type="radio" name="event_type" value="Baby or bridal shower">
+                <span class="choice__title">Baby or bridal shower</span>
+              </label>
+              <label class="choice">
+                <input type="radio" name="event_type" value="Milestone birthday">
+                <span class="choice__title">Milestone birthday</span>
+              </label>
+              <label class="choice">
+                <input type="radio" name="event_type" value="Aqiqah or naming ceremony">
+                <span class="choice__title">Aqiqah or naming ceremony</span>
+              </label>
+              <label class="choice">
+                <input type="radio" name="event_type" value="Engagement">
+                <span class="choice__title">Engagement</span>
+              </label>
+              <label class="choice">
+                <input type="radio" name="event_type" value="Corporate">
+                <span class="choice__title">Corporate</span>
+              </label>
+              <label class="choice">
+                <input type="radio" name="event_type" value="Diwali, Eid or holiday party">
+                <span class="choice__title">Diwali, Eid or holiday party</span>
+              </label>
+              <label class="choice">
+                <input type="radio" name="event_type" value="Something else">
+                <span class="choice__title">Something else</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <!-- Step 2 — date & guests -->
+          <fieldset class="plan__step" data-step="2" hidden>
+            <legend>When, and how many people?</legend>
+            <div class="field">
+              <label class="field__label" for="plan-date">Preferred date <span class="opt">(leave blank if undecided)</span></label>
+              <input class="input" type="date" name="preferred_date" id="plan-date" min="2026-10-01">
+            </div>
+            <div class="field">
+              <label class="check">
+                <input type="checkbox" name="date_flexible" value="Dates are flexible">
+                <span>Our dates are flexible</span>
+              </label>
+            </div>
+            <div class="field">
+              <p class="field__label" id="guest-count-label">Guest count</p>
+              <div class="choice-grid" role="radiogroup" aria-labelledby="guest-count-label">
+                <label class="choice">
+                  <input type="radio" name="guest_count" value="Under 50" required>
+                  <span class="choice__title">Under 50</span>
+                </label>
+                <label class="choice">
+                  <input type="radio" name="guest_count" value="50&ndash;75">
+                  <span class="choice__title">50&ndash;75</span>
+                </label>
+                <label class="choice">
+                  <input type="radio" name="guest_count" value="75&ndash;100">
+                  <span class="choice__title">75&ndash;100</span>
+                </label>
+                <label class="choice">
+                  <input type="radio" name="guest_count" value="100&ndash;125">
+                  <span class="choice__title">100&ndash;125</span>
+                </label>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- Step 3 — package & preset -->
+          <fieldset class="plan__step" data-step="3" hidden>
+            <legend>How finished do you want the room?</legend>
+            <div class="choice-grid choice-grid--stack">
+              <label class="choice">
+                <input type="radio" name="package" value="The Space" data-rates="895,1195,1395" required>
+                <span class="choice__title">The Space</span>
+                <span class="choice__sub">Tables, chairs, kitchenette &mdash; you style it. From $895.</span>
+              </label>
+              <label class="choice">
+                <input type="radio" name="package" value="The Styled Experience" data-rates="1695,1995,2195">
+                <span class="choice__title">The Styled Experience</span>
+                <span class="choice__sub">One of five looks, set and struck by us. From $1,695.</span>
+              </label>
+              <label class="choice">
+                <input type="radio" name="package" value="The Full Celebration" data-rates="2495,2695,2995">
+                <span class="choice__title">The Full Celebration</span>
+                <span class="choice__sub">Full day, coordinator on the floor. From $2,495.</span>
+              </label>
+              <label class="choice">
+                <input type="radio" name="package" value="Not sure yet">
+                <span class="choice__title">Not sure yet</span>
+                <span class="choice__sub">We&rsquo;ll help you choose on the call.</span>
+              </label>
+            </div>
+            <div class="field mt-3">
+              <label class="field__label" for="plan-preset">Design preset <span class="opt">(optional)</span></label>
+              <select class="input" name="design_preset" id="plan-preset">
+                <option value="No preference" selected>No preference</option>
+                <option value="Laurel">Laurel</option>
+                <option value="Golden Hour">Golden Hour</option>
+                <option value="Blush">Blush</option>
+                <option value="Monochrome">Monochrome</option>
+                <option value="Regal">Regal</option>
+              </select>
+            </div>
+          </fieldset>
+
+          <!-- Step 4 — contact details -->
+          <fieldset class="plan__step" data-step="4" hidden>
+            <legend>Where do we reach you?</legend>
+            <div class="field">
+              <label class="field__label" for="plan-name">Your name</label>
+              <input class="input" type="text" name="name" id="plan-name" autocomplete="name" placeholder="First and last" required>
+            </div>
+            <div class="field">
+              <label class="field__label" for="plan-email">Email</label>
+              <input class="input" type="email" name="email" id="plan-email" autocomplete="email" placeholder="you@email.com" required>
+            </div>
+            <div class="field">
+              <label class="field__label" for="plan-tel">Phone <span class="opt">(optional)</span></label>
+              <input class="input" type="tel" name="phone" id="plan-tel" autocomplete="tel" placeholder="(647) 000-0000">
+            </div>
+            <div class="field">
+              <label class="field__label" for="plan-message">Anything we should know <span class="opt">(optional)</span></label>
+              <textarea class="input" name="message" id="plan-message" rows="4" placeholder="Your caterer, your traditions, the timing of the rukhsati — whatever helps us plan."></textarea>
+            </div>
+          </fieldset>
+
+          <div class="plan__nav">
+            <button type="button" class="btn btn--outline" data-plan-prev hidden data-text="Back">Back</button>
+            <button type="button" class="btn btn--solid" data-plan-next data-text="Continue">Continue</button>
+            <button type="submit" class="btn btn--solid" data-plan-submit hidden data-text="Send inquiry">Send inquiry</button>
+          </div>
+          <p class="plan__error" role="alert"></p>
+        </form>
+
+        <!-- RIGHT — live summary + direct lines -->
+        <aside class="plan__aside" data-reveal-stagger>
+          <div class="plan-summary" data-plan-summary>
+            <p class="plan-summary__title">Your event so far</p>
+            <dl>
+              <div class="plan-summary__row">
+                <dt>Event</dt>
+                <dd data-summary="event_type"></dd>
+              </div>
+              <div class="plan-summary__row">
+                <dt>Date</dt>
+                <dd data-summary="date"></dd>
+              </div>
+              <div class="plan-summary__row">
+                <dt>Guests</dt>
+                <dd data-summary="guest_count"></dd>
+              </div>
+              <div class="plan-summary__row">
+                <dt>Package</dt>
+                <dd data-summary="package"></dd>
+              </div>
+              <div class="plan-summary__row">
+                <dt>Preset</dt>
+                <dd data-summary="design_preset"></dd>
+              </div>
+            </dl>
+            <div class="plan-summary__estimate">
+              <p class="plan-summary__estimate-label">Starting estimate</p>
+              <p class="plan-summary__estimate-value" data-estimate></p>
+              <p class="plan-summary__note">Starting estimate before add-ons. All prices + 13% HST.</p>
+            </div>
           </div>
 
-          <p style="color: var(--warm-gray); line-height: 1.8; margin-bottom: 2rem;">
-            Fill out the form below and we'll be in touch within 24 hours.
-          </p>
+          <div class="aside-card">
+            <h2 class="aside-card__title">Prefer a human?</h2>
+            <p>Call or text Khushbu directly. She answers both, usually the same day.</p>
+            <a class="phone" href="tel:6472861161">647-286-1161</a>
+            <p class="mt-2"><a class="text-link" href="mailto:hello@thelaurelroom.ca">hello@thelaurelroom.ca</a></p>
+          </div>
 
-          <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
-            <!-- Web3Forms hidden fields -->
-            <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY">
-            <input type="hidden" name="subject" value="New Inquiry — The Laurel Room">
-            <input type="hidden" name="from_name" value="The Laurel Room Website">
-            <input type="hidden" name="redirect" value="https://web3forms.com/success">
-
-            <div class="form-group">
-              <label class="form-label" for="full-name">Full Name</label>
-              <input type="text" id="full-name" name="name" class="form-input" placeholder="Your full name" required>
-            </div>
-
-            <div class="form-group">
-              <label class="form-label" for="email">Email Address</label>
-              <input type="email" id="email" name="email" class="form-input" placeholder="your@email.com" required>
-            </div>
-
-            <div class="form-group">
-              <label class="form-label" for="phone">Phone Number</label>
-              <input type="tel" id="phone" name="phone" class="form-input" placeholder="(416) 000-0000">
-            </div>
-
-            <div class="form-group">
-              <label class="form-label" for="event-type">Event Type</label>
-              <select id="event-type" name="event_type" class="form-input form-select">
-                <option value="">Select your event type</option>
-                <option value="Mehndi / Sangeet">Mehndi / Sangeet</option>
-                <option value="Baby Shower">Baby Shower</option>
-                <option value="Bridal Shower">Bridal Shower</option>
-                <option value="Birthday / Milestone">Birthday / Milestone</option>
-                <option value="Wedding / Nikkah">Wedding / Nikkah</option>
-                <option value="Aqiqah / Naming Ceremony">Aqiqah / Naming Ceremony</option>
-                <option value="Engagement Party">Engagement Party</option>
-                <option value="Corporate Event">Corporate Event</option>
-                <option value="Holiday / Diwali / Eid">Holiday / Diwali / Eid</option>
-                <option value="Other">Other</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label class="form-label" for="guest-count">Approximate Guest Count</label>
-              <select id="guest-count" name="guest_count" class="form-input form-select">
-                <option value="">Guest count</option>
-                <option value="Under 50">Under 50</option>
-                <option value="50-75">50–75</option>
-                <option value="75-100">75–100</option>
-                <option value="100-125">100–125</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label class="form-label" for="preferred-date">Preferred Date</label>
-              <input type="date" id="preferred-date" name="preferred_date" class="form-input">
-            </div>
-
-            <div class="form-group">
-              <label class="form-label" for="vision">Message</label>
-              <textarea id="vision" name="message" class="form-input form-textarea" placeholder="Describe your celebration, any special requirements, cultural traditions, or questions you have..."></textarea>
-            </div>
-
-            <button type="submit" class="btn btn--brass" style="width: 100%;">Plan My Event</button>
-          </form>
-        </div>
-
-        <!-- RIGHT COLUMN — Book a Tour + Contact Info -->
-        <div>
-          <!-- Book a Tour -->
-          <div class="tour-card">
-            <h3>Book a Tour</h3>
-            <div class="coming-soon-badge">
-              <span class="dot"></span>
-              Tours Available Spring 2026
-            </div>
+          <div class="aside-card">
+            <h2 class="aside-card__title">Want a tour?</h2>
             <p>
-              See the space in person and envision your celebration. We'll walk you through
-              our design presets and answer all your questions.
+              Honest answer: the room is mid-buildout, so there&rsquo;s nothing to walk
+              through yet. Join the founding list or follow
+              <a class="text-link" href="https://instagram.com/thelaurelroom" target="_blank" rel="noopener">@thelaurelroom</a>
+              and we&rsquo;ll invite you to see it as soon as it&rsquo;s ready.
             </p>
-            <a href="https://cal.com" class="btn btn--brass" target="_blank" rel="noopener">Schedule a Tour</a>
-            <p class="tour-note">(Calendar link coming soon)</p>
           </div>
 
-          <!-- Contact Information -->
-          <h4 class="contact-info-heading">Contact Information</h4>
+          <p class="plan__loc">
+            Brampton, Ontario &middot; Steeles Ave East corridor &middot;
+            Exact address shared with your booking confirmation.
+          </p>
+        </aside>
 
-          <!-- Email -->
-          <div class="contact-info-item">
-            <svg class="contact-info-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="2" y="4" width="20" height="16" rx="2"/>
-              <path d="M22 4L12 13 2 4"/>
-            </svg>
-            <div>
-              <div class="contact-info-item__label">Email</div>
-              <a href="mailto:hello@thelaurelroom.ca" class="contact-info-item__value" style="color: var(--brass);">hello@thelaurelroom.ca</a>
-            </div>
-          </div>
-
-          <!-- Location -->
-          <div class="contact-info-item">
-            <svg class="contact-info-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
-              <circle cx="12" cy="9" r="2.5"/>
-            </svg>
-            <div>
-              <div class="contact-info-item__label">Location</div>
-              <div class="contact-info-item__value">Brampton, Ontario &middot; Steeles Ave East Corridor</div>
-            </div>
-          </div>
-
-          <!-- Instagram -->
-          <div class="contact-info-item">
-            <svg class="contact-info-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="2" y="2" width="20" height="20" rx="5"/>
-              <circle cx="12" cy="12" r="5"/>
-              <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/>
-            </svg>
-            <div>
-              <div class="contact-info-item__label">Instagram</div>
-              <a href="https://instagram.com/thelaurelroom" class="contact-info-item__value" target="_blank" rel="noopener" style="color: var(--brass);">@thelaurelroom</a>
-            </div>
-          </div>
-
-          <!-- Website -->
-          <div class="contact-info-item">
-            <svg class="contact-info-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10"/>
-              <path d="M2 12h20"/>
-              <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
-            </svg>
-            <div>
-              <div class="contact-info-item__label">Website</div>
-              <a href="https://thelaurelroom.ca" class="contact-info-item__value" target="_blank" rel="noopener" style="color: var(--brass);">thelaurelroom.ca</a>
-            </div>
-          </div>
-
-          <!-- Hours -->
-          <div class="contact-info-item">
-            <svg class="contact-info-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10"/>
-              <path d="M12 6v6l4 2"/>
-            </svg>
-            <div>
-              <div class="contact-info-item__label">Hours</div>
-              <div class="contact-info-item__value">Opening Summer 2026 &mdash; Inquiries welcome now</div>
-            </div>
-          </div>
-
-        </div>
       </div>
     </div>
   </section>
 
-
-  <!-- ============ MAP SECTION ============ -->
-  <div class="map-container reveal">
-    <p class="map-placeholder">Map coming soon &mdash; Steeles Ave East Corridor, Brampton, Ontario</p>
-  </div>
-
-
-  <!-- ============ FAQ SECTION ============ -->
-  <section style="background: var(--white);">
+  <!-- ============ 02 · FAQ ============ -->
+  <section class="section band--bone2" id="faq">
     <div class="container">
-      <div class="text-center mb-5 reveal">
-        <span class="section-subtitle">FAQs</span>
-        <h2 class="section-title">Common Questions</h2>
-        <div class="section-divider"></div>
+      <div class="section-head">
+        <p class="kicker" data-reveal><span class="kicker__no">02</span><span>Questions</span></p>
+        <h2 class="display-2" data-reveal>Asked every week. Answered <em>plainly</em>.</h2>
       </div>
 
-      <div style="max-width: 800px; margin: 0 auto;" class="reveal">
-
-        <div class="faq-item">
-          <h4 class="faq-question">
-            What does BYOC mean?
-            <span class="faq-indicator">+</span>
-          </h4>
-          <div class="faq-answer">
-            <p>Bring Your Own Caterer. You choose any caterer you want &mdash; we provide the venue, styling, and kitchen facilities for warming and plating. Serve halal, vegetarian, Caribbean, Filipino, or any cuisine your family loves.</p>
+      <div class="faq" data-faq data-reveal-stagger>
+        <div class="faq__item">
+          <button class="faq__q" type="button" aria-expanded="false">
+            <span>What does BYOC actually mean?</span>
+            <span class="faq__icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq__a">
+            <div class="faq__a-inner">
+              <p>
+                Bring Your Own Caterer. Book the one your family already trusts &mdash;
+                halal, vegetarian, Caribbean, Filipino, whatever the occasion calls
+                for &mdash; and we hand them a kitchenette for warming and plating.
+                No in-house menu, no food minimums.
+              </p>
+            </div>
           </div>
         </div>
 
-        <div class="faq-item">
-          <h4 class="faq-question">
-            Can we serve alcohol?
-            <span class="faq-indicator">+</span>
-          </h4>
-          <div class="faq-answer">
-            <p>Yes. Clients arrange a Special Occasion Permit (SOP) through the AGCO. A Smart Serve-certified server is required. We can guide you through the process.</p>
+        <div class="faq__item">
+          <button class="faq__q" type="button" aria-expanded="false">
+            <span>Can we serve alcohol?</span>
+            <span class="faq__icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq__a">
+            <div class="faq__a-inner">
+              <p>
+                Yes, with the right paperwork. You arrange a Special Occasion Permit
+                through the AGCO, and a Smart Serve-certified server handles the
+                pouring. We can guide you through both, step by step.
+              </p>
+            </div>
           </div>
         </div>
 
-        <div class="faq-item">
-          <h4 class="faq-question">
-            What's included in the styled packages?
-            <span class="faq-indicator">+</span>
-          </h4>
-          <div class="faq-answer">
-            <p>Everything you see in the photos: linen tablecloths, cloth napkins, charger plates, styled centerpieces, a statement backdrop arch, LED uplighting in your chosen preset color, fairy light canopy, and full professional setup and teardown.</p>
+        <div class="faq__item">
+          <button class="faq__q" type="button" aria-expanded="false">
+            <span>What comes with the styled packages?</span>
+            <span class="faq__icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq__a">
+            <div class="faq__a-inner">
+              <p>
+                The finished room: linen tablecloths and cloth napkins, gold or brass
+                charger plates, styled centrepieces, a statement backdrop arch, LED
+                uplighting in your preset&rsquo;s colour, the fairy-light canopy, and
+                full professional setup and teardown. The aunties will ask who did
+                the decor.
+              </p>
+            </div>
           </div>
         </div>
 
-        <div class="faq-item">
-          <h4 class="faq-question">
-            How far in advance should we book?
-            <span class="faq-indicator">+</span>
-          </h4>
-          <div class="faq-answer">
-            <p>We recommend booking 3&ndash;6 months in advance for weekend dates, especially during peak season (September&ndash;December). Weekday dates are often available on shorter notice.</p>
+        <div class="faq__item">
+          <button class="faq__q" type="button" aria-expanded="false">
+            <span>How far ahead should we book?</span>
+            <span class="faq__icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq__a">
+            <div class="faq__a-inner">
+              <p>
+                Three to six months for weekend dates. September through December is
+                the peak &mdash; those Saturdays go first. Weekday dates often work
+                on much shorter notice.
+              </p>
+            </div>
           </div>
         </div>
 
-        <div class="faq-item">
-          <h4 class="faq-question">
-            Is the venue accessible?
-            <span class="faq-indicator">+</span>
-          </h4>
-          <div class="faq-answer">
-            <p>Yes. The venue is on the ground floor with step-free access, accessible parking, and accessible washrooms.</p>
+        <div class="faq__item">
+          <button class="faq__q" type="button" aria-expanded="false">
+            <span>Is the room accessible?</span>
+            <span class="faq__icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq__a">
+            <div class="faq__a-inner">
+              <p>
+                Yes. The venue is on the ground floor with step-free access,
+                accessible parking, and accessible washrooms.
+              </p>
+            </div>
           </div>
         </div>
-
       </div>
     </div>
   </section>
@@ -457,111 +442,42 @@
 
   <!-- ============ FOOTER ============ -->
   <footer class="footer">
-    <div class="container">
-      <div class="footer__top">
-        <!-- Brand Column -->
+    <div class="container container--wide">
+      <p class="footer__word">The Laurel <em>Room</em></p>
+      <div class="footer__cols">
         <div>
-          <div class="footer__brand-name">The Laurel Room</div>
-          <div class="footer__brand-tagline">Your celebration. Our canvas.</div>
-          <p class="footer__brand-text">
-            A boutique event venue designed for intimate celebrations of 50&ndash;125 guests.
-            Every culture. Every milestone. Your way.
+          <p class="footer__tag">
+            A boutique event venue in Brampton for 50&ndash;125 guests.
+            Bring your own caterer; we&rsquo;ll have the room ready.
           </p>
+          <p class="status">Now booking 2027 celebrations</p>
         </div>
-
-        <!-- Quick Links -->
         <div>
-          <div class="footer__heading">Quick Links</div>
-          <a href="index.html" class="footer__link">Home</a>
-          <a href="about.html" class="footer__link">About</a>
-          <a href="packages.html" class="footer__link">Packages</a>
-          <a href="gallery.html" class="footer__link">Gallery</a>
-          <a href="contact.html" class="footer__link">Contact</a>
-        </div>
-
-        <!-- Visit Us -->
-        <div>
-          <div class="footer__heading">Visit Us</div>
+          <p class="footer__head">Visit</p>
           <p class="footer__link">Brampton, Ontario</p>
-          <p class="footer__link">Steeles Ave East Corridor</p>
-          <p class="footer__link" style="margin-top: 0.5rem; color: var(--brass-light); font-size: 0.8rem;">
-            Opening Summer 2026
-          </p>
+          <p class="footer__link">Steeles Ave East corridor</p>
+          <p class="footer__link">Opening for events in 2027</p>
         </div>
-
-        <!-- Connect -->
         <div>
-          <div class="footer__heading">Connect</div>
-          <a href="tel:6472861161" class="footer__link">647-286-1161</a>
-          <a href="https://instagram.com/thelaurelroom" class="footer__link" target="_blank" rel="noopener">
-            Instagram: @thelaurelroom
-          </a>
-          <a href="mailto:hello@thelaurelroom.ca" class="footer__link">
-            hello@thelaurelroom.ca
-          </a>
-          <a href="https://thelaurelroom.ca" class="footer__link" target="_blank" rel="noopener">
-            thelaurelroom.ca
-          </a>
+          <p class="footer__head">Talk</p>
+          <a class="footer__link" href="tel:6472861161">647-286-1161 (call or text)</a>
+          <a class="footer__link" href="mailto:hello@thelaurelroom.ca">hello@thelaurelroom.ca</a>
+          <a class="footer__link" href="https://instagram.com/thelaurelroom" target="_blank" rel="noopener">@thelaurelroom</a>
+        </div>
+        <div>
+          <p class="footer__head">Pages</p>
+          <a class="footer__link" href="about.html">About</a>
+          <a class="footer__link" href="gallery.html">Gallery</a>
+          <a class="footer__link" href="packages.html">Pricing</a>
+          <a class="footer__link" href="contact.html">Contact</a>
         </div>
       </div>
-
       <div class="footer__bottom">
-        <span>&copy; 2026 The Laurel Room Inc. All rights reserved.</span>
-        <div class="footer__social">
-          <!-- Instagram -->
-          <a href="https://instagram.com/thelaurelroom" target="_blank" rel="noopener" aria-label="Instagram">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="2" y="2" width="20" height="20" rx="5"/>
-              <circle cx="12" cy="12" r="5"/>
-              <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/>
-            </svg>
-          </a>
-          <!-- Facebook -->
-          <a href="#" aria-label="Facebook">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
-            </svg>
-          </a>
-          <!-- TikTok -->
-          <a href="#" aria-label="TikTok">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M9 12a4 4 0 104 4V4a5 5 0 005 5"/>
-            </svg>
-          </a>
-        </div>
+        <span>&copy; <span data-year>2026</span> The Laurel Room Inc. All rights reserved.</span>
+        <span>Made in Brampton</span>
       </div>
     </div>
   </footer>
 
-
-  <!-- ============ LIGHTBOX ============ -->
-  <div class="lightbox" id="lightbox" role="dialog" aria-label="Image viewer">
-    <div class="lightbox__close" aria-label="Close">&times;</div>
-    <img src="" alt="Enlarged venue photo">
-  </div>
-
-
-  <!-- Scripts -->
-  <script src="js/main.js"></script>
-
-  <!-- FAQ Accordion Script -->
-  <script>
-    document.querySelectorAll('.faq-question').forEach(function(question) {
-      question.addEventListener('click', function() {
-        var item = this.parentElement;
-        var isActive = item.classList.contains('active');
-
-        // Close all items
-        document.querySelectorAll('.faq-item').forEach(function(faq) {
-          faq.classList.remove('active');
-        });
-
-        // Open clicked item if it wasn't already active
-        if (!isActive) {
-          item.classList.add('active');
-        }
-      });
-    });
-  </script>
 </body>
 </html>

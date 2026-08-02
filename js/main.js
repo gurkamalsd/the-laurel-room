@@ -1,365 +1,598 @@
 /* ============================================================
-   THE LAUREL ROOM — Main JavaScript
-   Modern interactions & micro-animations (2026)
+   THE LAUREL ROOM — main.js
+   One file, no dependencies. Every module bails out quietly
+   if its markup isn't on the page.
    ============================================================ */
 
-document.addEventListener('DOMContentLoaded', () => {
+(() => {
+  'use strict';
+
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* --------------------------------------------------------
-     1. SCROLL REVEAL (enhanced)
-     Supports: .reveal, .reveal-left, .reveal-right, .reveal-scale
-     All receive .reveal--visible when entering the viewport.
+     Button label roll — wraps .btn[data-text] content in
+     stacked spans so CSS can roll the label on hover.
      -------------------------------------------------------- */
-  const revealSelectors = '.reveal, .reveal-left, .reveal-right, .reveal-scale';
-  const reveals = document.querySelectorAll(revealSelectors);
-
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('reveal--visible');
-        revealObserver.unobserve(entry.target);
-      }
-    });
-  }, {
-    threshold: 0.15,
-    rootMargin: '0px 0px -50px 0px'
-  });
-
-  reveals.forEach(el => revealObserver.observe(el));
-
-
-  /* --------------------------------------------------------
-     2. NAVIGATION — Scroll Effect
-     -------------------------------------------------------- */
-  const nav = document.querySelector('.nav');
-
-  if (nav) {
-    const handleScroll = () => {
-      if (window.scrollY > 80) {
-        nav.classList.add('nav--scrolled');
-      } else {
-        nav.classList.remove('nav--scrolled');
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll();
-
-    // If on inner page (page-header), start scrolled
-    if (document.querySelector('.page-header')) {
-      nav.classList.add('nav--scrolled');
-    }
-  }
-
-
-  /* --------------------------------------------------------
-     3. MOBILE NAVIGATION TOGGLE
-     -------------------------------------------------------- */
-  const navToggle = document.querySelector('.nav__toggle');
-  const navMenu = document.querySelector('.nav__menu');
-
-  if (navToggle && navMenu) {
-    navToggle.addEventListener('click', () => {
-      navToggle.classList.toggle('nav__toggle--active');
-      navMenu.classList.toggle('nav__menu--open');
-      document.body.style.overflow = navMenu.classList.contains('nav__menu--open') ? 'hidden' : '';
-    });
-
-    // Close menu on link click
-    navMenu.querySelectorAll('.nav__link, .nav__cta').forEach(link => {
-      link.addEventListener('click', () => {
-        navToggle.classList.remove('nav__toggle--active');
-        navMenu.classList.remove('nav__menu--open');
-        document.body.style.overflow = '';
-      });
-    });
-  }
-
-
-  /* --------------------------------------------------------
-     4. LIGHTBOX
-     -------------------------------------------------------- */
-  const lightbox = document.getElementById('lightbox');
-  const lightboxImg = lightbox?.querySelector('img');
-  const lightboxClose = lightbox?.querySelector('.lightbox__close');
-
-  document.querySelectorAll('[data-lightbox]').forEach(item => {
-    item.addEventListener('click', () => {
-      const src = item.dataset.lightbox || item.querySelector('img')?.src;
-      if (src && lightbox && lightboxImg) {
-        lightboxImg.src = src;
-        lightbox.classList.add('lightbox--open');
-        document.body.style.overflow = 'hidden';
-      }
-    });
-  });
-
-  if (lightbox) {
-    const closeLightbox = () => {
-      lightbox.classList.remove('lightbox--open');
-      document.body.style.overflow = '';
-    };
-
-    lightboxClose?.addEventListener('click', closeLightbox);
-    lightbox.addEventListener('click', (e) => {
-      if (e.target === lightbox) closeLightbox();
-    });
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeLightbox();
-    });
-  }
-
-
-  /* --------------------------------------------------------
-     5. FORM HANDLING (Web3Forms)
-     -------------------------------------------------------- */
-  const contactForm = document.getElementById('contact-form');
-
-  if (contactForm) {
-    contactForm.addEventListener('submit', async (e) => {
-      e.preventDefault();
-
-      const submitBtn = contactForm.querySelector('button[type="submit"]');
-      const originalText = submitBtn.textContent;
-      submitBtn.textContent = 'SENDING...';
-      submitBtn.disabled = true;
-
-      const formData = new FormData(contactForm);
-      const data = Object.fromEntries(formData);
-
-      try {
-        const response = await fetch('https://api.web3forms.com/submit', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(data)
-        });
-
-        const result = await response.json();
-
-        if (result.success) {
-          // Show success state
-          contactForm.innerHTML = `
-            <div style="text-align: center; padding: 3rem 0;">
-              <h3 style="margin-bottom: 0.5rem;">Thank You</h3>
-              <p class="text-gray">We've received your inquiry and will be in touch within 24 hours.</p>
-            </div>
-          `;
-        } else {
-          throw new Error('Form submission failed');
-        }
-      } catch {
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
-        alert('Something went wrong. Please try again or email us directly at hello@thelaurelroom.ca');
-      }
-    });
-  }
-
-
-  /* --------------------------------------------------------
-     6. SMOOTH SCROLL FOR ANCHOR LINKS
-     -------------------------------------------------------- */
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', (e) => {
-      const target = document.querySelector(anchor.getAttribute('href'));
-      if (target) {
-        e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    });
-  });
-
-
-  /* --------------------------------------------------------
-     7. ACTIVE NAV LINK
-     -------------------------------------------------------- */
-  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-  document.querySelectorAll('.nav__link').forEach(link => {
-    const href = link.getAttribute('href');
-    if (href === currentPage || (currentPage === '' && href === 'index.html')) {
-      link.classList.add('nav__link--active');
-    }
-  });
-
-
-  /* ==========================================================
-     NEW MODERN ENHANCEMENTS
-     ========================================================== */
-
-
-  /* --------------------------------------------------------
-     8. LAZY IMAGE FADE-IN
-     Adds .loaded class to lazy images once they finish loading.
-     -------------------------------------------------------- */
-  document.querySelectorAll('img[loading="lazy"]').forEach(img => {
-    if (img.complete) {
-      img.classList.add('loaded');
-    } else {
-      img.addEventListener('load', () => img.classList.add('loaded'));
-    }
-  });
-
-
-  /* --------------------------------------------------------
-     9. PARALLAX EFFECT ON HERO
-     Subtle scale + translateY driven by scroll position.
-     -------------------------------------------------------- */
-  const heroImg = document.querySelector('.hero__bg img');
-
-  if (heroImg) {
-    let ticking = false;
-
-    window.addEventListener('scroll', () => {
-      if (!ticking) {
-        requestAnimationFrame(() => {
-          const scrolled = window.scrollY;
-          const heroHeight = window.innerHeight;
-          if (scrolled < heroHeight) {
-            heroImg.style.transform =
-              `scale(${1 + scrolled * 0.0003}) translateY(${scrolled * 0.3}px)`;
-          }
-          ticking = false;
-        });
-        ticking = true;
-      }
-    }, { passive: true });
-  }
-
-
-  /* --------------------------------------------------------
-     10. COUNTER ANIMATION FOR STATS
-     Animates [data-count] elements when they scroll into view.
-     Supports data-prefix and data-suffix attributes.
-     -------------------------------------------------------- */
-  const animateCounters = () => {
-    document.querySelectorAll('[data-count]').forEach(el => {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const target = parseInt(el.dataset.count);
-            const prefix = el.dataset.prefix || '';
-            const suffix = el.dataset.suffix || '';
-            let current = 0;
-            const increment = target / 40;
-            const timer = setInterval(() => {
-              current += increment;
-              if (current >= target) {
-                current = target;
-                clearInterval(timer);
-              }
-              el.textContent = prefix + Math.floor(current).toLocaleString() + suffix;
-            }, 30);
-            observer.unobserve(el);
-          }
-        });
-      }, { threshold: 0.5 });
-
-      observer.observe(el);
+  const initButtons = () => {
+    document.querySelectorAll('.btn[data-text]').forEach(btn => {
+      if (btn.querySelector('.btn__label')) return;
+      const text = btn.dataset.text;
+      btn.textContent = '';
+      const label = document.createElement('span');
+      label.className = 'btn__label';
+      const a = document.createElement('span');
+      const b = document.createElement('span');
+      a.textContent = text;
+      b.textContent = text;
+      b.setAttribute('aria-hidden', 'true');
+      label.append(a, b);
+      btn.append(label);
     });
   };
 
-  animateCounters();
-
-
   /* --------------------------------------------------------
-     11. SCROLL PROGRESS INDICATOR
-     Thin saffron bar fixed at the very top of the viewport.
+     Scroll reveals — [data-reveal], [data-reveal-stagger]
      -------------------------------------------------------- */
-  const progressBar = document.createElement('div');
-  progressBar.style.cssText =
-    'position:fixed;top:0;left:0;height:2px;background:var(--saffron);' +
-    'z-index:9999;transition:width 0.1s linear;width:0;pointer-events:none;';
-  document.body.appendChild(progressBar);
+  const initReveals = () => {
+    document.querySelectorAll('[data-reveal-stagger]').forEach(parent => {
+      Array.from(parent.children).forEach((child, i) => {
+        child.setAttribute('data-reveal', '');
+        child.style.transitionDelay = `${Math.min(i * 0.09, 0.63)}s`;
+      });
+    });
 
-  window.addEventListener('scroll', () => {
-    const scrollTop = window.scrollY;
-    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const scrollPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-    progressBar.style.width = scrollPercent + '%';
-  }, { passive: true });
+    const targets = document.querySelectorAll('[data-reveal]');
+    if (!targets.length) return;
 
-
-  /* --------------------------------------------------------
-     12. STAGGERED CHILDREN ANIMATION
-     Container with .stagger-children reveals its direct
-     children one by one with an 80 ms offset each.
-     -------------------------------------------------------- */
-  document.querySelectorAll('.stagger-children').forEach(container => {
-    const observer = new IntersectionObserver((entries) => {
+    const io = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          const children = entry.target.children;
-          Array.from(children).forEach((child, i) => {
-            child.style.transitionDelay = `${i * 0.08}s`;
-            child.classList.add('reveal--visible');
-          });
-          observer.unobserve(entry.target);
+          entry.target.classList.add('is-in');
+          io.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.1 });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 
-    observer.observe(container);
-  });
-
+    targets.forEach(el => io.observe(el));
+  };
 
   /* --------------------------------------------------------
-     13. MAGNETIC BUTTON EFFECT
-     Subtle cursor-following shift on CTA buttons.
+     Word-split headings — [data-split]
+     Preserves inline <em> styling while staggering words.
      -------------------------------------------------------- */
-  document.querySelectorAll('.btn--brass, .btn--plum').forEach(btn => {
-    btn.addEventListener('mousemove', (e) => {
-      const rect = btn.getBoundingClientRect();
-      const x = e.clientX - rect.left - rect.width / 2;
-      const y = e.clientY - rect.top - rect.height / 2;
-      btn.style.transform = `translateY(-3px) translate(${x * 0.15}px, ${y * 0.15}px)`;
+  const initSplits = () => {
+    const heads = document.querySelectorAll('[data-split]');
+    if (!heads.length) return;
+
+    const splitInto = (node, target, state) => {
+      node.childNodes.forEach(child => {
+        if (child.nodeType === Node.TEXT_NODE) {
+          child.textContent.split(/(\s+)/).forEach(part => {
+            if (!part) return;
+            if (/^\s+$/.test(part)) {
+              target.append(document.createTextNode(' '));
+              return;
+            }
+            const w = document.createElement('span');
+            w.className = 'w';
+            const inner = document.createElement('span');
+            inner.textContent = part;
+            inner.style.transitionDelay = `${state.i * 0.055}s`;
+            state.i += 1;
+            w.append(inner);
+            target.append(w);
+          });
+        } else if (child.nodeType === Node.ELEMENT_NODE) {
+          const clone = child.cloneNode(false);
+          splitInto(child, clone, state);
+          target.append(clone);
+        }
+      });
+    };
+
+    heads.forEach(head => {
+      if (prefersReduced) { head.classList.add('is-in'); return; }
+      const frag = document.createDocumentFragment();
+      const holder = document.createElement('span');
+      splitInto(head, holder, { i: 0 });
+      frag.append(...holder.childNodes);
+      head.textContent = '';
+      head.append(frag);
     });
 
-    btn.addEventListener('mouseleave', () => {
-      btn.style.transform = '';
-    });
-  });
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.25 });
 
-
-  /* --------------------------------------------------------
-     14. HERO TITLE SHIMMER
-     Adds .text-shimmer to the hero heading for a CSS-driven
-     gradient animation (defined in the stylesheet).
-     -------------------------------------------------------- */
-  const heroTitle = document.querySelector('.hero__title');
-  if (heroTitle) {
-    heroTitle.classList.add('text-shimmer');
-  }
-
+    heads.forEach(head => io.observe(head));
+  };
 
   /* --------------------------------------------------------
-     15. CURRENT YEAR IN FOOTER
-     Replaces any "© YYYY" with the actual current year.
+     Navigation — scrolled state + mobile menu
      -------------------------------------------------------- */
-  document.querySelectorAll('.footer__bottom span').forEach(el => {
-    el.innerHTML = el.innerHTML.replace(/© \d{4}/, `© ${new Date().getFullYear()}`);
-  });
+  const initNav = () => {
+    const nav = document.querySelector('[data-nav]');
+    if (!nav) return;
 
+    const onScroll = () => {
+      nav.classList.toggle('nav--scrolled', window.scrollY > 40);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
 
-  /* --------------------------------------------------------
-     16. STICKY CTA VISIBILITY
-     Shows the sticky CTA only after scrolling past the hero.
-     -------------------------------------------------------- */
-  const stickyCta = document.querySelector('.sticky-cta');
+    const toggle = nav.querySelector('[data-nav-toggle]');
+    const menu = nav.querySelector('[data-nav-menu]');
+    if (!toggle || !menu) return;
 
-  if (stickyCta) {
-    stickyCta.style.opacity = '0';
-    stickyCta.style.transform = 'translateY(100%)';
-    stickyCta.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
-
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > window.innerHeight * 0.8) {
-        stickyCta.style.opacity = '1';
-        stickyCta.style.transform = 'translateY(0)';
+    const setOpen = open => {
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      menu.classList.toggle('nav__mobile--open', open);
+      document.body.style.overflow = open ? 'hidden' : '';
+      if (open) {
+        // wait for the overlay's visibility to apply before moving focus
+        requestAnimationFrame(() => requestAnimationFrame(() => {
+          menu.querySelector('a')?.focus();
+        }));
       } else {
-        stickyCta.style.opacity = '0';
-        stickyCta.style.transform = 'translateY(100%)';
+        toggle.focus();
       }
-    }, { passive: true });
-  }
+    };
 
-});
+    toggle.addEventListener('click', () => {
+      setOpen(toggle.getAttribute('aria-expanded') !== 'true');
+    });
+    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setOpen(false)));
+    document.addEventListener('keydown', e => {
+      if (toggle.getAttribute('aria-expanded') !== 'true') return;
+      if (e.key === 'Escape') { setOpen(false); return; }
+      if (e.key !== 'Tab') return;
+      // keep focus cycling between the overlay links and the toggle button
+      const focusables = [...menu.querySelectorAll('a'), toggle];
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault(); last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault(); first.focus();
+      } else if (!focusables.includes(document.activeElement)) {
+        e.preventDefault(); first.focus();
+      }
+    });
+  };
+
+  /* --------------------------------------------------------
+     Parallax — [data-parallax] (container of an img, or an img)
+     -------------------------------------------------------- */
+  const initParallax = () => {
+    if (prefersReduced) return;
+    const els = document.querySelectorAll('[data-parallax]');
+    if (!els.length) return;
+
+    const items = Array.from(els).map(el => ({
+      el,
+      img: el.tagName === 'IMG' ? el : el.querySelector('img'),
+      speed: el.dataset.parallax === 'soft' ? 0.035 : 0.07
+    })).filter(item => item.img);
+
+    let ticking = false;
+    const update = () => {
+      const vh = window.innerHeight;
+      items.forEach(({ el, img, speed }) => {
+        const rect = el.getBoundingClientRect();
+        if (rect.bottom < -80 || rect.top > vh + 80) return;
+        const delta = rect.top + rect.height / 2 - vh / 2;
+        img.style.transform = `translate3d(0, ${(-delta * speed).toFixed(1)}px, 0) scale(1.08)`;
+      });
+      ticking = false;
+    };
+    window.addEventListener('scroll', () => {
+      if (!ticking) { requestAnimationFrame(update); ticking = true; }
+    }, { passive: true });
+    update();
+  };
+
+  /* --------------------------------------------------------
+     Counters — [data-count] with data-prefix / data-suffix
+     -------------------------------------------------------- */
+  const initCounters = () => {
+    const els = document.querySelectorAll('[data-count]');
+    if (!els.length) return;
+
+    const run = el => {
+      const target = parseInt(el.dataset.count, 10) || 0;
+      const prefix = el.dataset.prefix || '';
+      const suffix = el.dataset.suffix || '';
+      if (prefersReduced) {
+        el.textContent = prefix + target.toLocaleString() + suffix;
+        return;
+      }
+      const dur = 1100;
+      const start = performance.now();
+      const tick = now => {
+        const p = Math.min((now - start) / dur, 1);
+        const eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = prefix + Math.round(target * eased).toLocaleString() + suffix;
+        if (p < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    };
+
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          run(entry.target);
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    els.forEach(el => io.observe(el));
+  };
+
+  /* --------------------------------------------------------
+     Lightbox — [data-lightbox] openers + #lightbox dialog
+     -------------------------------------------------------- */
+  const initLightbox = () => {
+    const box = document.getElementById('lightbox');
+    if (!box) return;
+    const img = box.querySelector('img');
+    const closeBtn = box.querySelector('.lightbox__close');
+    let lastFocus = null;
+
+    const open = (src, alt) => {
+      img.src = src;
+      img.alt = alt || 'Enlarged venue photo';
+      box.classList.add('lightbox--open');
+      document.body.style.overflow = 'hidden';
+      lastFocus = document.activeElement;
+      closeBtn.focus();
+    };
+    const close = () => {
+      box.classList.remove('lightbox--open');
+      document.body.style.overflow = '';
+      if (lastFocus) lastFocus.focus();
+    };
+
+    document.querySelectorAll('[data-lightbox]').forEach(el => {
+      el.addEventListener('click', e => {
+        e.preventDefault();
+        const src = el.dataset.lightbox || el.querySelector('img')?.src;
+        if (src) open(src, el.querySelector('img')?.alt);
+      });
+      el.addEventListener('keydown', e => {
+        if ((e.key === 'Enter' || e.key === ' ') && el.tagName !== 'A' && el.tagName !== 'BUTTON') {
+          e.preventDefault();
+          el.click();
+        }
+      });
+    });
+
+    closeBtn.addEventListener('click', close);
+    box.addEventListener('click', e => { if (e.target === box) close(); });
+    document.addEventListener('keydown', e => {
+      if (!box.classList.contains('lightbox--open')) return;
+      if (e.key === 'Escape') { close(); return; }
+      if (e.key === 'Tab') { e.preventDefault(); closeBtn.focus(); }
+    });
+  };
+
+  /* --------------------------------------------------------
+     FAQ — [data-faq] wrapper, .faq__q buttons, animated height
+     -------------------------------------------------------- */
+  const initFaq = () => {
+    document.querySelectorAll('[data-faq]').forEach(wrap => {
+      wrap.querySelectorAll('.faq__q').forEach(btn => {
+        const panel = btn.parentElement.querySelector('.faq__a');
+        if (!panel) return;
+
+        btn.setAttribute('aria-expanded', 'false');
+        panel.style.height = '0px';
+
+        btn.addEventListener('click', () => {
+          const isOpen = btn.getAttribute('aria-expanded') === 'true';
+
+          wrap.querySelectorAll('.faq__q[aria-expanded="true"]').forEach(other => {
+            if (other === btn) return;
+            const otherPanel = other.parentElement.querySelector('.faq__a');
+            other.setAttribute('aria-expanded', 'false');
+            otherPanel.style.height = `${otherPanel.scrollHeight}px`;
+            requestAnimationFrame(() => { otherPanel.style.height = '0px'; });
+          });
+
+          btn.setAttribute('aria-expanded', String(!isOpen));
+          if (isOpen) {
+            panel.style.height = `${panel.scrollHeight}px`;
+            requestAnimationFrame(() => { panel.style.height = '0px'; });
+          } else {
+            panel.style.height = `${panel.scrollHeight}px`;
+            panel.addEventListener('transitionend', function onEnd(e) {
+              if (e.propertyName !== 'height') return;
+              if (btn.getAttribute('aria-expanded') === 'true') panel.style.height = 'auto';
+              panel.removeEventListener('transitionend', onEnd);
+            });
+          }
+        });
+      });
+    });
+  };
+
+  /* --------------------------------------------------------
+     Filters — [data-filter-group] with [data-filter] buttons
+     and [data-filter-item][data-tags] targets on the page.
+     -------------------------------------------------------- */
+  const initFilters = () => {
+    document.querySelectorAll('[data-filter-group]').forEach(group => {
+      const buttons = group.querySelectorAll('[data-filter]');
+      const items = document.querySelectorAll('[data-filter-item]');
+      if (!buttons.length || !items.length) return;
+
+      buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const key = btn.dataset.filter;
+          buttons.forEach(b => b.setAttribute('aria-pressed', String(b === btn)));
+          items.forEach(item => {
+            const tags = (item.dataset.tags || '').split(/\s+/);
+            item.hidden = key !== 'all' && !tags.includes(key);
+          });
+        });
+      });
+    });
+  };
+
+  /* --------------------------------------------------------
+     Sticky mobile CTA
+     -------------------------------------------------------- */
+  const initStickyCta = () => {
+    const bar = document.querySelector('.sticky-cta');
+    if (!bar) return;
+    let footerInView = false;
+    const footer = document.querySelector('.footer');
+    if (footer) {
+      new IntersectionObserver(entries => {
+        footerInView = entries[0].isIntersecting;
+        onScroll();
+      }, { rootMargin: '80px' }).observe(footer);
+    }
+    const onScroll = () => {
+      bar.classList.toggle('sticky-cta--show',
+        !footerInView && window.scrollY > window.innerHeight * 0.7);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  };
+
+  /* --------------------------------------------------------
+     Marquee pause control
+     -------------------------------------------------------- */
+  const initMarquee = () => {
+    if (prefersReduced) return;
+    document.querySelectorAll('.marquee').forEach(marquee => {
+      const btn = document.createElement('button');
+      btn.className = 'marquee__pause';
+      btn.setAttribute('aria-pressed', 'false');
+      btn.setAttribute('aria-label', 'Pause scrolling list');
+      btn.textContent = '\u23F8';
+      btn.addEventListener('click', () => {
+        const paused = marquee.classList.toggle('marquee--paused');
+        btn.setAttribute('aria-pressed', String(paused));
+        btn.setAttribute('aria-label', paused ? 'Resume scrolling list' : 'Pause scrolling list');
+        btn.textContent = paused ? '\u25B8' : '\u23F8';
+      });
+      marquee.append(btn);
+    });
+  };
+
+  /* --------------------------------------------------------
+     Footer year
+     -------------------------------------------------------- */
+  const initYear = () => {
+    document.querySelectorAll('[data-year]').forEach(el => {
+      el.textContent = new Date().getFullYear();
+    });
+  };
+
+  /* --------------------------------------------------------
+     Plan flow — guided inquiry wizard (#plan-form)
+     -------------------------------------------------------- */
+  const initPlanFlow = () => {
+    const form = document.getElementById('plan-form');
+    if (!form) return;
+
+    const steps = Array.from(form.querySelectorAll('[data-step]'));
+    const dots = Array.from(form.querySelectorAll('[data-step-dot]'));
+    const prevBtn = form.querySelector('[data-plan-prev]');
+    const nextBtn = form.querySelector('[data-plan-next]');
+    const submitBtn = form.querySelector('[data-plan-submit]');
+    const errorEl = form.querySelector('.plan__error');
+    const summary = document.querySelector('[data-plan-summary]');
+    let current = 0;
+
+    const showError = msg => {
+      if (!errorEl) return;
+      errorEl.textContent = msg;
+      errorEl.classList.add('plan__error--show');
+    };
+    const clearError = () => errorEl && errorEl.classList.remove('plan__error--show');
+
+    const render = () => {
+      steps.forEach((step, i) => { step.hidden = i !== current; });
+      dots.forEach((dot, i) => {
+        dot.toggleAttribute('data-active', i === current);
+        dot.toggleAttribute('data-done', i < current);
+      });
+      if (prevBtn) prevBtn.hidden = current === 0;
+      if (nextBtn) nextBtn.hidden = current === steps.length - 1;
+      if (submitBtn) submitBtn.hidden = current !== steps.length - 1;
+      clearError();
+    };
+
+    const validateStep = () => {
+      const step = steps[current];
+      const radios = step.querySelectorAll('input[type="radio"][required]');
+      if (radios.length) {
+        const name = radios[0].name;
+        if (!form.querySelector(`input[name="${name}"]:checked`)) {
+          showError('Pick one to keep going.');
+          return false;
+        }
+      }
+      const fields = step.querySelectorAll('input:not([type="radio"]):not([type="checkbox"]), textarea, select');
+      for (const field of fields) {
+        if (!field.checkValidity()) {
+          field.reportValidity();
+          return false;
+        }
+      }
+      return true;
+    };
+
+    prevBtn?.addEventListener('click', () => {
+      if (current > 0) { current -= 1; render(); }
+    });
+    nextBtn?.addEventListener('click', () => {
+      if (!validateStep()) return;
+      if (current < steps.length - 1) { current += 1; render(); }
+      form.closest('.plan')?.scrollIntoView({ behavior: prefersReduced ? 'auto' : 'smooth', block: 'start' });
+    });
+
+    /* --- summary + estimate --- */
+    const fmtDate = value => {
+      if (!value) return '';
+      const d = new Date(`${value}T12:00:00`);
+      if (Number.isNaN(d.getTime())) return '';
+      return d.toLocaleDateString('en-CA', { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' });
+    };
+
+    const rateIndexFor = value => {
+      if (!value) return -1;
+      const day = new Date(`${value}T12:00:00`).getDay();
+      if (day === 6) return 2;               // Saturday
+      if (day === 5 || day === 0) return 1;  // Friday & Sunday
+      return 0;                              // Mon–Thu
+    };
+
+    const updateSummary = () => {
+      if (!summary) return;
+      const val = name => form.querySelector(`input[name="${name}"]:checked`)?.value
+        || form.querySelector(`select[name="${name}"]`)?.value
+        || '';
+
+      const set = (key, text) => {
+        const dd = summary.querySelector(`[data-summary="${key}"]`);
+        if (dd) dd.textContent = text;
+      };
+
+      set('event_type', val('event_type'));
+      const dateVal = form.querySelector('input[name="preferred_date"]')?.value || '';
+      const flexible = form.querySelector('input[name="date_flexible"]')?.checked;
+      set('date', dateVal ? fmtDate(dateVal) + (flexible ? ' (flexible)' : '') : (flexible ? 'Flexible' : ''));
+      set('guest_count', val('guest_count') ? `${val('guest_count')} guests` : '');
+      set('package', val('package'));
+      const preset = val('design_preset');
+      set('design_preset', preset === 'No preference' ? '' : preset);
+
+      const estimateEl = summary.querySelector('[data-estimate]');
+      if (estimateEl) {
+        const pkg = form.querySelector('input[name="package"]:checked');
+        const rates = pkg?.dataset.rates?.split(',').map(Number);
+        if (rates && rates.length === 3) {
+          const idx = rateIndexFor(dateVal);
+          estimateEl.textContent = idx >= 0
+            ? `$${rates[idx].toLocaleString()}`
+            : `$${rates[0].toLocaleString()}–$${rates[2].toLocaleString()}`;
+        } else if (pkg) {
+          estimateEl.textContent = 'We’ll talk it through';
+        } else {
+          estimateEl.textContent = '';
+        }
+      }
+    };
+
+    form.addEventListener('change', updateSummary);
+    form.addEventListener('input', e => {
+      if (e.target.name === 'preferred_date') updateSummary();
+    });
+
+    /* --- preselect package from ?package= --- */
+    const pkgParam = new URLSearchParams(location.search).get('package');
+    if (pkgParam) {
+      const map = { space: 'The Space', styled: 'The Styled Experience', full: 'The Full Celebration' };
+      const target = map[pkgParam.toLowerCase()];
+      if (target) {
+        const radio = Array.from(form.querySelectorAll('input[name="package"]'))
+          .find(r => r.value === target);
+        if (radio) radio.checked = true;
+      }
+    }
+    updateSummary();
+    render();
+
+    /* --- submit --- */
+    form.addEventListener('submit', async e => {
+      e.preventDefault();
+      if (!validateStep()) return;
+      if (form.querySelector('input[name="botcheck"]')?.checked) return;
+
+      submitBtn.disabled = true;
+      const rollLabel = submitBtn.querySelector('.btn__label span');
+      if (rollLabel) rollLabel.textContent = 'Sending…';
+
+      const data = Object.fromEntries(new FormData(form));
+      delete data.botcheck;
+
+      try {
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify(data)
+        });
+        const result = await res.json();
+        if (!result.success) throw new Error('submit failed');
+
+        const panel = document.createElement('div');
+        panel.className = 'plan-success';
+        panel.innerHTML = `
+          <h3>Got it.</h3>
+          <p>We’ll get back to you within 24 hours — usually faster.
+          If it’s urgent, call or text <a href="tel:6472861161" class="text-brass">647-286-1161</a>.</p>`;
+        form.replaceWith(panel);
+        panel.closest('.plan')?.scrollIntoView({ behavior: prefersReduced ? 'auto' : 'smooth', block: 'start' });
+      } catch {
+        submitBtn.disabled = false;
+        if (rollLabel) rollLabel.textContent = 'Send inquiry';
+        showError('That didn’t go through. Try again, or email hello@thelaurelroom.ca directly.');
+      }
+    });
+  };
+
+  /* --------------------------------------------------------
+     Boot
+     -------------------------------------------------------- */
+  const boot = () => {
+    initButtons();
+    initReveals();
+    initSplits();
+    initNav();
+    initParallax();
+    initCounters();
+    initLightbox();
+    initFaq();
+    initFilters();
+    initMarquee();
+    initStickyCta();
+    initYear();
+    initPlanFlow();
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', boot);
+  } else {
+    boot();
+  }
+})();
