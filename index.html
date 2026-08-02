@@ -7,17 +7,16 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/brand/favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/brand/favicon-16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/brand/apple-touch-icon.png">
-  <title>The Laurel Room | Boutique Event Venue in Brampton</title>
-  <meta name="description" content="Brampton's boutique event venue for 50-125 guests. Five curated design presets, BYOC flexibility, and full-service celebrations. Opening Summer 2026.">
-  <meta name="keywords" content="event venue Brampton, boutique event space, BYOC venue, intimate wedding venue, mehndi venue Brampton, baby shower venue, bridal shower venue, corporate event space Brampton, party venue 50-125 guests, celebration venue Ontario">
+  <title>The Laurel Room — Boutique Event Venue in Brampton | Now Booking 2027</title>
+  <meta name="description" content="A boutique event venue in Brampton for 50–125 guests. Bring your own caterer, pick one of five looks, walk into a finished room. Now booking 2027 celebrations.">
   <meta name="robots" content="index, follow">
   <meta name="ai-content-declarations" content="venue-information, pricing, cultural-events">
   <meta name="author" content="The Laurel Room Inc.">
   <link rel="canonical" href="https://thelaurelroom.ca/">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="The Laurel Room | Boutique Event Venue in Brampton">
-  <meta property="og:description" content="Brampton's boutique event venue for 50-125 guests. Five curated design presets, BYOC flexibility, and full-service celebrations.">
+  <meta property="og:title" content="The Laurel Room — Boutique Event Venue in Brampton">
+  <meta property="og:description" content="A boutique venue for 50–125 guests. Bring your own caterer, pick one of five looks, walk into a finished room. Now booking 2027 celebrations.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://thelaurelroom.ca/">
   <meta property="og:image" content="https://thelaurelroom.ca/images/brand/og-image.png">
@@ -25,21 +24,19 @@
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="The Laurel Room | Boutique Event Venue in Brampton">
-  <meta name="twitter:description" content="Brampton's boutique event venue for 50-125 guests. Five curated design presets, BYOC flexibility, and full-service celebrations.">
+  <meta name="twitter:title" content="The Laurel Room — Boutique Event Venue in Brampton">
+  <meta name="twitter:description" content="A boutique venue for 50–125 guests. Bring your own caterer, pick one of five looks, walk into a finished room.">
   <meta name="twitter:image" content="https://thelaurelroom.ca/images/brand/og-image.png">
 
   <!-- Performance -->
-  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-  <link rel="preload" as="image" href="images/hero/hero-main.jpg">
+  <link rel="preload" as="image" href="images/hero/hero-main.jpg" fetchpriority="high">
+  <link rel="preload" as="font" type="font/woff2" href="fonts/fraunces-normal-latin.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="fonts/dmsans-normal-latin.woff2" crossorigin>
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&family=Pinyon+Script&display=swap" rel="stylesheet">
-
-  <!-- Stylesheet -->
+  <!-- Fonts (self-hosted) + stylesheet -->
+  <link rel="stylesheet" href="css/fonts.css">
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
 
   <!-- Structured Data — EventVenue -->
   <script type="application/ld+json">
@@ -47,7 +44,7 @@
     "@context": "https://schema.org",
     "@type": "EventVenue",
     "name": "The Laurel Room",
-    "description": "Boutique event venue for intimate celebrations of 50-125 guests in Brampton, Ontario. Five curated design presets, BYOC flexibility, and full-service coordination.",
+    "description": "Boutique event venue for celebrations of 50–125 guests in Brampton, Ontario. Bring-your-own-caterer model, five design presets, opening for events in 2027.",
     "url": "https://thelaurelroom.ca",
     "image": "https://thelaurelroom.ca/images/hero/hero-main.jpg",
     "address": {
@@ -57,568 +54,487 @@
       "addressCountry": "CA"
     },
     "maximumAttendeeCapacity": 125,
-    "openingHours": "Mo-Su 10:00-23:00",
     "priceRange": "$895-$2995",
     "telephone": "+16472861161",
     "email": "hello@thelaurelroom.ca",
-    "sameAs": [
-      "https://instagram.com/thelaurelroom"
-    ]
+    "sameAs": ["https://instagram.com/thelaurelroom"]
   }
   </script>
-
-  <!-- Page-specific enhancements -->
-  <style>
-    /* Hero parallax-like slow zoom */
-    .hero__bg img {
-      animation: heroBreath 25s ease-in-out infinite alternate;
-    }
-    @keyframes heroBreath {
-      0% { transform: scale(1); }
-      100% { transform: scale(1.08); }
-    }
-
-    /* Staggered hero content reveal */
-    .hero__content > * {
-      opacity: 0;
-      transform: translateY(25px);
-      animation: heroReveal 1s var(--ease-out) forwards;
-    }
-    .hero__content > *:nth-child(1) { animation-delay: 0.3s; }
-    .hero__content > *:nth-child(2) { animation-delay: 0.6s; }
-    .hero__content > *:nth-child(3) { animation-delay: 0.8s; }
-    .hero__content > *:nth-child(4) { animation-delay: 1s; }
-    .hero__content > *:nth-child(5) { animation-delay: 1.2s; }
-
-    @keyframes heroReveal {
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* Preset hover color washes */
-    .preset-card--laurel .preset-card__overlay {
-      background: linear-gradient(to top, rgba(107,133,119,0.85) 0%, rgba(107,133,119,0.15) 50%, transparent 100%);
-    }
-    .preset-card--golden .preset-card__overlay {
-      background: linear-gradient(to top, rgba(181,142,94,0.85) 0%, rgba(181,142,94,0.15) 50%, transparent 100%);
-    }
-    .preset-card--blush .preset-card__overlay {
-      background: linear-gradient(to top, rgba(210,170,160,0.85) 0%, rgba(210,170,160,0.15) 50%, transparent 100%);
-    }
-    .preset-card--mono .preset-card__overlay {
-      background: linear-gradient(to top, rgba(44,44,44,0.88) 0%, rgba(44,44,44,0.2) 50%, transparent 100%);
-    }
-    .preset-card--regal .preset-card__overlay {
-      background: linear-gradient(to top, rgba(88,30,68,0.85) 0%, rgba(88,30,68,0.15) 50%, transparent 100%);
-    }
-
-    /* Decorative corner flourish on hero */
-    .hero::before,
-    .hero::after {
-      content: '';
-      position: absolute;
-      width: 80px;
-      height: 80px;
-      border-color: rgba(212, 184, 150, 0.25);
-      border-style: solid;
-      z-index: 2;
-      pointer-events: none;
-    }
-    .hero::before {
-      top: 2.5rem;
-      left: 2.5rem;
-      border-width: 1px 0 0 1px;
-    }
-    .hero::after {
-      bottom: 5rem;
-      right: 2.5rem;
-      border-width: 0 1px 1px 0;
-    }
-
-    @media (max-width: 768px) {
-      .hero::before, .hero::after { display: none; }
-      .presets-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
-      .presets-scroll .grid-5 {
-        grid-template-columns: repeat(5, 250px);
-        gap: 0.75rem;
-      }
-    }
-  </style>
 </head>
 <body>
 
+  <a class="skip-link" href="#main">Skip to content</a>
+
   <!-- ============ NAVIGATION ============ -->
-  <nav class="nav" role="navigation" aria-label="Main navigation">
+  <header class="nav" data-nav>
     <div class="nav__inner">
-      <a href="index.html" class="nav__logo">
-        <span class="nav__logo-text">The Laurel Room</span>
-        <span class="nav__logo-tagline">Your celebration. Our canvas.</span>
-      </a>
-
-      <div class="nav__toggle" aria-label="Toggle menu" role="button" tabindex="0">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-
-      <div class="nav__menu nav__links">
-        <a href="index.html" class="nav__link">Home</a>
-        <a href="about.html" class="nav__link">About</a>
-        <a href="packages.html" class="nav__link">Packages</a>
-        <a href="gallery.html" class="nav__link">Gallery</a>
-        <a href="contact.html" class="nav__link">Contact</a>
-        <a href="contact.html" class="nav__cta">Book a Tour</a>
+      <a class="nav__logo" href="index.html" aria-current="page">The Laurel Room</a>
+      <nav class="nav__links" aria-label="Primary">
+        <a class="nav__link" href="about.html">About</a>
+        <a class="nav__link" href="gallery.html">Gallery</a>
+        <a class="nav__link" href="packages.html">Pricing</a>
+        <a class="nav__link" href="contact.html">Contact</a>
+      </nav>
+      <a class="btn btn--outline nav__cta" href="contact.html" data-text="Plan your event">Plan your event</a>
+      <button class="nav__toggle" data-nav-toggle aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu"><span></span><span></span></button>
+    </div>
+    <div class="nav__mobile" id="mobile-menu" data-nav-menu>
+      <nav aria-label="Mobile">
+        <a class="nav__mobile-link" href="index.html">Home</a>
+        <a class="nav__mobile-link" href="about.html">About</a>
+        <a class="nav__mobile-link" href="gallery.html">Gallery</a>
+        <a class="nav__mobile-link" href="packages.html">Pricing</a>
+        <a class="nav__mobile-link" href="contact.html"><em>Plan your event</em></a>
+      </nav>
+      <div class="nav__mobile-foot">
+        <a href="tel:6472861161">647-286-1161</a>
+        <a href="mailto:hello@thelaurelroom.ca">hello@thelaurelroom.ca</a>
+        <a href="https://instagram.com/thelaurelroom" target="_blank" rel="noopener">@thelaurelroom</a>
       </div>
     </div>
-  </nav>
+  </header>
 
+  <main id="main">
 
-  <main>
   <!-- ============ HERO ============ -->
   <section class="hero">
-    <div class="hero__bg">
-      <img src="images/hero/hero-main.jpg" alt="The Laurel Room — a beautifully styled industrial-romantic event venue with harvest tables, warm lighting, and a fairy light canopy" loading="eager">
+    <div class="hero__bg" data-parallax="soft">
+      <img src="images/hero/hero-main.jpg" alt="The Laurel Room styled for an evening event — harvest tables, draped backdrop, and a fairy-light canopy under an 18-foot ceiling" fetchpriority="high">
     </div>
-    <div class="hero__overlay"></div>
+    <div class="hero__scrim" aria-hidden="true"></div>
 
-    <div class="hero__content">
-      <div class="coming-soon-badge">
-        <span class="dot"></span>
-        Opening Summer 2026 — Now Accepting Reservations
-      </div>
-      <h1 class="hero__title">Finally, a room worthy of how your family celebrates.</h1>
-      <p class="hero__script">Intimate celebrations, beautifully styled</p>
-      <p class="hero__description">
-        A boutique event venue in Brampton for 50&ndash;125 guests. Bring your own caterer. Choose your design preset. We handle the rest.
+    <div class="hero__inner">
+      <p class="hero__status">Now booking 2027 celebrations</p>
+      <h1 class="hero__title display-1" data-split>A room worthy of how your family <em>celebrates</em>.</h1>
+      <p class="hero__dek" data-reveal data-reveal-delay="3">
+        A boutique venue in Brampton for 50 to 125 guests. Bring your own caterer,
+        pick one of five looks, and walk into a finished room.
       </p>
-      <div class="hero__actions">
-        <a href="contact.html" class="btn btn--brass btn--large">Check Availability</a>
-        <a href="packages.html" class="btn btn--outline btn--large" style="color: #fff; border-color: rgba(255,255,255,0.5);">See Packages &amp; Pricing</a>
+      <div class="hero__actions" data-reveal data-reveal-delay="4">
+        <a class="btn btn--light btn--large" href="contact.html" data-text="Start planning">Start planning</a>
+        <a class="btn btn--ghost-light btn--large" href="packages.html" data-text="See pricing">See pricing</a>
       </div>
     </div>
-
-    <div class="hero__scroll">
-      <span>Discover</span>
-      <div class="hero__scroll-line"></div>
-    </div>
   </section>
+  <div class="hero__facts" style="background: var(--espresso);">
+    <p class="hero__fact"><strong>Brampton, ON</strong> Steeles Ave East corridor</p>
+    <p class="hero__fact"><strong>50–125</strong> seated guests</p>
+    <p class="hero__fact"><strong>18 ft</strong> ceilings</p>
+    <p class="hero__fact"><strong>Five</strong> design presets</p>
+  </div>
 
+  <!-- ============ MARQUEE ============ -->
+  <div class="marquee" aria-label="Events we host">
+    <div class="marquee__track">
+      <div class="marquee__group">
+        <span class="marquee__item">Mehndi nights</span><span class="marquee__dot" aria-hidden="true">&#9670;</span>
+        <span class="marquee__item">Sangeets</span><span class="marquee__dot" aria-hidden="true">&#9670;</span>
+        <span class="marquee__item">Nikkahs</span><span class="marquee__dot" aria-hidden="true">&#9670;</span>
+        <span class="marquee__item">Baby showers</span><span class="marquee__dot" aria-hidden="true">&#9670;</span>
+        <span class="marquee__item">Bridal showers</span><span class="marquee__dot" aria-hidden="true">&#9670;</span>
+        <span class="marquee__item">Aqiqahs</span><span class="marquee__dot" aria-hidden="true">&#9670;</span>
+        <span class="marquee__item">Naming ceremonies</span><span class="marquee__dot" aria-hidden="true">&#9670;</span>
+        <span class="marquee__item">Milestone birthdays</span><span class="marquee__dot" aria-hidden="true">&#9670;</span>
+        <span class="marquee__item">Engagement parties</span><span class="marquee__dot" aria-hidden="true">&#9670;</span>
+        <span class="marquee__item">Diwali</span><span class="marquee__dot" aria-hidden="true">&#9670;</span>
+        <span class="marquee__item">Eid</span><span class="marquee__dot" aria-hidden="true">&#9670;</span>
+        <span class="marquee__item">Corporate off-sites</span><span class="marquee__dot" aria-hidden="true">&#9670;</span>
+      </div>
+      <div class="marquee__group" aria-hidden="true">
+        <span class="marquee__item">Mehndi nights</span><span class="marquee__dot">&#9670;</span>
+        <span class="marquee__item">Sangeets</span><span class="marquee__dot">&#9670;</span>
+        <span class="marquee__item">Nikkahs</span><span class="marquee__dot">&#9670;</span>
+        <span class="marquee__item">Baby showers</span><span class="marquee__dot">&#9670;</span>
+        <span class="marquee__item">Bridal showers</span><span class="marquee__dot">&#9670;</span>
+        <span class="marquee__item">Aqiqahs</span><span class="marquee__dot">&#9670;</span>
+        <span class="marquee__item">Naming ceremonies</span><span class="marquee__dot">&#9670;</span>
+        <span class="marquee__item">Milestone birthdays</span><span class="marquee__dot">&#9670;</span>
+        <span class="marquee__item">Engagement parties</span><span class="marquee__dot">&#9670;</span>
+        <span class="marquee__item">Diwali</span><span class="marquee__dot">&#9670;</span>
+        <span class="marquee__item">Eid</span><span class="marquee__dot">&#9670;</span>
+        <span class="marquee__item">Corporate off-sites</span><span class="marquee__dot">&#9670;</span>
+      </div>
+    </div>
+  </div>
 
-  <!-- ============ BYOC HERO BANNER ============ -->
-  <section class="byoc-hero">
+  <!-- ============ 01 · THE IDEA ============ -->
+  <section class="section band--paper">
     <div class="container">
-      <div class="text-center reveal">
-        <h2 class="byoc-hero__headline">Bring your food. Bring your people. We built the room.</h2>
-        <p class="byoc-hero__text">
-          The Laurel Room is a BYOC venue — Bring Your Own Caterer. That means total freedom
-          to serve the food your family loves, from the caterer you trust.
-        </p>
-        <div class="byoc-hero__bullets">
-          <div class="byoc-hero__bullet">
-            <strong>Halal caterer?</strong> Bring them.
-          </div>
-          <div class="byoc-hero__bullet">
-            <strong>Family recipe Caribbean curry?</strong> Serve it.
-          </div>
-          <div class="byoc-hero__bullet">
-            <strong>Vegetarian thali spread?</strong> We'll set the table.
-          </div>
+      <p class="kicker" data-reveal><span class="kicker__no">01</span><span>The idea</span></p>
+      <h2 class="display-2" data-reveal>Brampton throws beautiful parties. It deserved a room to match.</h2>
+      <div class="split mt-4" style="align-items: start;">
+        <div class="split__body" data-reveal data-reveal-delay="1">
+          <p>
+            For years, hosting 80 people here meant choosing between a banquet hall
+            built for 300 and a community centre with fluorescent lights. Both wrong,
+            in opposite directions.
+          </p>
+          <p>
+            The Laurel Room is the missing middle: 2,000 square feet of warm wood,
+            alabaster walls, and a fairy-light canopy under an 18-foot ceiling,
+            sized for the celebrations families actually have.
+          </p>
         </div>
-        <p class="byoc-hero__text" style="margin-top: 1.5rem; font-size: 0.95rem; opacity: 0.8;">
-          No mandatory in-house catering. No food minimums. No cultural compromises. Your celebration, your cuisine.
-        </p>
+        <div class="split__media" data-reveal data-reveal-delay="2">
+          <figure>
+            <div class="frame" style="aspect-ratio: 4/3;">
+              <img src="images/hero/hero-alt.jpg" alt="Interior of The Laurel Room with long harvest tables set for a celebration" loading="lazy">
+            </div>
+            <figcaption>Design rendering — the room styled for a seated dinner.</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="stats mt-4" data-reveal-stagger>
+        <div class="stat">
+          <span class="stat__value"><span data-count="2000" data-suffix="+">2,000+</span></span>
+          <span class="stat__label">Square feet</span>
+        </div>
+        <div class="stat">
+          <span class="stat__value"><span data-count="125">125</span></span>
+          <span class="stat__label">Seated guests</span>
+        </div>
+        <div class="stat">
+          <span class="stat__value"><span data-count="18">18</span><span class="unit">&nbsp;ft</span></span>
+          <span class="stat__label">Ceiling height</span>
+        </div>
+        <div class="stat">
+          <span class="stat__value"><span data-count="20" data-suffix="+">20+</span></span>
+          <span class="stat__label">Parking spaces</span>
+        </div>
       </div>
     </div>
   </section>
 
-
-  <!-- ============ FEATURES ============ -->
-  <section class="features" id="features">
+  <!-- ============ 02 · BYOC ============ -->
+  <section class="section band--bone2">
     <div class="container">
-      <div class="text-center mb-5 reveal">
-        <span class="section-subtitle">Why The Laurel Room</span>
-        <h2 class="section-title">A Space Unlike Any Other</h2>
-        <div class="section-divider"></div>
-      </div>
-
-      <div class="grid grid-3">
-        <!-- Feature 1 -->
-        <div class="feature-card reveal reveal-delay-1">
-          <svg class="feature-card__icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M6 38h36M10 38V18l14-10 14 10v20M18 38v-10h12v10"/>
-            <path d="M20 24h8M24 20v8" opacity="0.4"/>
-          </svg>
-          <h3 class="feature-card__title">Beautiful Space</h3>
-          <p class="feature-card__text">
-            2,000+ sq ft with soaring 18-foot ceilings, a shimmering fairy light canopy,
-            and five curated design presets. Walk into a room that's already breathtaking.
-          </p>
+      <div class="split split--flip">
+        <div class="split__body">
+          <p class="kicker" data-reveal><span class="kicker__no">02</span><span>Bring your own caterer</span></p>
+          <h2 class="display-2" data-reveal>Your caterer. Your playlist. Your <em>people</em>.</h2>
+          <div data-reveal data-reveal-delay="1">
+            <p>
+              BYOC means exactly what it sounds like: bring the caterer your family
+              already trusts. No in-house menu, no food minimums, no corkage-style
+              surcharges for serving what you actually eat.
+            </p>
+            <ul class="linelist mt-3">
+              <li class="linelist__item linelist__item--2col">
+                <span class="linelist__title">Halal caterer?</span>
+                <span class="linelist__value">Bring them</span>
+              </li>
+              <li class="linelist__item linelist__item--2col">
+                <span class="linelist__title">Family-recipe Caribbean curry?</span>
+                <span class="linelist__value">Serve it</span>
+              </li>
+              <li class="linelist__item linelist__item--2col">
+                <span class="linelist__title">Vegetarian thali for a hundred?</span>
+                <span class="linelist__value">We&rsquo;ll set the table</span>
+              </li>
+            </ul>
+            <p class="mt-2">
+              A kitchenette handles warming and plating.
+              The aunties will handle quality control.
+            </p>
+          </div>
+          <div class="split__actions" data-reveal data-reveal-delay="2">
+            <a class="btn btn--outline" href="packages.html" data-text="See what's included">See what&rsquo;s included</a>
+          </div>
         </div>
-
-        <!-- Feature 2 -->
-        <div class="feature-card reveal reveal-delay-2">
-          <svg class="feature-card__icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="24" cy="20" r="8"/>
-            <path d="M16 20c0-4.4 3.6-8 8-8"/>
-            <path d="M12 38c0-2 1-4 3-5s4.5-2 9-2 7 1 9 2 3 3 3 5"/>
-            <path d="M36 14l4-4M36 14l4 4" opacity="0.5"/>
-            <path d="M8 14l4-4M8 14l-4 4" opacity="0.5"/>
-          </svg>
-          <h3 class="feature-card__title">Your Food, Your Way</h3>
-          <p class="feature-card__text">
-            Our BYOC model means total freedom. Bring any caterer and serve the food your
-            family loves &mdash; halal, vegetarian, Caribbean, Filipino, or any cuisine.
-          </p>
-        </div>
-
-        <!-- Feature 3 -->
-        <div class="feature-card reveal reveal-delay-3">
-          <svg class="feature-card__icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M24 4v6M4 24h6M44 24h-6M24 44v-6"/>
-            <circle cx="24" cy="24" r="10"/>
-            <path d="M20 22l3 3 5-5"/>
-            <path d="M10.9 10.9l4.2 4.2M33 33l4.2 4.2M10.9 37.1l4.2-4.2M33 15l4.2-4.2" opacity="0.35"/>
-          </svg>
-          <h3 class="feature-card__title">Every Detail Handled</h3>
-          <p class="feature-card__text">
-            From blank canvas to full-service coordination. We handle the setup, styling,
-            and teardown so you can focus on what matters &mdash; celebrating.
-          </p>
+        <div class="split__media" data-reveal>
+          <figure>
+            <div class="frame" style="aspect-ratio: 3/4;" data-parallax="soft">
+              <img src="images/details/table-setting.jpg" alt="A set table at The Laurel Room — linen, charger plates, and candles" loading="lazy">
+            </div>
+          </figure>
         </div>
       </div>
     </div>
   </section>
 
-
-  <!-- ============ DESIGN PRESETS ============ -->
-  <section style="background: var(--white); padding: var(--section-padding) 0;">
+  <!-- ============ 03 · THE PRESETS ============ -->
+  <section class="section">
     <div class="container container--wide">
-      <div class="text-center mb-5 reveal">
-        <span class="section-subtitle">Choose Your Mood</span>
-        <h2 class="section-title">Five Moods. One Unforgettable Room.</h2>
-        <div class="section-divider"></div>
-        <p class="section-description">
-          Each preset transforms the entire space &mdash; lighting, linens, centerpieces,
-          and backdrop &mdash; into a cohesive world designed for your celebration.
+      <div class="section-head">
+        <p class="kicker" data-reveal><span class="kicker__no">03</span><span>Five looks</span></p>
+        <h2 class="display-2" data-reveal>Five ways to set the room.</h2>
+        <p class="lead" data-reveal data-reveal-delay="1">
+          Lighting, linens, centerpieces, and backdrop change as a set.
+          Pick one, and the whole room commits to it.
+        </p>
+      </div>
+    </div>
+    <div class="preset-row" data-reveal-stagger>
+      <a class="preset" href="gallery.html">
+        <span class="frame"><img src="images/presets/laurel.jpg" alt="Laurel preset — sage green and cream with eucalyptus and pillar candles" loading="lazy"></span>
+        <span class="preset__meta">
+          <span class="preset__no">i.</span>
+          <span class="preset__name">Laurel</span>
+          <span class="preset__palette" aria-hidden="true">
+            <span class="dot" style="background:#6B8577"></span>
+            <span class="dot" style="background:#E8E4D8"></span>
+            <span class="dot" style="background:#A8C0B4"></span>
+          </span>
+        </span>
+      </a>
+      <a class="preset" href="gallery.html">
+        <span class="frame"><img src="images/presets/golden-hour.jpg" alt="Golden Hour preset — amber tones, antique brass, and candlelight" loading="lazy"></span>
+        <span class="preset__meta">
+          <span class="preset__no">ii.</span>
+          <span class="preset__name">Golden Hour</span>
+          <span class="preset__palette" aria-hidden="true">
+            <span class="dot" style="background:#B58E5E"></span>
+            <span class="dot" style="background:#D4B896"></span>
+            <span class="dot" style="background:#4A3826"></span>
+          </span>
+        </span>
+      </a>
+      <a class="preset" href="gallery.html">
+        <span class="frame"><img src="images/presets/blush.jpg" alt="Blush preset — dusty pink, cream, and rose gold" loading="lazy"></span>
+        <span class="preset__meta">
+          <span class="preset__no">iii.</span>
+          <span class="preset__name">Blush</span>
+          <span class="preset__palette" aria-hidden="true">
+            <span class="dot" style="background:#D2AAA0"></span>
+            <span class="dot" style="background:#F3ECE9"></span>
+            <span class="dot" style="background:#C9927F"></span>
+          </span>
+        </span>
+      </a>
+      <a class="preset" href="gallery.html">
+        <span class="frame"><img src="images/presets/monochrome.jpg" alt="Monochrome preset — black, white, silver, and clear acrylic" loading="lazy"></span>
+        <span class="preset__meta">
+          <span class="preset__no">iv.</span>
+          <span class="preset__name">Monochrome</span>
+          <span class="preset__palette" aria-hidden="true">
+            <span class="dot" style="background:#2C2C2C"></span>
+            <span class="dot" style="background:#F5F5F3"></span>
+            <span class="dot" style="background:#9B9B98"></span>
+          </span>
+        </span>
+      </a>
+      <a class="preset" href="gallery.html">
+        <span class="frame"><img src="images/presets/regal.jpg" alt="Regal preset — deep jewel tones with gold and crystal" loading="lazy"></span>
+        <span class="preset__meta">
+          <span class="preset__no">v.</span>
+          <span class="preset__name">Regal</span>
+          <span class="preset__palette" aria-hidden="true">
+            <span class="dot" style="background:#581E44"></span>
+            <span class="dot" style="background:#A8845A"></span>
+            <span class="dot" style="background:#2E1430"></span>
+          </span>
+        </span>
+      </a>
+    </div>
+    <div class="container container--wide">
+      <div class="section-foot" data-reveal>
+        <a class="text-link" href="gallery.html">See the full gallery</a>
+        <p class="small">Included with The Styled Experience and up.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 04 · PRICING ============ -->
+  <section class="section band--paper">
+    <div class="container">
+      <div class="section-head">
+        <p class="kicker" data-reveal><span class="kicker__no">04</span><span>Pricing</span></p>
+        <h2 class="display-2" data-reveal>Pricing you can <em>read</em>.</h2>
+        <p class="lead" data-reveal data-reveal-delay="1">
+          Three packages, day rates on the table, 13% HST and nothing hidden after it.
         </p>
       </div>
 
-      <div class="presets-scroll">
-        <div class="grid grid-5" style="gap: 4px;">
-          <!-- Laurel -->
-          <div class="preset-card preset-card--laurel reveal reveal-delay-1">
-            <img src="images/presets/laurel.jpg" alt="Laurel design preset — botanical, sage green, romantic" loading="lazy">
-            <div class="preset-card__overlay">
-              <span class="preset-card__name">Laurel</span>
-              <span class="preset-card__vibe">Botanical &middot; Romantic</span>
-            </div>
-          </div>
-
-          <!-- Golden Hour -->
-          <div class="preset-card preset-card--golden reveal reveal-delay-2">
-            <img src="images/presets/golden-hour.jpg" alt="Golden Hour design preset — warm amber, moody candlelight" loading="lazy">
-            <div class="preset-card__overlay">
-              <span class="preset-card__name">Golden Hour</span>
-              <span class="preset-card__vibe">Warm &middot; Moody</span>
-            </div>
-          </div>
-
-          <!-- Blush -->
-          <div class="preset-card preset-card--blush reveal reveal-delay-3">
-            <img src="images/presets/blush.jpg" alt="Blush design preset — soft pink, feminine elegance" loading="lazy">
-            <div class="preset-card__overlay">
-              <span class="preset-card__name">Blush</span>
-              <span class="preset-card__vibe">Soft &middot; Feminine</span>
-            </div>
-          </div>
-
-          <!-- Monochrome -->
-          <div class="preset-card preset-card--mono reveal reveal-delay-4">
-            <img src="images/presets/monochrome.jpg" alt="Monochrome design preset — modern black and white" loading="lazy">
-            <div class="preset-card__overlay">
-              <span class="preset-card__name">Monochrome</span>
-              <span class="preset-card__vibe">Modern &middot; Sleek</span>
-            </div>
-          </div>
-
-          <!-- Regal -->
-          <div class="preset-card preset-card--regal reveal reveal-delay-5">
-            <img src="images/presets/regal.jpg" alt="Regal design preset — jewel tones, opulent gold" loading="lazy">
-            <div class="preset-card__overlay">
-              <span class="preset-card__name">Regal</span>
-              <span class="preset-card__vibe">Opulent &middot; Grand</span>
-            </div>
-          </div>
+      <div class="tiers" data-reveal>
+        <div class="tier">
+          <h3 class="tier__name">The Space</h3>
+          <p class="tier__for">The blank canvas, for hosts who bring their own vision.</p>
+          <p class="tier__price"><span class="from">from</span>$895</p>
+          <p class="tier__meta">5.5-hour block &middot; up to 125 guests</p>
+          <ul class="tier__list">
+            <li>12 harvest tables, 125 cross-back chairs</li>
+            <li>Kitchenette, Bluetooth speaker, WiFi</li>
+            <li>Basic setup and cleanup</li>
+          </ul>
+          <a class="btn btn--outline btn--small" href="packages.html" data-text="Full details">Full details</a>
+        </div>
+        <div class="tier tier--featured">
+          <p class="tier__tag">Most popular</p>
+          <h3 class="tier__name">The Styled Experience</h3>
+          <p class="tier__for">Walk into a finished room in the preset you picked.</p>
+          <p class="tier__price"><span class="from">from</span>$1,695</p>
+          <p class="tier__meta">5.5-hour block &middot; any of the five presets</p>
+          <ul class="tier__list">
+            <li>Linens, charger plates, centerpieces</li>
+            <li>Backdrop arch, uplighting, fairy-light canopy</li>
+            <li>Full professional setup and teardown</li>
+          </ul>
+          <a class="btn btn--solid btn--small" href="packages.html" data-text="Full details">Full details</a>
+        </div>
+        <div class="tier">
+          <h3 class="tier__name">The Full Celebration</h3>
+          <p class="tier__for">Full-day access with a coordinator on the floor.</p>
+          <p class="tier__price"><span class="from">from</span>$2,495</p>
+          <p class="tier__meta">Full day, 10 AM&ndash;11 PM</p>
+          <ul class="tier__list">
+            <li>Everything in Styled, upgraded</li>
+            <li>Dedicated event coordinator</li>
+            <li>Cake table, welcome easel, enhanced lighting</li>
+          </ul>
+          <a class="btn btn--outline btn--small" href="packages.html" data-text="Full details">Full details</a>
         </div>
       </div>
 
-      <div class="text-center mt-4 reveal">
-        <a href="gallery.html" class="btn btn--outline">View Full Gallery</a>
+      <div class="section-foot" data-reveal>
+        <a class="text-link" href="packages.html">All rates, signature packages, and add-ons</a>
+        <p class="small">Mehndi nights, morning ceremonies, and corporate days from $795.</p>
       </div>
     </div>
   </section>
 
-
-  <!-- ============ MEET THE FOUNDER ============ -->
-  <section style="background: var(--alabaster);">
+  <!-- ============ 05 · THE FOUNDER ============ -->
+  <section class="section band--dark">
     <div class="container">
-      <div class="founder-section reveal">
-        <div class="founder-section__photo-wrap">
-          <img src="images/brand/founder.jpg" alt="Khushbu Dhahan — Founder of The Laurel Room" class="founder-section__photo" loading="lazy">
+      <div class="split">
+        <div class="split__media" data-reveal>
+          <figure>
+            <div class="frame" style="aspect-ratio: 3/4;">
+              <img src="images/brand/founder.jpg" alt="Khushbu Dhahan, founder of The Laurel Room" loading="lazy" style="object-position: top;">
+            </div>
+          </figure>
         </div>
-        <div class="founder-section__content">
-          <span class="section-subtitle">Meet the Founder</span>
-          <h2 class="section-title" style="text-align: left;">Khushbu Dhahan</h2>
-          <div class="section-divider" style="margin: 1.5rem 0;"></div>
-          <p class="founder-section__story">
-            I built The Laurel Room because I was tired of the same problem you have.
+        <div class="split__body">
+          <p class="kicker" data-reveal><span class="kicker__no">05</span><span>The founder</span></p>
+          <h2 class="display-2" data-reveal>Built by someone who kept needing it.</h2>
+          <div data-reveal data-reveal-delay="1">
+            <p>
+              &ldquo;Before every mehndi night and baby shower, I&rsquo;d spend weeks
+              looking for a room that was beautiful, let us bring our own food, and
+              didn&rsquo;t mean a drive to Toronto. It didn&rsquo;t exist. So I&rsquo;m
+              building it.&rdquo;
+            </p>
+            <p class="mt-2">
+              <strong>Khushbu Dhahan</strong><br>
+              <span class="small">Founder, The Laurel Room</span>
+            </p>
+          </div>
+          <div class="split__actions" data-reveal data-reveal-delay="2">
+            <a class="btn btn--ghost-light" href="about.html" data-text="Read the whole story">Read the whole story</a>
+            <a class="btn btn--light" href="tel:6472861161" data-text="Call or text her">Call or text her</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 06 · THE BUILD ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="split split--flip">
+        <div class="split__body">
+          <p class="kicker" data-reveal><span class="kicker__no">06</span><span>The build</span></p>
+          <h2 class="display-2" data-reveal>Going up right now.</h2>
+          <div data-reveal data-reveal-delay="1">
+            <p>
+              The rooms you see across this site are our design renderings. The real
+              one is under construction on the Steeles Ave East corridor: drywall,
+              warm wood floors, then a ceiling full of fairy lights.
+            </p>
+            <p>
+              We post the progress, honestly, as it happens.
+            </p>
+          </div>
+          <div class="split__actions" data-reveal data-reveal-delay="2">
+            <a class="btn btn--outline" href="https://instagram.com/thelaurelroom" target="_blank" rel="noopener" data-text="Follow the build">Follow the build</a>
+          </div>
+        </div>
+        <div class="split__media" data-reveal>
+          <figure>
+            <div class="frame" style="aspect-ratio: 4/3;" data-parallax="soft">
+              <img src="images/hero/raw-space.jpg" alt="The raw industrial space before buildout — concrete floor and exposed ceiling" loading="lazy">
+            </div>
+            <figcaption>The honest starting point: 2,000 square feet of raw space.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA BAND ============ -->
+  <section class="section band--dark cta-band">
+    <div class="container">
+      <div class="cta-band__grid">
+        <div>
+          <p class="kicker" data-reveal><span class="kicker__no">07</span><span>Founding offer</span></p>
+          <h2 class="display-2" data-reveal>Put your date in the book.</h2>
+          <p data-reveal data-reveal-delay="1">
+            Reserve any 2027 date before we open and take 10% off. Founding clients
+            get first pick of the calendar &mdash; Saturdays go earliest.
           </p>
-          <p class="founder-section__story">
-            Every time my family needed a beautiful space for 80 guests — a mehndi night,
-            a baby shower, a milestone birthday — there was nothing. Oversized banquet halls
-            that forced us into their catering. Community centres with fluorescent lights
-            and folding chairs. Or a 45-minute drive to Toronto for something that actually
-            looked good in photos.
+        </div>
+        <div data-reveal data-reveal-delay="2">
+          <form class="capture" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY">
+            <input type="hidden" name="subject" value="Founding client signup — The Laurel Room">
+            <input type="hidden" name="from_name" value="The Laurel Room Website">
+            <label class="visually-hidden" for="capture-email">Email address</label>
+            <input class="input" type="email" id="capture-email" name="email" placeholder="you@email.com" required>
+            <button type="submit" class="btn btn--light" data-text="Save my spot">Save my spot</button>
+          </form>
+          <p class="small mt-1">
+            One email when booking opens wider, plus your tour invitation. That&rsquo;s it.
           </p>
-          <p class="founder-section__story">
-            So I'm building what should have existed all along: an intimate, stunning venue
-            right here in Brampton where you bring your own food, your own music, your own
-            traditions — and walk into a room that's already beautiful.
-          </p>
-          <div class="founder-section__contact">
-            <a href="tel:6472861161" class="phone-link">647-286-1161</a>
-            <span style="margin: 0 0.75rem; opacity: 0.3;">|</span>
-            <a href="mailto:hello@thelaurelroom.ca" style="color: var(--saffron);">hello@thelaurelroom.ca</a>
-          </div>
         </div>
       </div>
     </div>
   </section>
-
-
-  <!-- ============ EVENT TYPES ============ -->
-  <section style="background: var(--white);">
-    <div class="container">
-      <div class="text-center mb-5 reveal">
-        <span class="section-subtitle">What We Host</span>
-        <h2 class="section-title">Every Celebration Welcome</h2>
-        <div class="section-divider"></div>
-      </div>
-
-      <div class="grid grid-4 stagger-children" style="text-align: center; gap: 0;">
-        <div style="padding: 1.8rem 1rem; border: 1px solid var(--cream);">
-          <h4 style="font-size: 0.75rem; letter-spacing: 2px; margin-bottom: 0.3rem;">Mehndi Nights</h4>
-          <span class="text-sm text-gray">& Sangeet</span>
-        </div>
-        <div style="padding: 1.8rem 1rem; border: 1px solid var(--cream);">
-          <h4 style="font-size: 0.75rem; letter-spacing: 2px; margin-bottom: 0.3rem;">Baby & Bridal</h4>
-          <span class="text-sm text-gray">Showers</span>
-        </div>
-        <div style="padding: 1.8rem 1rem; border: 1px solid var(--cream);">
-          <h4 style="font-size: 0.75rem; letter-spacing: 2px; margin-bottom: 0.3rem;">Intimate</h4>
-          <span class="text-sm text-gray">Weddings & Nikkah</span>
-        </div>
-        <div style="padding: 1.8rem 1rem; border: 1px solid var(--cream);">
-          <h4 style="font-size: 0.75rem; letter-spacing: 2px; margin-bottom: 0.3rem;">Milestone</h4>
-          <span class="text-sm text-gray">Birthdays</span>
-        </div>
-        <div style="padding: 1.8rem 1rem; border: 1px solid var(--cream);">
-          <h4 style="font-size: 0.75rem; letter-spacing: 2px; margin-bottom: 0.3rem;">Aqiqah &</h4>
-          <span class="text-sm text-gray">Naming Ceremonies</span>
-        </div>
-        <div style="padding: 1.8rem 1rem; border: 1px solid var(--cream);">
-          <h4 style="font-size: 0.75rem; letter-spacing: 2px; margin-bottom: 0.3rem;">Engagement</h4>
-          <span class="text-sm text-gray">Parties</span>
-        </div>
-        <div style="padding: 1.8rem 1rem; border: 1px solid var(--cream);">
-          <h4 style="font-size: 0.75rem; letter-spacing: 2px; margin-bottom: 0.3rem;">Corporate</h4>
-          <span class="text-sm text-gray">Retreats & Events</span>
-        </div>
-        <div style="padding: 1.8rem 1rem; border: 1px solid var(--cream);">
-          <h4 style="font-size: 0.75rem; letter-spacing: 2px; margin-bottom: 0.3rem;">Holiday</h4>
-          <span class="text-sm text-gray">Diwali, Eid & More</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ============ PACKAGES QUICK VIEW ============ -->
-  <section style="background: var(--alabaster);">
-    <div class="container">
-      <div class="text-center mb-5 reveal">
-        <span class="section-subtitle">Transparent Pricing</span>
-        <h2 class="section-title">Packages Starting at $895</h2>
-        <div class="section-divider"></div>
-        <p class="section-description">No hidden fees. No surprise charges. Just honest pricing for an honest celebration.</p>
-      </div>
-      <div class="grid grid-3 packages-preview">
-        <div class="packages-preview__card reveal reveal-delay-1">
-          <h3>The Space</h3>
-          <div class="packages-preview__price">From $895</div>
-          <p>Your blank canvas. Tables, chairs, kitchenette, 5.5-hour block for up to 125 guests.</p>
-          <a href="packages.html" class="btn btn--outline btn--small">See Details</a>
-        </div>
-        <div class="packages-preview__card packages-preview__card--featured reveal reveal-delay-2">
-          <h3>The Styled Experience</h3>
-          <div class="packages-preview__price">From $1,695</div>
-          <p>Walk into a fully styled room. Choose from 5 design presets with linens, chargers, arch, and uplighting.</p>
-          <a href="packages.html" class="btn btn--brass btn--small">Most Popular</a>
-        </div>
-        <div class="packages-preview__card reveal reveal-delay-3">
-          <h3>The Full Celebration</h3>
-          <div class="packages-preview__price">From $2,495</div>
-          <p>Every detail handled. Full-day access, dedicated coordinator, premium styling, enhanced lighting.</p>
-          <a href="packages.html" class="btn btn--outline btn--small">See Details</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ============ THE BUILD JOURNEY ============ -->
-  <section style="background: var(--white);">
-    <div class="container">
-      <div class="text-center mb-5 reveal">
-        <span class="section-subtitle">Follow the Journey</span>
-        <h2 class="section-title">We're Building Something Beautiful</h2>
-        <div class="section-divider"></div>
-        <p class="section-description">
-          The Laurel Room is taking shape. Follow our buildout journey on Instagram
-          as we transform a raw industrial space into Brampton's first boutique event venue.
-        </p>
-      </div>
-      <div class="text-center reveal">
-        <a href="https://instagram.com/thelaurelroom" target="_blank" rel="noopener" class="btn btn--outline">
-          Follow @thelaurelroom on Instagram
-        </a>
-      </div>
-      <p class="build-journey__label reveal">Design renderings shown throughout this site represent our vision. Final styling may vary as we bring it to life.</p>
-    </div>
-  </section>
-
-
-  <!-- ============ COMING SOON CTA ============ -->
-  <section class="cta-section" id="founding">
-    <div class="container reveal">
-      <div class="coming-soon-badge" style="margin: 0 auto 1.5rem;">
-        <span class="dot"></span>
-        Now Accepting Reservations
-      </div>
-      <span class="section-subtitle">Be Among the First</span>
-      <h2 style="color: var(--white); margin-bottom: 0.5rem;">Founding Client Offer</h2>
-      <p>
-        Join our founding client list and receive <strong style="color: var(--brass-light);">10% off</strong>
-        your first booking. Limited spots for Summer &amp; Fall 2026.
-      </p>
-
-      <form class="email-capture" action="https://api.web3forms.com/submit" method="POST">
-        <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY">
-        <input type="hidden" name="subject" value="New Founding Client Signup — The Laurel Room">
-        <input type="hidden" name="from_name" value="The Laurel Room Website">
-        <input type="email" name="email" placeholder="Enter your email address" required>
-        <button type="submit" class="btn btn--brass">Save My Spot</button>
-      </form>
-
-      <p class="text-sm" style="margin-top: 1rem; opacity: 0.5;">
-        We respect your privacy. No spam, just your invitation to book first.
-      </p>
-    </div>
-  </section>
-
 
   </main>
 
   <!-- ============ FOOTER ============ -->
   <footer class="footer">
-    <div class="container">
-      <div class="footer__top">
-        <!-- Brand Column -->
+    <div class="container container--wide">
+      <p class="footer__word">The Laurel <em>Room</em></p>
+      <div class="footer__cols">
         <div>
-          <div class="footer__brand-name">The Laurel Room</div>
-          <div class="footer__brand-tagline">Your celebration. Our canvas.</div>
-          <p class="footer__brand-text">
-            A boutique event venue designed for intimate celebrations of
-            50&ndash;125 guests. Every culture. Every milestone. Your way.
+          <p class="footer__tag">
+            A boutique event venue in Brampton for 50&ndash;125 guests.
+            Bring your own caterer; we&rsquo;ll have the room ready.
           </p>
+          <p class="status">Now booking 2027 celebrations</p>
         </div>
-
-        <!-- Quick Links -->
         <div>
-          <div class="footer__heading">Quick Links</div>
-          <a href="index.html" class="footer__link">Home</a>
-          <a href="about.html" class="footer__link">About</a>
-          <a href="packages.html" class="footer__link">Packages</a>
-          <a href="gallery.html" class="footer__link">Gallery</a>
-          <a href="contact.html" class="footer__link">Contact</a>
-        </div>
-
-        <!-- Visit Us -->
-        <div>
-          <div class="footer__heading">Visit Us</div>
+          <p class="footer__head">Visit</p>
           <p class="footer__link">Brampton, Ontario</p>
-          <p class="footer__link">Steeles Ave East Corridor</p>
-          <p class="footer__link" style="margin-top: 0.5rem; color: var(--brass-light); font-size: 0.8rem;">
-            Opening Summer 2026
-          </p>
+          <p class="footer__link">Steeles Ave East corridor</p>
+          <p class="footer__link">Opening for events in 2027</p>
         </div>
-
-        <!-- Connect -->
         <div>
-          <div class="footer__heading">Connect</div>
-          <a href="tel:6472861161" class="footer__link">647-286-1161</a>
-          <a href="https://instagram.com/thelaurelroom" class="footer__link" target="_blank" rel="noopener">
-            Instagram: @thelaurelroom
-          </a>
-          <a href="mailto:hello@thelaurelroom.ca" class="footer__link">
-            hello@thelaurelroom.ca
-          </a>
-          <a href="https://thelaurelroom.ca" class="footer__link" target="_blank" rel="noopener">
-            thelaurelroom.ca
-          </a>
+          <p class="footer__head">Talk</p>
+          <a class="footer__link" href="tel:6472861161">647-286-1161 (call or text)</a>
+          <a class="footer__link" href="mailto:hello@thelaurelroom.ca">hello@thelaurelroom.ca</a>
+          <a class="footer__link" href="https://instagram.com/thelaurelroom" target="_blank" rel="noopener">@thelaurelroom</a>
+        </div>
+        <div>
+          <p class="footer__head">Pages</p>
+          <a class="footer__link" href="about.html">About</a>
+          <a class="footer__link" href="gallery.html">Gallery</a>
+          <a class="footer__link" href="packages.html">Pricing</a>
+          <a class="footer__link" href="contact.html">Contact</a>
         </div>
       </div>
-
       <div class="footer__bottom">
-        <span>&copy; 2026 The Laurel Room Inc. All rights reserved.</span>
-        <div class="footer__social">
-          <!-- Instagram -->
-          <a href="https://instagram.com/thelaurelroom" target="_blank" rel="noopener" aria-label="Instagram">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="2" y="2" width="20" height="20" rx="5"/>
-              <circle cx="12" cy="12" r="5"/>
-              <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/>
-            </svg>
-          </a>
-          <!-- Facebook -->
-          <a href="#" aria-label="Facebook">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
-            </svg>
-          </a>
-          <!-- TikTok -->
-          <a href="#" aria-label="TikTok">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M9 12a4 4 0 104 4V4a5 5 0 005 5"/>
-            </svg>
-          </a>
-        </div>
+        <span>&copy; <span data-year>2026</span> The Laurel Room Inc. All rights reserved.</span>
+        <span>Made in Brampton</span>
       </div>
     </div>
   </footer>
 
-
-  <!-- ============ LIGHTBOX ============ -->
-  <div class="lightbox" id="lightbox" role="dialog" aria-label="Image viewer">
-    <div class="lightbox__close" aria-label="Close">&times;</div>
-    <img src="" alt="Enlarged venue photo">
-  </div>
-
   <!-- ============ STICKY MOBILE CTA ============ -->
   <div class="sticky-cta">
-    <a href="contact.html" class="btn btn--brass" style="width: 100%;">Check Availability</a>
+    <a class="btn btn--solid" href="contact.html" data-text="Check 2027 availability">Check 2027 availability</a>
   </div>
 
-  <!-- Scripts -->
-  <script src="js/main.js"></script>
 </body>
 </html>
