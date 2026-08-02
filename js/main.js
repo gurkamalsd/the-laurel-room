@@ -1,7 +1,8 @@
 /* ============================================================
-   THE LAUREL ROOM — main.js
-   One file, no dependencies. Every module bails out quietly
-   if its markup isn't on the page.
+   THE LAUREL ROOM — main.js (v3)
+   Small on purpose. Five modules, no scroll theatrics:
+   nav, preset switcher, FAQ, forms, wizard. Content never
+   depends on this file to be visible.
    ============================================================ */
 
 (() => {
@@ -10,126 +11,11 @@
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* --------------------------------------------------------
-     Button label roll — wraps .btn[data-text] content in
-     stacked spans so CSS can roll the label on hover.
-     -------------------------------------------------------- */
-  const initButtons = () => {
-    document.querySelectorAll('.btn[data-text]').forEach(btn => {
-      if (btn.querySelector('.btn__label')) return;
-      const text = btn.dataset.text;
-      btn.textContent = '';
-      const label = document.createElement('span');
-      label.className = 'btn__label';
-      const a = document.createElement('span');
-      const b = document.createElement('span');
-      a.textContent = text;
-      b.textContent = text;
-      b.setAttribute('aria-hidden', 'true');
-      label.append(a, b);
-      btn.append(label);
-    });
-  };
-
-  /* --------------------------------------------------------
-     Scroll reveals — [data-reveal], [data-reveal-stagger]
-     -------------------------------------------------------- */
-  const initReveals = () => {
-    document.querySelectorAll('[data-reveal-stagger]').forEach(parent => {
-      Array.from(parent.children).forEach((child, i) => {
-        child.setAttribute('data-reveal', '');
-        child.style.transitionDelay = `${Math.min(i * 0.09, 0.63)}s`;
-      });
-    });
-
-    const targets = document.querySelectorAll('[data-reveal]');
-    if (!targets.length) return;
-
-    const io = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-in');
-          io.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-
-    targets.forEach(el => io.observe(el));
-
-    // Failsafe: if observers misbehave (older Safari quirks), show everything
-    setTimeout(() => {
-      document.querySelectorAll('[data-reveal]:not(.is-in)').forEach(el => el.classList.add('is-in'));
-    }, 4000);
-  };
-
-  /* --------------------------------------------------------
-     Word-split headings — [data-split]
-     Preserves inline <em> styling while staggering words.
-     -------------------------------------------------------- */
-  const initSplits = () => {
-    const heads = document.querySelectorAll('[data-split]');
-    if (!heads.length) return;
-
-    const splitInto = (node, target, state) => {
-      node.childNodes.forEach(child => {
-        if (child.nodeType === Node.TEXT_NODE) {
-          child.textContent.split(/(\s+)/).forEach(part => {
-            if (!part) return;
-            if (/^\s+$/.test(part)) {
-              target.append(document.createTextNode(' '));
-              return;
-            }
-            const w = document.createElement('span');
-            w.className = 'w';
-            const inner = document.createElement('span');
-            inner.textContent = part;
-            inner.style.transitionDelay = `${state.i * 0.055}s`;
-            state.i += 1;
-            w.append(inner);
-            target.append(w);
-          });
-        } else if (child.nodeType === Node.ELEMENT_NODE) {
-          const clone = child.cloneNode(false);
-          splitInto(child, clone, state);
-          target.append(clone);
-        }
-      });
-    };
-
-    heads.forEach(head => {
-      if (prefersReduced) { head.classList.add('is-in'); return; }
-      const frag = document.createDocumentFragment();
-      const holder = document.createElement('span');
-      splitInto(head, holder, { i: 0 });
-      frag.append(...holder.childNodes);
-      head.textContent = '';
-      head.append(frag);
-    });
-
-    const io = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-in');
-          io.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.25 });
-
-    heads.forEach(head => io.observe(head));
-  };
-
-  /* --------------------------------------------------------
-     Navigation — scrolled state + mobile menu
+     Navigation — mobile overlay with focus containment
      -------------------------------------------------------- */
   const initNav = () => {
     const nav = document.querySelector('[data-nav]');
     if (!nav) return;
-
-    const onScroll = () => {
-      nav.classList.toggle('nav--scrolled', window.scrollY > 40);
-    };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-
     const toggle = nav.querySelector('[data-nav-toggle]');
     const menu = nav.querySelector('[data-nav-menu]');
     if (!toggle || !menu) return;
@@ -140,7 +26,6 @@
       menu.classList.toggle('nav__mobile--open', open);
       document.body.style.overflow = open ? 'hidden' : '';
       if (open) {
-        // wait for the overlay's visibility to apply before moving focus
         requestAnimationFrame(() => requestAnimationFrame(() => {
           menu.querySelector('a')?.focus();
         }));
@@ -157,7 +42,6 @@
       if (toggle.getAttribute('aria-expanded') !== 'true') return;
       if (e.key === 'Escape') { setOpen(false); return; }
       if (e.key !== 'Tab') return;
-      // keep focus cycling between the overlay links and the toggle button
       const focusables = [...menu.querySelectorAll('a'), toggle];
       const first = focusables[0];
       const last = focusables[focusables.length - 1];
@@ -172,137 +56,35 @@
   };
 
   /* --------------------------------------------------------
-     Parallax — [data-parallax] (container of an img, or an img)
+     Preset switcher — recolors any [data-preset] scope
      -------------------------------------------------------- */
-  const initParallax = () => {
-    if (prefersReduced) return;
-    if (window.matchMedia('(hover: none) and (pointer: coarse)').matches) return;
-    const els = document.querySelectorAll('[data-parallax]');
-    if (!els.length) return;
-
-    const items = Array.from(els).map(el => ({
-      el,
-      img: el.tagName === 'IMG' ? el : el.querySelector('img'),
-      speed: el.dataset.parallax === 'soft' ? 0.035 : 0.07
-    })).filter(item => item.img);
-
-    let ticking = false;
-    const update = () => {
-      const vh = window.innerHeight;
-      items.forEach(({ el, img, speed }) => {
-        const rect = el.getBoundingClientRect();
-        if (rect.bottom < -80 || rect.top > vh + 80) return;
-        const delta = rect.top + rect.height / 2 - vh / 2;
-        img.style.transform = `translate3d(0, ${(-delta * speed).toFixed(1)}px, 0) scale(1.08)`;
+  const initPresetSwitch = () => {
+    document.querySelectorAll('[data-preset-switch]').forEach(group => {
+      const scope = document.querySelector(group.dataset.presetSwitch);
+      if (!scope) return;
+      const buttons = group.querySelectorAll('button[data-p]');
+      buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          buttons.forEach(b => b.setAttribute('aria-pressed', String(b === btn)));
+          scope.dataset.preset = btn.dataset.p;
+        });
       });
-      ticking = false;
-    };
-    window.addEventListener('scroll', () => {
-      if (!ticking) { requestAnimationFrame(update); ticking = true; }
-    }, { passive: true });
-    update();
-  };
-
-  /* --------------------------------------------------------
-     Counters — [data-count] with data-prefix / data-suffix
-     -------------------------------------------------------- */
-  const initCounters = () => {
-    const els = document.querySelectorAll('[data-count]');
-    if (!els.length) return;
-
-    const run = el => {
-      const target = parseInt(el.dataset.count, 10) || 0;
-      const prefix = el.dataset.prefix || '';
-      const suffix = el.dataset.suffix || '';
-      if (prefersReduced) {
-        el.textContent = prefix + target.toLocaleString() + suffix;
-        return;
-      }
-      const dur = 1100;
-      const start = performance.now();
-      const tick = now => {
-        const p = Math.min((now - start) / dur, 1);
-        const eased = 1 - Math.pow(1 - p, 3);
-        el.textContent = prefix + Math.round(target * eased).toLocaleString() + suffix;
-        if (p < 1) requestAnimationFrame(tick);
-      };
-      requestAnimationFrame(tick);
-    };
-
-    const io = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          run(entry.target);
-          io.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.5 });
-
-    els.forEach(el => io.observe(el));
-  };
-
-  /* --------------------------------------------------------
-     Lightbox — [data-lightbox] openers + #lightbox dialog
-     -------------------------------------------------------- */
-  const initLightbox = () => {
-    const box = document.getElementById('lightbox');
-    if (!box) return;
-    const img = box.querySelector('img');
-    const closeBtn = box.querySelector('.lightbox__close');
-    let lastFocus = null;
-
-    const open = (src, alt) => {
-      img.src = src;
-      img.alt = alt || 'Enlarged venue photo';
-      box.classList.add('lightbox--open');
-      document.body.style.overflow = 'hidden';
-      lastFocus = document.activeElement;
-      closeBtn.focus();
-    };
-    const close = () => {
-      box.classList.remove('lightbox--open');
-      document.body.style.overflow = '';
-      if (lastFocus) lastFocus.focus();
-    };
-
-    document.querySelectorAll('[data-lightbox]').forEach(el => {
-      el.addEventListener('click', e => {
-        e.preventDefault();
-        const src = el.dataset.lightbox || el.querySelector('img')?.src;
-        if (src) open(src, el.querySelector('img')?.alt);
-      });
-      el.addEventListener('keydown', e => {
-        if ((e.key === 'Enter' || e.key === ' ') && el.tagName !== 'A' && el.tagName !== 'BUTTON') {
-          e.preventDefault();
-          el.click();
-        }
-      });
-    });
-
-    closeBtn.addEventListener('click', close);
-    box.addEventListener('click', e => { if (e.target === box) close(); });
-    document.addEventListener('keydown', e => {
-      if (!box.classList.contains('lightbox--open')) return;
-      if (e.key === 'Escape') { close(); return; }
-      if (e.key === 'Tab') { e.preventDefault(); closeBtn.focus(); }
     });
   };
 
   /* --------------------------------------------------------
-     FAQ — [data-faq] wrapper, .faq__q buttons, animated height
+     FAQ — animated disclosure
      -------------------------------------------------------- */
   const initFaq = () => {
     document.querySelectorAll('[data-faq]').forEach(wrap => {
       wrap.querySelectorAll('.faq__q').forEach(btn => {
         const panel = btn.parentElement.querySelector('.faq__a');
         if (!panel) return;
-
         btn.setAttribute('aria-expanded', 'false');
         panel.style.height = '0px';
 
         btn.addEventListener('click', () => {
           const isOpen = btn.getAttribute('aria-expanded') === 'true';
-
           wrap.querySelectorAll('.faq__q[aria-expanded="true"]').forEach(other => {
             if (other === btn) return;
             const otherPanel = other.parentElement.querySelector('.faq__a');
@@ -310,7 +92,6 @@
             otherPanel.style.height = `${otherPanel.scrollHeight}px`;
             requestAnimationFrame(() => { otherPanel.style.height = '0px'; });
           });
-
           btn.setAttribute('aria-expanded', String(!isOpen));
           if (isOpen) {
             panel.style.height = `${panel.scrollHeight}px`;
@@ -329,73 +110,21 @@
   };
 
   /* --------------------------------------------------------
-     Filters — [data-filter-group] with [data-filter] buttons
-     and [data-filter-item][data-tags] targets on the page.
-     -------------------------------------------------------- */
-  const initFilters = () => {
-    document.querySelectorAll('[data-filter-group]').forEach(group => {
-      const buttons = group.querySelectorAll('[data-filter]');
-      const items = document.querySelectorAll('[data-filter-item]');
-      if (!buttons.length || !items.length) return;
-
-      buttons.forEach(btn => {
-        btn.addEventListener('click', () => {
-          const key = btn.dataset.filter;
-          buttons.forEach(b => b.setAttribute('aria-pressed', String(b === btn)));
-          items.forEach(item => {
-            const tags = (item.dataset.tags || '').split(/\s+/);
-            item.hidden = key !== 'all' && !tags.includes(key);
-          });
-        });
-      });
-    });
-  };
-
-  /* --------------------------------------------------------
-     Sticky mobile CTA
+     Sticky mobile CTA — hide when the footer is visible
      -------------------------------------------------------- */
   const initStickyCta = () => {
     const bar = document.querySelector('.sticky-cta');
     if (!bar) return;
-    let footerInView = false;
+    document.body.classList.add('has-sticky');
     const footer = document.querySelector('.footer');
-    if (footer) {
-      new IntersectionObserver(entries => {
-        footerInView = entries[0].isIntersecting;
-        onScroll();
-      }, { rootMargin: '80px' }).observe(footer);
-    }
-    const onScroll = () => {
-      bar.classList.toggle('sticky-cta--show',
-        !footerInView && window.scrollY > window.innerHeight * 0.7);
-    };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
+    if (!footer) return;
+    new IntersectionObserver(entries => {
+      bar.classList.toggle('sticky-cta--hide', entries[0].isIntersecting);
+    }, { rootMargin: '60px' }).observe(footer);
   };
 
   /* --------------------------------------------------------
-     Marquee pause control
-     -------------------------------------------------------- */
-  const initMarquee = () => {
-    if (prefersReduced) return;
-    document.querySelectorAll('.marquee').forEach(marquee => {
-      const btn = document.createElement('button');
-      btn.className = 'marquee__pause';
-      btn.setAttribute('aria-pressed', 'false');
-      btn.setAttribute('aria-label', 'Pause scrolling list');
-      btn.textContent = '\u23F8';
-      btn.addEventListener('click', () => {
-        const paused = marquee.classList.toggle('marquee--paused');
-        btn.setAttribute('aria-pressed', String(paused));
-        btn.setAttribute('aria-label', paused ? 'Resume scrolling list' : 'Pause scrolling list');
-        btn.textContent = paused ? '\u25B8' : '\u23F8';
-      });
-      marquee.append(btn);
-    });
-  };
-
-  /* --------------------------------------------------------
-     Footer year
+     Year stamps
      -------------------------------------------------------- */
   const initYear = () => {
     document.querySelectorAll('[data-year]').forEach(el => {
@@ -404,7 +133,54 @@
   };
 
   /* --------------------------------------------------------
-     Plan flow — guided inquiry wizard (#plan-form)
+     Founding Families capture — fetch submit, honest success
+     panel with a WhatsApp share (no counters, no gimmicks)
+     -------------------------------------------------------- */
+  const initCapture = () => {
+    document.querySelectorAll('form[data-capture]').forEach(form => {
+      form.addEventListener('submit', async e => {
+        e.preventDefault();
+        const btn = form.querySelector('button[type="submit"]');
+        btn.disabled = true;
+        btn.textContent = 'Saving…';
+        try {
+          const res = await fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+            body: JSON.stringify(Object.fromEntries(new FormData(form)))
+          });
+          if (!(await res.json()).success) throw new Error('failed');
+          const share = encodeURIComponent(
+            'A boutique event venue for 50–125 guests is coming to Brampton — bring your own caterer, opening 2027. Founding families book first: https://thelaurelroom.ca'
+          );
+          const done = document.createElement('div');
+          done.className = 'capture-done';
+          done.innerHTML = `
+            <h3>You&rsquo;re on the founding list.</h3>
+            <p>One email when tours open. If someone in your family plans the parties, they&rsquo;ll want to know about this:</p>
+            <div class="share">
+              <a class="btn" href="https://wa.me/?text=${share}" target="_blank" rel="noopener">Share on WhatsApp</a>
+              <a class="linkline" href="https://instagram.com/thelaurelroom" target="_blank" rel="noopener">Follow the build</a>
+            </div>`;
+          form.replaceWith(done);
+        } catch {
+          btn.disabled = false;
+          btn.textContent = 'Save my spot';
+          let err = form.querySelector('.plan__error');
+          if (!err) {
+            err = document.createElement('p');
+            err.className = 'plan__error plan__error--show';
+            form.append(err);
+          }
+          err.classList.add('plan__error--show');
+          err.textContent = 'That didn’t go through. Try again, or email hello@thelaurelroom.ca.';
+        }
+      });
+    });
+  };
+
+  /* --------------------------------------------------------
+     Plan wizard (#plan-form) — same contract as v2
      -------------------------------------------------------- */
   const initPlanFlow = () => {
     const form = document.getElementById('plan-form');
@@ -467,7 +243,6 @@
       form.closest('.plan')?.scrollIntoView({ behavior: prefersReduced ? 'auto' : 'smooth', block: 'start' });
     });
 
-    /* --- summary + estimate --- */
     const fmtDate = value => {
       if (!value) return '';
       const d = new Date(`${value}T12:00:00`);
@@ -478,9 +253,9 @@
     const rateIndexFor = value => {
       if (!value) return -1;
       const day = new Date(`${value}T12:00:00`).getDay();
-      if (day === 6) return 2;               // Saturday
-      if (day === 5 || day === 0) return 1;  // Friday & Sunday
-      return 0;                              // Mon–Thu
+      if (day === 6) return 2;
+      if (day === 5 || day === 0) return 1;
+      return 0;
     };
 
     const updateSummary = () => {
@@ -488,7 +263,6 @@
       const val = name => form.querySelector(`input[name="${name}"]:checked`)?.value
         || form.querySelector(`select[name="${name}"]`)?.value
         || '';
-
       const set = (key, text) => {
         const dd = summary.querySelector(`[data-summary="${key}"]`);
         if (dd) dd.textContent = text;
@@ -500,8 +274,6 @@
       set('date', dateVal ? fmtDate(dateVal) + (flexible ? ' (flexible)' : '') : (flexible ? 'Flexible' : ''));
       set('guest_count', val('guest_count') ? `${val('guest_count')} guests` : '');
       set('package', val('package'));
-      const preset = val('design_preset');
-      set('design_preset', preset === 'No preference' ? '' : preset);
 
       const estimateEl = summary.querySelector('[data-estimate]');
       if (estimateEl) {
@@ -525,7 +297,6 @@
       if (e.target.name === 'preferred_date') updateSummary();
     });
 
-    /* --- preselect package from ?package= --- */
     const pkgParam = new URLSearchParams(location.search).get('package');
     if (pkgParam) {
       const map = { space: 'The Space', styled: 'The Styled Experience', full: 'The Full Celebration' };
@@ -539,15 +310,13 @@
     updateSummary();
     render();
 
-    /* --- submit --- */
     form.addEventListener('submit', async e => {
       e.preventDefault();
       if (!validateStep()) return;
       if (form.querySelector('input[name="botcheck"]')?.checked) return;
 
       submitBtn.disabled = true;
-      const rollLabel = submitBtn.querySelector('.btn__label span');
-      if (rollLabel) rollLabel.textContent = 'Sending…';
+      submitBtn.textContent = 'Sending…';
 
       const data = Object.fromEntries(new FormData(form));
       delete data.botcheck;
@@ -558,35 +327,31 @@
           headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
           body: JSON.stringify(data)
         });
-        const result = await res.json();
-        if (!result.success) throw new Error('submit failed');
-
+        if (!(await res.json()).success) throw new Error('submit failed');
         const panel = document.createElement('div');
         panel.className = 'plan-success';
         panel.innerHTML = `
           <h3>Got it.</h3>
-          <p>We’ll get back to you within 24 hours — usually faster.
-          If it’s urgent, call or text <a href="tel:6472861161" class="text-brass">647-286-1161</a>.</p>`;
+          <p>We&rsquo;ll get back to you within 24 hours &mdash; usually faster.
+          If it&rsquo;s urgent, call or text <a class="linkline linkline--plain" href="tel:6472861161">647-286-1161</a>.</p>`;
         form.replaceWith(panel);
         panel.closest('.plan')?.scrollIntoView({ behavior: prefersReduced ? 'auto' : 'smooth', block: 'start' });
       } catch {
         submitBtn.disabled = false;
-        if (rollLabel) rollLabel.textContent = 'Send inquiry';
+        submitBtn.textContent = 'Send inquiry';
         showError('That didn’t go through. Try again, or email hello@thelaurelroom.ca directly.');
       }
     });
   };
 
   /* --------------------------------------------------------
-     Boot
+     Boot — isolated so one failure can't take down the rest
      -------------------------------------------------------- */
   const boot = () => {
-    // Isolate modules so one failure can't blank the page
-    [initButtons, initReveals, initSplits, initNav, initParallax, initCounters,
-     initLightbox, initFaq, initFilters, initMarquee, initStickyCta, initYear,
-     initPlanFlow].forEach(fn => {
-      try { fn(); } catch (err) { console.warn('module failed:', fn.name, err); }
-    });
+    [initNav, initPresetSwitch, initFaq, initStickyCta, initYear, initCapture, initPlanFlow]
+      .forEach(fn => {
+        try { fn(); } catch (err) { console.warn('module failed:', fn.name, err); }
+      });
   };
 
   if (document.readyState === 'loading') {
