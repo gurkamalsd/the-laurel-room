@@ -1,0 +1,10 @@
+// Cloudflare Worker configuration — serves this repo as a static site.
+// Deployed automatically on every push to main via Workers Builds (Git connection).
+{
+  "name": "the-laurel-room",
+  "compatibility_date": "2026-08-02",
+  "assets": {
+    "directory": ".",
+    "not_found_handling": "404-page"
+  }
+}
