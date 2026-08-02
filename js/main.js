@@ -134,6 +134,14 @@
       toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
       menu.classList.toggle('nav__mobile--open', open);
       document.body.style.overflow = open ? 'hidden' : '';
+      if (open) {
+        // wait for the overlay's visibility to apply before moving focus
+        requestAnimationFrame(() => requestAnimationFrame(() => {
+          menu.querySelector('a')?.focus();
+        }));
+      } else {
+        toggle.focus();
+      }
     };
 
     toggle.addEventListener('click', () => {
@@ -141,7 +149,20 @@
     });
     menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setOpen(false)));
     document.addEventListener('keydown', e => {
-      if (e.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') setOpen(false);
+      if (toggle.getAttribute('aria-expanded') !== 'true') return;
+      if (e.key === 'Escape') { setOpen(false); return; }
+      if (e.key !== 'Tab') return;
+      // keep focus cycling between the overlay links and the toggle button
+      const focusables = [...menu.querySelectorAll('a'), toggle];
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault(); last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault(); first.focus();
+      } else if (!focusables.includes(document.activeElement)) {
+        e.preventDefault(); first.focus();
+      }
     });
   };
 
@@ -255,7 +276,9 @@
     closeBtn.addEventListener('click', close);
     box.addEventListener('click', e => { if (e.target === box) close(); });
     document.addEventListener('keydown', e => {
-      if (e.key === 'Escape' && box.classList.contains('lightbox--open')) close();
+      if (!box.classList.contains('lightbox--open')) return;
+      if (e.key === 'Escape') { close(); return; }
+      if (e.key === 'Tab') { e.preventDefault(); closeBtn.focus(); }
     });
   };
 
@@ -328,11 +351,41 @@
   const initStickyCta = () => {
     const bar = document.querySelector('.sticky-cta');
     if (!bar) return;
+    let footerInView = false;
+    const footer = document.querySelector('.footer');
+    if (footer) {
+      new IntersectionObserver(entries => {
+        footerInView = entries[0].isIntersecting;
+        onScroll();
+      }, { rootMargin: '80px' }).observe(footer);
+    }
     const onScroll = () => {
-      bar.classList.toggle('sticky-cta--show', window.scrollY > window.innerHeight * 0.7);
+      bar.classList.toggle('sticky-cta--show',
+        !footerInView && window.scrollY > window.innerHeight * 0.7);
     };
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
+  };
+
+  /* --------------------------------------------------------
+     Marquee pause control
+     -------------------------------------------------------- */
+  const initMarquee = () => {
+    if (prefersReduced) return;
+    document.querySelectorAll('.marquee').forEach(marquee => {
+      const btn = document.createElement('button');
+      btn.className = 'marquee__pause';
+      btn.setAttribute('aria-pressed', 'false');
+      btn.setAttribute('aria-label', 'Pause scrolling list');
+      btn.textContent = '\u23F8';
+      btn.addEventListener('click', () => {
+        const paused = marquee.classList.toggle('marquee--paused');
+        btn.setAttribute('aria-pressed', String(paused));
+        btn.setAttribute('aria-label', paused ? 'Resume scrolling list' : 'Pause scrolling list');
+        btn.textContent = paused ? '\u25B8' : '\u23F8';
+      });
+      marquee.append(btn);
+    });
   };
 
   /* --------------------------------------------------------
@@ -531,6 +584,7 @@
     initLightbox();
     initFaq();
     initFilters();
+    initMarquee();
     initStickyCta();
     initYear();
     initPlanFlow();
