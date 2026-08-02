@@ -54,6 +54,11 @@
     }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 
     targets.forEach(el => io.observe(el));
+
+    // Failsafe: if observers misbehave (older Safari quirks), show everything
+    setTimeout(() => {
+      document.querySelectorAll('[data-reveal]:not(.is-in)').forEach(el => el.classList.add('is-in'));
+    }, 4000);
   };
 
   /* --------------------------------------------------------
@@ -171,6 +176,7 @@
      -------------------------------------------------------- */
   const initParallax = () => {
     if (prefersReduced) return;
+    if (window.matchMedia('(hover: none) and (pointer: coarse)').matches) return;
     const els = document.querySelectorAll('[data-parallax]');
     if (!els.length) return;
 
@@ -575,19 +581,12 @@
      Boot
      -------------------------------------------------------- */
   const boot = () => {
-    initButtons();
-    initReveals();
-    initSplits();
-    initNav();
-    initParallax();
-    initCounters();
-    initLightbox();
-    initFaq();
-    initFilters();
-    initMarquee();
-    initStickyCta();
-    initYear();
-    initPlanFlow();
+    // Isolate modules so one failure can't blank the page
+    [initButtons, initReveals, initSplits, initNav, initParallax, initCounters,
+     initLightbox, initFaq, initFilters, initMarquee, initStickyCta, initYear,
+     initPlanFlow].forEach(fn => {
+      try { fn(); } catch (err) { console.warn('module failed:', fn.name, err); }
+    });
   };
 
   if (document.readyState === 'loading') {
