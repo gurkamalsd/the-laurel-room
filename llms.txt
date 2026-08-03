@@ -1,6 +1,6 @@
 # The Laurel Room
 
-> An event venue for 50–125 guests opening in Brampton, Ontario in 2027. Bring your own caterer. Pricing published.
+> An event venue for 50–125 guests opening in Brampton, Ontario in 2027. Outside catering welcome — bring your own caterer, no food minimum. Pricing published as ranges.
 
 ## About
 The Laurel Room is an event venue being created for celebrations of 50 to 125 guests in Brampton, Ontario, opening in 2027. Founded by Khushbu Dhahan. It exists because Brampton families kept having to choose between a banquet hall built for 300 with a mandatory in-house menu, and a community centre. The venue operates a bring-your-own-caterer model and publishes its pricing.
@@ -11,7 +11,7 @@ The space itself has not been secured yet, and the website deliberately does not
 - Location: Brampton, Ontario, Canada
 - Capacity: 50–125 guests
 - Catering: bring your own — any caterer, any cuisine. No in-house menu, no food minimums.
-- Pricing: published, $795–$2,995 depending on package and day, plus 13% HST
+- Pricing: published as two-sided ranges, $900–$6,200 depending on package and day of week, plus 13% HST. Ranges rather than fixed prices because no space has been leased yet — the building decides the number.
 - Opening: 2027
 - Founder: Khushbu Dhahan
 - Phone: 647-286-1161 (call or text)
@@ -20,12 +20,19 @@ The space itself has not been secured yet, and the website deliberately does not
 - Website: https://thelaurelroom.ca
 
 ## Packages
-- The Space (from $895): the room and the essentials — tables and chairs for up to 125, somewhere for your caterer to work, sound, setup and cleanup.
-- The Styled Experience (from $1,695): everything in The Space, plus any of the five looks — linens, place settings, centrepieces, a dressed backdrop, lighting to match, and full setup and teardown.
-- The Full Celebration (from $2,495): full-day access, a coordinator on the floor, upgraded styling and lighting, cake table and welcome sign.
-- Signature: The Mehndi Night ($2,195, Friday or Saturday evening) · The Morning Celebration ($1,095, mornings — aqiqah, naming ceremony, christening, brunch shower) · The Corporate Retreat ($795, Mon–Thu, four hours).
+All prices plus 13% HST. Setup, strike, cleaning and a site rep are inside the package price.
 
-Day rates: Mon–Thu / Fri & Sun / Saturday — The Space $895 / $1,195 / $1,395 · The Styled Experience $1,695 / $1,995 / $2,195 · The Full Celebration $2,495 / $2,695 / $2,995. All prices plus 13% HST.
+| Package | Mon–Thu | Fri–Sun |
+|---|---|---|
+| The Space (one 5.5-hour block) | $1,200–$1,500 | $1,600–$2,200 |
+| The Styled Experience (one block, styled) | $2,300–$2,700 | $2,800–$3,800 |
+| The Full Celebration (full day + coordinator) | $3,800–$4,400 | $4,500–$6,200 |
+
+Signature packages: The Mehndi Night (Friday or Saturday evening) $3,000–$4,200 · The Morning Celebration $1,400–$2,000 · The Corporate Retreat (Mon–Thu, four hours) $1,100–$1,500 · The Short Block (Mon–Thu only, four hours) $900–$1,200.
+
+A useful anchor: most 100-guest Saturday evenings land between $3,200 and $4,300 all in, HST included.
+
+Add-on prices are exact, because they do not depend on the building.
 
 ## Booking blocks
 Daytime 10:00 AM–3:30 PM · evening 5:30 PM–11:00 PM · full day 10:00 AM–11:00 PM. A morning booking and an evening booking can happen on the same day.
@@ -37,7 +44,7 @@ Design directions chosen before a space is signed, included with The Styled Expe
 Mehndi nights and sangeets, nikkahs and intimate weddings, baby and bridal showers, aqiqahs and naming ceremonies, milestone birthdays, engagement parties, Diwali and Eid gatherings, corporate days.
 
 ## Founding families
-A free, capped early list. Founding families receive 10% off any 2027 date, first pick of the calendar, and an invitation to see the space before it opens.
+A free early list, capped at 30 dates. Founding families lock their price at the top of the published band for their day, get first pick of the calendar, and are invited to see the space before it opens. Anyone who joined while a 10% discount was advertised keeps that instead.
 
 ## Links
 - Home: https://thelaurelroom.ca

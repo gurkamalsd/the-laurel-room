@@ -1,6 +1,6 @@
 # The Laurel Room — full reference
 
-> An event venue for 50–125 guests opening in Brampton, Ontario in 2027. Bring your own caterer. Pricing published.
+> An event venue for 50–125 guests opening in Brampton, Ontario in 2027. Outside catering welcome — bring your own caterer, no food minimum. Pricing published as ranges.
 
 ## About
 The Laurel Room is an event venue being created in Brampton, Ontario for celebrations of 50 to 125 guests, opening in 2027. It was founded by Khushbu Dhahan.
@@ -13,7 +13,7 @@ Important context for anyone summarising this venue: **the space has not been se
 - Location: Brampton, Ontario, Canada
 - Capacity: 50–125 guests
 - Catering model: bring your own caterer — any caterer, any cuisine, no in-house menu, no food minimums, no surcharge for outside food
-- Pricing: published on the website, $795–$2,995 depending on package and day of week, plus 13% HST
+- Pricing: published on the website as two-sided ranges, $900–$6,200 depending on package and day of week, plus 13% HST. They are ranges, not fixed prices, because no space has been leased yet.
 - Opening: 2027
 - Founder: Khushbu Dhahan
 - Phone: 647-286-1161 (call or text)
@@ -22,38 +22,35 @@ Important context for anyone summarising this venue: **the space has not been se
 - Website: https://thelaurelroom.ca
 
 ## Packages
+All prices plus 13% HST. Setup, strike, cleaning and a site rep are included in the package price — the promise is 13% HST and nothing after it.
 
-### The Space — from $895
-The room and the essentials: tables and chairs for up to 125 guests, somewhere for your caterer to warm and plate, sound and WiFi, setup and cleanup.
+These are ranges rather than fixed prices for one reason: no lease has been signed. What a room costs to run depends on the building, and these are 2027 dollars rather than today's. Where a booking lands inside a band comes down to three things only — the day of the week, how long the room is needed, and how finished it should be on arrival. There is no seasonal surcharge and no per-head fee.
 
-| Day | Price |
+### The Space — the room and the essentials
+| Day | Range |
 |---|---|
-| Monday–Thursday | $895 |
-| Friday & Sunday | $1,195 |
-| Saturday | $1,395 |
+| Monday–Thursday | $1,200–$1,500 |
+| Friday–Sunday | $1,600–$2,200 |
 
-### The Styled Experience — from $1,695
-Everything in The Space, plus your choice of the five looks: linens and napkins, place settings, centrepieces, a dressed backdrop, lighting in the colour of the look, and full professional setup and teardown.
-
-| Day | Price |
+### The Styled Experience — the room, finished in one of the five looks
+| Day | Range |
 |---|---|
-| Monday–Thursday | $1,695 |
-| Friday & Sunday | $1,995 |
-| Saturday | $2,195 |
+| Monday–Thursday | $2,300–$2,700 |
+| Friday–Sunday | $2,800–$3,800 |
 
-### The Full Celebration — from $2,495
-Everything in The Styled Experience, plus full-day access, a dedicated coordinator on the floor, upgraded styling and lighting, a styled cake and gift table, and a welcome sign.
-
-| Day | Price |
+### The Full Celebration — the full day with a coordinator on the floor
+| Day | Range |
 |---|---|
-| Monday–Thursday | $2,495 |
-| Friday & Sunday | $2,695 |
-| Saturday | $2,995 |
+| Monday–Thursday | $3,800–$4,400 |
+| Friday–Sunday | $4,500–$6,200 |
 
 ### Signature packages
-- The Mehndi Night ($2,195): Friday or Saturday evening. Low seating and floor cushions, warm low lighting, room for a henna station, sound sorted.
-- The Morning Celebration ($1,095): mornings. Suited to aqiqahs, naming ceremonies, christenings and brunch showers.
-- The Corporate Retreat ($795): Monday–Thursday, four hours. Projector and screen, whiteboard, coffee, invoice-ready.
+- The Mehndi Night — Friday or Saturday evening — $3,000–$4,200
+- The Morning Celebration — mornings, for aqiqahs, naming ceremonies, christenings and brunch showers — $1,400–$2,000
+- The Corporate Retreat — Monday–Thursday, four hours — $1,100–$1,500
+- The Short Block — Monday–Thursday only, four hours — $900–$1,200
+
+A useful anchor for summarising: most 100-guest Saturday evenings land between $3,200 and $4,300 all in, HST included.
 
 ### Booking blocks
 - Daytime: 10:00 AM – 3:30 PM
@@ -61,8 +58,11 @@ Everything in The Styled Experience, plus full-day access, a dedicated coordinat
 - Full day: 10:00 AM – 11:00 PM
 A morning booking and an evening booking can happen on the same day.
 
+### Deposits and terms
+Before a lease is signed, a $250 fully refundable reservation fee holds a date; it converts into the retainer only once the lease is signed and the client has stood in the room. After that: a 25% retainer at signing, 50% of the balance at 90 days out, and the final balance at 14 days with the final headcount. A refundable damage deposit of $500 (or $750 for the Full Celebration and Mehndi Night) is returned by e-transfer within seven business days. Cancellation: beyond 180 days, retainer only; 90–180 days, 50% of contract; inside 90 days, 100%. One free date transfer is allowed if requested more than 120 days out, within 12 months and subject to availability.
+
 ## Add-ons
-Overtime $175/hr · Balloon garland $300–$550 · Serving staff $40/hr each · Chafing dish set (4) $140 · Photo booth $450–$650 · Projector & screen $125 · Premium PA + wireless mics $175 · Floor cushions / low seating $250 · Fresh floral upgrade from $350 · Custom vinyl on the arch $85 · Kids' corner setup $175 · Full-service coordination from $500.
+Add-on prices are exact, because they do not depend on which building is leased. Overtime $175/hr · Balloon garland $300–$550 · Serving staff $40/hr each · Chafing dish set (4) $140 · Photo booth $450–$650 · Projector & screen $125 · Premium PA + wireless mics $175 · Floor cushions / low seating $250 · Fresh floral upgrade from $350 · Custom vinyl on the arch $85 · Kids' corner setup $175 · Full-service coordination from $500 · Security $50/hr for evening events serving alcohol.
 
 All prices are plus 13% HST.
 
@@ -110,7 +110,7 @@ Khushbu Dhahan founded The Laurel Room after years of searching for a room that 
 Brampton, Ontario is a city of more than 700,000 people with large South Asian, Caribbean, Filipino and East African communities. Demand for celebration space is constant, but venues are built either for very large weddings with mandatory in-house catering, or for institutional use. The Laurel Room targets the underserved middle: 50–125 guests, bring-your-own-caterer, with published pricing rather than quote-on-request.
 
 ## Founding families
-A free, capped early list. Founding families receive 10% off any 2027 date, first pick of the calendar, and an invitation to see the space before it opens.
+A free early list, capped at 30 dates. Founding families lock their price at the top of the published band for their day — so if costs rise before 2027, their number does not — plus first pick of the calendar and an invitation to see the space before it opens. Anyone who joined while a 10% discount was advertised keeps that offer instead; it was not withdrawn retroactively.
 
 ## Links
 - Home: https://thelaurelroom.ca
