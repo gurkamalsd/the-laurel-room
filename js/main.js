@@ -143,6 +143,7 @@
             err.className = 'plan__error';
             form.append(err);
           }
+          err.setAttribute('role', 'alert');
           err.classList.add('plan__error--show');
           err.textContent = 'That didn’t go through. Try again, or email hello@thelaurelroom.ca.';
         }
@@ -161,6 +162,7 @@
     const nextBtn = form.querySelector('[data-plan-next]');
     const submitBtn = form.querySelector('[data-plan-submit]');
     const errorEl = form.querySelector('.plan__error');
+    if (errorEl) errorEl.setAttribute('role', 'alert');
     const summary = document.querySelector('[data-plan-summary]');
     let current = 0;
 
@@ -176,6 +178,7 @@
       dots.forEach((dot, i) => {
         dot.toggleAttribute('data-active', i === current);
         dot.toggleAttribute('data-done', i < current);
+        dot.setAttribute('aria-current', i === current ? 'step' : 'false');
       });
       if (prevBtn) prevBtn.hidden = current === 0;
       if (nextBtn) nextBtn.hidden = current === steps.length - 1;
@@ -200,11 +203,18 @@
     };
 
     prevBtn?.addEventListener('click', () => {
-      if (current > 0) { current -= 1; render(); }
+      if (current > 0) { current -= 1; render(); focusStep(); }
     });
+    const focusStep = () => {
+      const step = steps[current];
+      if (!step) return;
+      step.setAttribute('tabindex', '-1');
+      step.focus({ preventScroll: true });
+    };
+
     nextBtn?.addEventListener('click', () => {
       if (!validateStep()) return;
-      if (current < steps.length - 1) { current += 1; render(); }
+      if (current < steps.length - 1) { current += 1; render(); focusStep(); }
       form.closest('.plan')?.scrollIntoView(scrollOpts);
     });
 
