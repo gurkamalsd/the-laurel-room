@@ -8,67 +8,71 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/brand/favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/brand/favicon-16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/brand/apple-touch-icon.png">
-  <title>Pricing — The Laurel Room | Brampton venue from $895 for 50–125 guests, opening 2027</title>
-  <meta name="description" content="Day rates printed in full: The Space from $895, The Styled Experience from $1,695, The Full Celebration from $2,495. Mehndi nights, morning showers, aqiqahs, all 12 add-ons priced. 13% HST and nothing hidden after it. Brampton venue for 50–125 guests, opening 2027.">
+  <title>Pricing — The Laurel Room | A Brampton Venue from $895 for 50–125 Guests</title>
+  <meta name="description" content="Day rates published in full: The Space from $895, The Styled Experience from $1,695, The Full Celebration from $2,495. Mehndi nights, morning aqiqahs and showers, corporate days, and all twelve add-ons priced. Bring your own caterer, any cuisine. 13% HST and nothing after it. Brampton, opening 2027.">
   <meta name="robots" content="index, follow">
   <meta name="ai-content-declarations" content="venue-information, pricing, cultural-events">
   <meta name="author" content="The Laurel Room Inc.">
   <meta name="color-scheme" content="light dark">
-  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#F7F2E6">
-  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#221D14">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#FFFFFF">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0D1110">
   <link rel="canonical" href="https://thelaurelroom.ca/packages.html">
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Pricing you can read — The Laurel Room, Brampton">
-  <meta property="og:description" content="Three packages from $895 with full day rates, signature mehndi and morning packages, and every add-on priced. 13% HST and nothing hidden after it. Opening 2027.">
+  <meta property="og:title" content="Pricing you can read without asking — The Laurel Room, Brampton">
+  <meta property="og:description" content="Three packages from $895, every day rate and every add-on printed. Bring your own caterer. 13% HST and nothing after it.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://thelaurelroom.ca/packages.html">
-  <meta property="og:image" content="https://thelaurelroom.ca/images/brand/og-image.png">
+  <meta property="og:image" content="https://thelaurelroom.ca/images/brand/og-card.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="The Laurel Room — a room in Brampton for the celebrations that never fit. 50–125 guests, bring your own caterer, opening 2027.">
   <meta property="og:site_name" content="The Laurel Room">
-
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Pricing you can read — The Laurel Room, Brampton">
-  <meta name="twitter:description" content="Three packages from $895, every day rate and add-on printed. 13% HST and nothing hidden after it. Opening 2027.">
-  <meta name="twitter:image" content="https://thelaurelroom.ca/images/brand/og-image.png">
+  <meta name="twitter:title" content="Pricing you can read without asking — The Laurel Room, Brampton">
+  <meta name="twitter:description" content="Three packages from $895, every day rate and every add-on printed. Bring your own caterer. 13% HST and nothing after it.">
+  <meta name="twitter:image" content="https://thelaurelroom.ca/images/brand/og-card.png">
+  <meta name="twitter:image:alt" content="The Laurel Room — a room in Brampton for the celebrations that never fit. 50–125 guests, bring your own caterer, opening 2027.">
 
-  <!-- Performance -->
-  <link rel="preload" as="font" type="font/woff2" href="fonts/fraunces-normal-latin.woff2" crossorigin>
-  <link rel="preload" as="font" type="font/woff2" href="fonts/aneklatin-normal-latin.woff2" crossorigin>
-
-  <!-- Fonts (self-hosted) + stylesheet -->
-  <link rel="stylesheet" href="css/fonts.css?v=4">
-  <link rel="stylesheet" href="css/style.css?v=4">
-  <script src="js/main.js?v=4" defer></script>
+  <link rel="preload" as="font" type="font/woff2" href="fonts/newsreader-normal-latin.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="fonts/instrumentsans-normal-latin.woff2" crossorigin>
+  <link rel="stylesheet" href="css/fonts.css?v=5">
+  <link rel="stylesheet" href="css/style.css?v=5">
+  <script src="js/main.js?v=5" defer></script>
 
   <style>
-    /* page: packages */
+    /* packages.html — the add-on list runs in two columns on wide screens */
     .addons {
       display: grid;
       grid-template-columns: 1fr;
       gap: 0 clamp(2rem, 5vw, 4.5rem);
     }
-    @media (min-width: 860px) {
+    @media (min-width: 861px) {
       .addons { grid-template-columns: 1fr 1fr; }
     }
-    @media (max-width: 859px) {
-      .addons .rulelist + .rulelist { border-top: 0; }
+    @media (max-width: 860px) {
+      .addons .rows + .rows { border-top: 0; }
     }
   </style>
 
-  <!-- Structured Data — Service / Offer Catalog -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Service",
     "name": "The Laurel Room Event Venue Rental",
+    "serviceType": "Event venue rental",
     "provider": {
       "@type": "LocalBusiness",
       "name": "The Laurel Room",
       "telephone": "+16472861161",
-      "email": "hello@thelaurelroom.ca"
+      "email": "hello@thelaurelroom.ca",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Brampton",
+        "addressRegion": "ON",
+        "addressCountry": "CA"
+      }
     },
-    "description": "Event venue rental in Brampton, Ontario for 50–125 guests. Three packages with published day rates, bring-your-own-caterer model, opening 2027 (construction estimate).",
+    "description": "Event venue rental in Brampton, Ontario for 50–125 guests, opening 2027. Three packages with published day rates and a bring-your-own-caterer model. All prices plus 13% HST.",
     "areaServed": "Brampton, Ontario",
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
@@ -79,21 +83,21 @@
           "name": "The Space",
           "price": "895",
           "priceCurrency": "CAD",
-          "description": "5.5-hour venue rental with 12 harvest tables, 125 cross-back chairs, and kitchenette for up to 125 guests"
+          "description": "A 5.5-hour booking for up to 125 guests. Tables and chairs, sound, WiFi, setup and cleanup included. Bring your own caterer."
         },
         {
           "@type": "Offer",
           "name": "The Styled Experience",
           "price": "1695",
           "priceCurrency": "CAD",
-          "description": "Fully styled venue in one of five looks — linens, charger plates, backdrop arch, uplighting, fairy-light canopy, and full professional setup"
+          "description": "A 5.5-hour booking styled in any one of five design directions — linens and place settings, centrepieces, a backdrop arch dressed to match, and lighting in the colour of the look."
         },
         {
           "@type": "Offer",
           "name": "The Full Celebration",
           "price": "2495",
           "priceCurrency": "CAD",
-          "description": "Full-day access from 10 AM to 11 PM with a dedicated coordinator, premium styling upgrades, and enhanced lighting"
+          "description": "A full-day booking, 10:00 AM to 11:00 PM, with a coordinator on the floor and upgraded styling throughout."
         }
       ]
     }
@@ -104,24 +108,23 @@
 
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- ============ NAVIGATION ============ -->
   <header class="nav" data-nav>
     <div class="nav__inner">
       <a class="wordmark" href="index.html">The Laurel Room</a>
       <nav class="nav__links" aria-label="Primary">
-        <a class="nav__link" href="about.html">The story</a>
-        <a class="nav__link" href="gallery.html">The room</a>
+        <a class="nav__link" href="about.html">Story</a>
+        <a class="nav__link" href="gallery.html">Looks</a>
         <a class="nav__link nav__link--current" href="packages.html" aria-current="page">Pricing</a>
         <a class="nav__link" href="contact.html">Plan an event</a>
       </nav>
       <a class="btn nav__cta" href="#founding">Founding families</a>
-      <button class="nav__toggle" data-nav-toggle aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu"><span></span><span></span></button>
+      <button class="nav__toggle" data-nav-toggle aria-expanded="false" aria-controls="menu" aria-label="Open menu"><span></span><span></span></button>
     </div>
-    <div class="nav__mobile" id="mobile-menu" data-nav-menu>
+    <div class="nav__mobile" id="menu" data-nav-menu>
       <nav aria-label="Mobile">
         <a class="nav__mobile-link" href="index.html">Home</a>
-        <a class="nav__mobile-link" href="about.html">The story</a>
-        <a class="nav__mobile-link" href="gallery.html">The room</a>
+        <a class="nav__mobile-link" href="about.html">Story</a>
+        <a class="nav__mobile-link" href="gallery.html">Looks</a>
         <a class="nav__mobile-link" href="packages.html" aria-current="page">Pricing</a>
         <a class="nav__mobile-link" href="contact.html">Plan an event</a>
       </nav>
@@ -135,303 +138,308 @@
 
   <main id="main">
 
-  <!-- ============ TITLEBLOCK + TIME BLOCKS ============ -->
-  <section class="titleblock">
-    <div class="container">
-      <div class="titleblock__meta">
-        <span>Dossier &middot; <strong>The Laurel Room</strong></span>
-        <span>Sheet &middot; Pricing</span>
-        <span class="spacer"></span>
-        <span>Rates as of &middot; <strong>Aug 2026</strong></span>
-        <span>Opening &middot; <strong>2027</strong></span>
-      </div>
-
-      <h1 class="display-1">Pricing you can read.</h1>
-      <p class="lead titleblock__dek">
-        Three packages, day rates on the table, 13% HST and nothing hidden after it.
-        The room opens in 2027 (construction estimate); the prices open today.
-      </p>
-
-      <div class="specdex mt-4" role="list" aria-label="Time blocks">
-        <div class="specdex__row" role="listitem">
-          <span class="specdex__no">A</span>
-          <span class="specdex__key">Block A &middot; daytime</span>
-          <span class="specdex__val num">10:00 AM&ndash;3:30 PM &middot; <em>5.5 hours of daylight</em></span>
-        </div>
-        <div class="specdex__row" role="listitem">
-          <span class="specdex__no">B</span>
-          <span class="specdex__key">Block B &middot; evening</span>
-          <span class="specdex__val num">5:30 PM&ndash;11:00 PM &middot; <em>ends at 11; overtime is $175/hr</em></span>
-        </div>
-        <div class="specdex__row" role="listitem">
-          <span class="specdex__no">A+B</span>
-          <span class="specdex__key">Full day</span>
-          <span class="specdex__val num">10:00 AM&ndash;11:00 PM &middot; <em>setup to last song</em></span>
-        </div>
-      </div>
-
-      <p class="mt-3 prose">
-        Weekends can run both blocks: a morning shower at 10:00 and an evening sangeet
-        at 5:30 on the same Saturday, with two hours between them to reset the room.
-      </p>
-    </div>
-  </section>
-
-  <!-- ============ THE PACKAGES ============ -->
-  <section class="section" id="packages">
-    <div class="container relative">
-      <span class="annotation annotation--margin" aria-hidden="true">rates as printed &middot; aug 2026</span>
-      <div class="section-head">
-        <h2 class="display-2">Same room, same tables &mdash; three levels of finished.</h2>
-        <p class="lead">
-          Every package books the same 2,000 square feet, the same 12 harvest tables,
-          the same 20-plus parking spaces. The difference is how much is already done
-          when you walk in.
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <h1 class="d1 hero__title anim">Pricing you can read without asking.</h1>
+        <p class="lead hero__dek anim anim-1">
+          Three packages, day rates published, 13% HST and nothing after it.
         </p>
       </div>
+    </section>
 
-      <div class="tiers">
-        <div class="tier">
-          <h3 class="tier__name">The Space</h3>
-          <p class="tier__for">The blank canvas &mdash; you or your decorator style it.</p>
-          <p class="tier__price num"><span class="from">from</span>$895</p>
-          <p class="tier__meta">5.5-hour block &middot; up to 125 guests &middot; + 13% HST</p>
-          <dl class="rates">
-            <div><dt>Mon&ndash;Thu</dt><dd>$895</dd></div>
-            <div><dt>Fri &amp; Sun</dt><dd>$1,195</dd></div>
-            <div><dt>Saturday</dt><dd>$1,395</dd></div>
-          </dl>
-          <ul class="tier__list">
-            <li>Up to 125 seated guests</li>
-            <li>12 harvest tables, 125 cross-back chairs</li>
-            <li>Kitchenette for warming and plating</li>
-            <li>Bluetooth speaker and WiFi</li>
-            <li>20+ parking spaces</li>
-            <li>Basic setup and cleanup</li>
-          </ul>
-          <a class="btn btn--quiet" href="contact.html?package=space">Start with this one</a>
+    <!-- Time blocks -->
+    <section class="section section--tight">
+      <div class="container">
+        <div class="head">
+          <h2 class="d2">Two blocks a day, or the whole day.</h2>
+          <p class="lead">Every rate on this page buys one of these three.</p>
         </div>
 
-        <div class="tier tier--featured">
-          <p class="tier__tag">The one to start with</p>
-          <h3 class="tier__name">The Styled Experience</h3>
-          <p class="tier__for">Walk into a finished look &mdash; any of the five.</p>
-          <p class="tier__price num"><span class="from">from</span>$1,695</p>
-          <p class="tier__meta">5.5-hour block &middot; any of the five looks &middot; + 13% HST</p>
-          <dl class="rates">
-            <div><dt>Mon&ndash;Thu</dt><dd>$1,695</dd></div>
-            <div><dt>Fri &amp; Sun</dt><dd>$1,995</dd></div>
-            <div><dt>Saturday</dt><dd>$2,195</dd></div>
-          </dl>
-          <ul class="tier__list">
-            <li class="lead-in">Everything in The Space, plus</li>
-            <li>Your choice of the five looks</li>
-            <li>Linen tablecloths and cloth napkins</li>
-            <li>Gold or brass charger plates</li>
-            <li>Styled centrepieces</li>
-            <li>Statement backdrop arch</li>
-            <li>LED uplighting in your look&rsquo;s colour</li>
-            <li>Fairy-light canopy</li>
-            <li>Full professional setup and teardown</li>
-          </ul>
-          <a class="btn" href="contact.html?package=styled">Start with this one</a>
-        </div>
+        <ul class="rows">
+          <li class="row">
+            <span class="row__title">Daytime</span>
+            <span class="row__detail">Sold as a five-and-a-half-hour block.</span>
+            <span class="row__value num">10:00 AM&ndash;3:30 PM</span>
+          </li>
+          <li class="row">
+            <span class="row__title">Evening</span>
+            <span class="row__detail">Also five and a half hours. Past eleven, overtime runs $175 an hour.</span>
+            <span class="row__value num">5:30 PM&ndash;11:00 PM</span>
+          </li>
+          <li class="row">
+            <span class="row__title">Full day</span>
+            <span class="row__detail">Both blocks booked as one &mdash; setup to last song.</span>
+            <span class="row__value num">10:00 AM&ndash;11:00 PM</span>
+          </li>
+        </ul>
 
-        <div class="tier">
-          <h3 class="tier__name">The Full Celebration</h3>
-          <p class="tier__for">The whole day, with a coordinator on the floor.</p>
-          <p class="tier__price num"><span class="from">from</span>$2,495</p>
-          <p class="tier__meta">Full day, 10 AM&ndash;11 PM &middot; + 13% HST</p>
-          <dl class="rates">
-            <div><dt>Mon&ndash;Thu</dt><dd>$2,495</dd></div>
-            <div><dt>Fri &amp; Sun</dt><dd>$2,695</dd></div>
-            <div><dt>Saturday</dt><dd>$2,995</dd></div>
-          </dl>
-          <ul class="tier__list">
-            <li class="lead-in">Everything in The Styled Experience, plus</li>
-            <li>Full-day access, 10 AM&ndash;11 PM</li>
-            <li>Dedicated event coordinator</li>
-            <li>Premium design upgrades</li>
-            <li>Styled cake and gift table</li>
-            <li>Welcome easel with a custom sign</li>
-            <li>Enhanced lighting</li>
-            <li>Head table premium styling</li>
-          </ul>
-          <a class="btn btn--quiet" href="contact.html?package=full">Start with this one</a>
-        </div>
-      </div>
-
-      <div class="section-foot">
-        <a class="linkline" href="gallery.html">See the five looks before you pick one</a>
-        <p class="small">Every rate above is plus 13% HST. Add-ons are priced below.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ SIGNATURE PACKAGES ============ -->
-  <section class="section" id="signature">
-    <div class="container">
-      <div class="section-head">
-        <h2 class="display-2">The mehndi night comes with the floor seating.</h2>
-        <p class="lead">
-          Three signature packages at flat prices, set up for how these events actually
-          run &mdash; not a room rate with extras bolted on.
+        <p class="prose mt-3">
+          A morning booking and an evening booking can happen on the same Saturday
+          &mdash; a brunch shower at ten, a sangeet at half past five, two different
+          families. They&rsquo;re sold separately, so you pay only for the hours you
+          asked for.
         </p>
       </div>
+    </section>
 
-      <div class="rulelist" role="list">
-        <div class="rulelist__row" role="listitem">
-          <span class="rulelist__title">The Mehndi Night</span>
-          <span class="rulelist__detail">
-            Friday or Saturday, 6 PM&ndash;12 AM. Floor cushions and low tables, warm
-            moody lighting, a henna station area, enhanced sound.
-          </span>
-          <span class="rulelist__val num">$2,195</span>
+    <!-- The packages -->
+    <section class="section" id="packages">
+      <div class="container">
+        <div class="head">
+          <h2 class="d2 d2--wide">Three packages, and the difference is how much is already done.</h2>
+          <p class="lead">
+            Each one books a room for 50 to 125 guests and your own caterer. What
+            changes is how finished it is when you walk in.
+          </p>
         </div>
-        <div class="rulelist__row" role="listitem">
-          <span class="rulelist__title">The Morning Celebration</span>
-          <span class="rulelist__detail">
-            Any day, 10 AM&ndash;2 PM. Aqiqahs, naming ceremonies, christenings,
-            brunch showers.
-          </span>
-          <span class="rulelist__val num">$1,095</span>
+
+        <div class="tiers">
+          <article class="tier">
+            <h3 class="tier__name">The Space</h3>
+            <p class="tier__price"><span class="from">from</span>$895</p>
+            <p class="tier__for">The room and the essentials. You bring the vision.</p>
+            <dl class="rates">
+              <div><dt>Mon&ndash;Thu</dt><dd>$895</dd></div>
+              <div><dt>Fri &amp; Sun</dt><dd>$1,195</dd></div>
+              <div><dt>Saturday</dt><dd>$1,395</dd></div>
+            </dl>
+            <ul class="tier__list">
+              <li>One 5.5-hour block, daytime or evening</li>
+              <li>Tables and chairs for up to 125</li>
+              <li>Somewhere for your caterer to warm and plate</li>
+              <li>Sound, WiFi, setup and cleanup</li>
+            </ul>
+            <p><a class="tlink" href="contact.html?package=space">Start with The Space</a></p>
+          </article>
+
+          <article class="tier tier--featured">
+            <p class="tier__note">Everything in The Space, already set up</p>
+            <h3 class="tier__name">The Styled Experience</h3>
+            <p class="tier__price"><span class="from">from</span>$1,695</p>
+            <p class="tier__for">You walk in and the room is already finished.</p>
+            <dl class="rates">
+              <div><dt>Mon&ndash;Thu</dt><dd>$1,695</dd></div>
+              <div><dt>Fri &amp; Sun</dt><dd>$1,995</dd></div>
+              <div><dt>Saturday</dt><dd>$2,195</dd></div>
+            </dl>
+            <ul class="tier__list">
+              <li class="lead-in">Everything in The Space, plus</li>
+              <li>Any one of the five looks</li>
+              <li>Linens, napkins, and place settings</li>
+              <li>Centrepieces styled to the look</li>
+              <li>A backdrop arch dressed to match</li>
+              <li>Lighting in the colour of the look you pick</li>
+              <li>Setting up and clearing away, done for you</li>
+            </ul>
+            <p><a class="tlink" href="contact.html?package=styled">Start with The Styled Experience</a></p>
+          </article>
+
+          <article class="tier">
+            <h3 class="tier__name">The Full Celebration</h3>
+            <p class="tier__price"><span class="from">from</span>$2,495</p>
+            <p class="tier__for">The whole day, with someone running it but you.</p>
+            <dl class="rates">
+              <div><dt>Mon&ndash;Thu</dt><dd>$2,495</dd></div>
+              <div><dt>Fri &amp; Sun</dt><dd>$2,695</dd></div>
+              <div><dt>Saturday</dt><dd>$2,995</dd></div>
+            </dl>
+            <ul class="tier__list">
+              <li class="lead-in">Everything in The Styled Experience, plus</li>
+              <li>The full day, 10:00 AM to 11:00 PM</li>
+              <li>A coordinator on the floor</li>
+              <li>Cake and gift table styled</li>
+              <li>A welcome sign with your names on it</li>
+              <li>The head table taken a step further</li>
+              <li>Upgraded lighting</li>
+            </ul>
+            <p><a class="tlink" href="contact.html?package=full">Start with The Full Celebration</a></p>
+          </article>
         </div>
-        <div class="rulelist__row" role="listitem">
-          <span class="rulelist__title">The Corporate Retreat</span>
-          <span class="rulelist__detail">
-            Monday to Thursday, four-hour block. Projector and screen, whiteboard,
-            coffee station, invoice-ready.
-          </span>
-          <span class="rulelist__val num">$795</span>
+
+        <div class="foot">
+          <a class="tlink" href="gallery.html">See the five looks before you pick one</a>
+          <p class="small">Every rate above is plus 13% HST.</p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ============ ADD-ONS ============ -->
-  <section class="section" id="addons">
-    <div class="container">
-      <div class="section-head">
-        <h2 class="display-2">Twelve add-ons, twelve printed prices.</h2>
-        <p class="lead">
-          From the $85 vinyl decal on the arch to overtime at $175 an hour,
-          because good parties run long.
+    <!-- Signature packages -->
+    <section class="section" id="signature">
+      <div class="container">
+        <div class="head">
+          <h2 class="d2 d2--wide">The mehndi night comes with the low seating.</h2>
+          <p class="lead">
+            Three flat prices, set up for how these evenings and mornings actually run.
+          </p>
+        </div>
+
+        <ul class="rows">
+          <li class="row">
+            <span class="row__title">The Mehndi Night</span>
+            <span class="row__detail">
+              Friday or Saturday evening. Low seating and floor cushions, warm low
+              lighting, room for a henna station, sound sorted.
+            </span>
+            <span class="row__value num">$2,195</span>
+          </li>
+          <li class="row">
+            <span class="row__title">The Morning Celebration</span>
+            <span class="row__detail">
+              Mornings. Aqiqahs, naming ceremonies, christenings, brunch showers.
+            </span>
+            <span class="row__value num">$1,095</span>
+          </li>
+          <li class="row">
+            <span class="row__title">The Corporate Retreat</span>
+            <span class="row__detail">
+              Monday to Thursday, four hours. Projector and screen, whiteboard,
+              coffee, invoice-ready.
+            </span>
+            <span class="row__value num">$795</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Add-ons -->
+    <section class="section" id="addons">
+      <div class="container">
+        <div class="head">
+          <h2 class="d2 d2--wide">Twelve add-ons, every price printed.</h2>
+          <p class="lead">
+            From an $85 vinyl decal on the arch to overtime at $175 an hour, because
+            good parties run long.
+          </p>
+        </div>
+
+        <div class="addons">
+          <ul class="rows">
+            <li class="row row--2">
+              <span class="row__title">Overtime</span>
+              <span class="row__value num">$175/hr</span>
+            </li>
+            <li class="row row--2">
+              <span class="row__title">Balloon garland</span>
+              <span class="row__value num">$300&ndash;$550</span>
+            </li>
+            <li class="row row--2">
+              <span class="row__title">Serving staff</span>
+              <span class="row__value num">$40/hr each</span>
+            </li>
+            <li class="row row--2">
+              <span class="row__title">Chafing dish set (4)</span>
+              <span class="row__value num">$140</span>
+            </li>
+            <li class="row row--2">
+              <span class="row__title">Photo booth</span>
+              <span class="row__value num">$450&ndash;$650</span>
+            </li>
+            <li class="row row--2">
+              <span class="row__title">Projector and screen</span>
+              <span class="row__value num">$125</span>
+            </li>
+          </ul>
+          <ul class="rows">
+            <li class="row row--2">
+              <span class="row__title">Premium PA and wireless mics</span>
+              <span class="row__value num">$175</span>
+            </li>
+            <li class="row row--2">
+              <span class="row__title">Floor cushions and low seating</span>
+              <span class="row__value num">$250</span>
+            </li>
+            <li class="row row--2">
+              <span class="row__title">Fresh floral upgrade</span>
+              <span class="row__value num">from $350</span>
+            </li>
+            <li class="row row--2">
+              <span class="row__title">Custom vinyl on the arch</span>
+              <span class="row__value num">$85</span>
+            </li>
+            <li class="row row--2">
+              <span class="row__title">Kids&rsquo; corner setup</span>
+              <span class="row__value num">$175</span>
+            </li>
+            <li class="row row--2">
+              <span class="row__title">Full-service coordination</span>
+              <span class="row__value num">from $500</span>
+            </li>
+          </ul>
+        </div>
+
+        <p class="prose mt-3">
+          Every package on this page is bring-your-own-caterer &mdash; any caterer,
+          any cuisine, no in-house menu, no food minimums. Add 13% HST to any price
+          you see here; after that, there is nothing else to add.
         </p>
-      </div>
 
-      <div class="addons">
-        <div class="rulelist" role="list">
-          <div class="rulelist__row rulelist__row--2" role="listitem">
-            <span class="rulelist__title">Overtime</span>
-            <span class="rulelist__val num">$175/hr</span>
-          </div>
-          <div class="rulelist__row rulelist__row--2" role="listitem">
-            <span class="rulelist__title">Balloon garland</span>
-            <span class="rulelist__val num">$300&ndash;$550</span>
-          </div>
-          <div class="rulelist__row rulelist__row--2" role="listitem">
-            <span class="rulelist__title">Serving staff</span>
-            <span class="rulelist__val num">$40/hr each</span>
-          </div>
-          <div class="rulelist__row rulelist__row--2" role="listitem">
-            <span class="rulelist__title">Chafing dish set (4)</span>
-            <span class="rulelist__val num">$140</span>
-          </div>
-          <div class="rulelist__row rulelist__row--2" role="listitem">
-            <span class="rulelist__title">Photo booth</span>
-            <span class="rulelist__val num">$450&ndash;$650</span>
-          </div>
-          <div class="rulelist__row rulelist__row--2" role="listitem">
-            <span class="rulelist__title">Projector and screen</span>
-            <span class="rulelist__val num">$125</span>
-          </div>
+        <div class="foot">
+          <a class="tlink" href="contact.html#faq">Alcohol permits, booking lead times, accessibility &mdash; the questions we get asked</a>
+          <p class="small">If it isn&rsquo;t answered there, call or text 647-286-1161.</p>
         </div>
-        <div class="rulelist" role="list">
-          <div class="rulelist__row rulelist__row--2" role="listitem">
-            <span class="rulelist__title">Premium PA + wireless mics</span>
-            <span class="rulelist__val num">$175</span>
+      </div>
+    </section>
+
+    <!-- Founding families — the one dark section -->
+    <section class="section dark" id="founding">
+      <div class="container">
+        <div class="split">
+          <div class="stack">
+            <h2 class="d2">Founding families go first.</h2>
+            <div class="prose">
+              <p>
+                A short list, free to join. Founding families take 10% off any 2027
+                date, get first pick of the calendar &mdash; Saturdays go earliest &mdash;
+                and see the space before anyone&rsquo;s allowed to call it finished.
+              </p>
+            </div>
+            <form class="capture" data-capture action="https://api.web3forms.com/submit" method="POST">
+              <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY">
+              <input type="hidden" name="subject" value="Founding family signup — The Laurel Room">
+              <input type="hidden" name="from_name" value="The Laurel Room Website">
+              <label class="visually-hidden" for="founding-email">Email address</label>
+              <input class="input" type="email" id="founding-email" name="email" placeholder="you@email.com" required>
+              <button type="submit" class="btn">Save my spot</button>
+            </form>
+            <p class="small">One email, when there&rsquo;s something worth showing you.</p>
           </div>
-          <div class="rulelist__row rulelist__row--2" role="listitem">
-            <span class="rulelist__title">Floor cushions + low seating</span>
-            <span class="rulelist__val num">$250</span>
-          </div>
-          <div class="rulelist__row rulelist__row--2" role="listitem">
-            <span class="rulelist__title">Fresh floral upgrade</span>
-            <span class="rulelist__val num">from $350</span>
-          </div>
-          <div class="rulelist__row rulelist__row--2" role="listitem">
-            <span class="rulelist__title">Custom vinyl on arch</span>
-            <span class="rulelist__val num">$85</span>
-          </div>
-          <div class="rulelist__row rulelist__row--2" role="listitem">
-            <span class="rulelist__title">Kids&rsquo; corner setup</span>
-            <span class="rulelist__val num">$175</span>
-          </div>
-          <div class="rulelist__row rulelist__row--2" role="listitem">
-            <span class="rulelist__title">Full-service coordination</span>
-            <span class="rulelist__val num">from $500</span>
+          <div class="stack stack--s">
+            <p class="eyebrow">Or just ask</p>
+            <p class="prose">
+              Khushbu answers her own phone. If you&rsquo;re working out whether 2027
+              is realistic for your date, that&rsquo;s a two-minute conversation.
+            </p>
+            <p><a class="tlink" href="tel:6472861161">647-286-1161</a></p>
           </div>
         </div>
       </div>
-
-      <p class="mt-4 prose">
-        Every package on this page is BYOC &mdash; bring any caterer, any cuisine.
-        No in-house menu, no food minimums. Add 13% HST to any price you see here;
-        after that, there is nothing else to add.
-      </p>
-
-      <div class="section-foot">
-        <a class="linkline" href="contact.html#faq">Alcohol permits, booking lead times, accessibility &mdash; read the FAQ</a>
-        <p class="small">If it isn&rsquo;t answered there, call or text 647-286-1161.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ FOUNDING FAMILIES BAND ============ -->
-  <section class="section band band--marigold" id="founding">
-    <div class="container">
-      <h2 class="band__huge">Founding families book first.</h2>
-      <p class="mt-2" style="max-width: 38em;">
-        A capped first list, free to join. Founding families get 10% off any 2027 date,
-        first pick of the calendar &mdash; Saturdays go earliest &mdash; and an invite to
-        the first hard-hat walk-through, before the room is pretty.
-      </p>
-      <form class="capture mt-3" data-capture action="https://api.web3forms.com/submit" method="POST">
-        <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY">
-        <input type="hidden" name="subject" value="Founding family signup — The Laurel Room">
-        <input type="hidden" name="from_name" value="The Laurel Room Website">
-        <label class="visually-hidden" for="capture-email">Email address</label>
-        <input class="input" type="email" id="capture-email" name="email" placeholder="you@email.com" required>
-        <button type="submit" class="btn">Save my spot</button>
-      </form>
-      <p class="small mt-2">One email when tours open. That&rsquo;s the whole newsletter.</p>
-    </div>
-  </section>
+    </section>
 
   </main>
 
-  <!-- ============ FOOTER ============ -->
   <footer class="footer">
     <div class="container">
-      <div class="footer__row">
+      <div class="footer__top">
         <a class="wordmark" href="index.html">The Laurel Room</a>
         <nav class="footer__links" aria-label="Footer">
-          <a href="about.html">The story</a>
-          <a href="gallery.html">The room</a>
+          <a href="about.html">Story</a>
+          <a href="gallery.html">Looks</a>
           <a href="packages.html">Pricing</a>
           <a href="contact.html">Plan an event</a>
-          <a href="https://instagram.com/thelaurelroom" target="_blank" rel="noopener">@thelaurelroom</a>
+          <a href="https://instagram.com/thelaurelroom" target="_blank" rel="noopener">Instagram</a>
         </nav>
       </div>
-      <div class="footer__colophon">
+      <p class="footer__welcome">
+        <span>Welcome</span><i>&middot;</i><span lang="pa">ਜੀ ਆਇਆਂ ਨੂੰ</span><i>&middot;</i><span lang="ur" dir="rtl">خوش آمدید</span><i>&middot;</i><span lang="hi">स्वागत</span><i>&middot;</i><span lang="fil">Maligayang pagdating</span><i>&middot;</i><span lang="sw">Karibu</span>
+      </p>
+      <div class="footer__bottom">
         <span>&copy; <span data-year>2026</span> The Laurel Room Inc. &middot; Brampton, Ontario</span>
-        <span>Drawings by us. Room by 2027.</span>
         <span><a href="tel:6472861161">647-286-1161</a> &middot; <a href="mailto:hello@thelaurelroom.ca">hello@thelaurelroom.ca</a></span>
       </div>
     </div>
   </footer>
 
-  <!-- ============ STICKY MOBILE CTA ============ -->
   <div class="sticky-cta">
     <a class="btn" href="contact.html">Plan a 2027 event</a>
   </div>
