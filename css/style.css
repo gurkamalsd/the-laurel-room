@@ -890,3 +890,121 @@ input[type="date"].input { min-height: 3rem; }
   }
   ::view-transition-old(root), ::view-transition-new(root) { animation: none !important; }
 }
+
+/* ---------- v5: breadcrumbs, price bands, terms, consent ---------- */
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.3rem 0.55rem;
+  font-size: 0.84rem;
+  color: var(--ink-2);
+  padding-top: 1.5rem;
+}
+.breadcrumb a { text-decoration: none; }
+.breadcrumb a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 0.18em; }
+.breadcrumb [aria-current="page"] { color: var(--ink); }
+.breadcrumb .sep { opacity: 0.45; }
+
+/* The all-in anchor / any standing note that must be read */
+.callout {
+  border-left: 2px solid var(--laurel);
+  background: var(--mist);
+  padding: 1.15rem 1.35rem;
+  max-width: 40rem;
+}
+.callout p + p { margin-top: 0.6rem; }
+.callout .big {
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 1.9vw, 1.45rem);
+  line-height: 1.25;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Two-sided price bands */
+.bands { display: grid; gap: 0.9rem; margin-top: 0.35rem; }
+.band-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.35rem 1.25rem;
+  padding-bottom: 0.55rem;
+  border-bottom: 1px solid var(--line-2);
+}
+.band-row dt { font-size: 0.9rem; color: var(--ink-2); }
+.band-row dd {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 2.1vw, 1.6rem);
+  font-weight: 450;
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.placing {
+  font-size: 0.88rem;
+  color: var(--ink-2);
+  max-width: 34rem;
+  margin-top: 0.15rem;
+}
+.dark .band-row { border-color: rgba(255,255,255,.22); }
+.dark .band-row dt, .dark .placing { color: rgba(255,255,255,.78); }
+
+/* Deposit / cancellation terms */
+.terms { border-top: 1px solid var(--line); margin-top: 0.5rem; }
+.terms > div {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  gap: 0.4rem 2rem;
+  padding: 0.95rem 0;
+  border-bottom: 1px solid var(--line-2);
+}
+.terms dt { font-weight: 600; font-size: 0.95rem; }
+.terms dd { margin: 0; color: var(--ink-2); font-size: 0.95rem; }
+@media (max-width: 640px) { .terms > div { grid-template-columns: 1fr; gap: 0.2rem; } }
+
+/* CASL consent */
+.consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--ink-2);
+  cursor: pointer;
+  max-width: 34rem;
+}
+.consent input {
+  flex: none;
+  width: 17px;
+  height: 17px;
+  margin-top: 0.16rem;
+  accent-color: var(--laurel);
+}
+.dark .consent { color: rgba(255,255,255,.82); }
+.dark .consent a { color: #FFFFFF; }
+
+/* Journal index rows */
+.posts { border-top: 1px solid var(--line); }
+.post {
+  display: grid;
+  grid-template-columns: 8.5rem minmax(0, 1fr);
+  gap: 0.35rem 2rem;
+  align-items: baseline;
+  padding: 1.4rem 0;
+  border-bottom: 1px solid var(--line-2);
+}
+.post__date { font-size: 0.86rem; color: var(--ink-2); font-variant-numeric: tabular-nums; }
+.post__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 2.1vw, 1.6rem);
+  font-weight: 450;
+  line-height: 1.15;
+}
+.post__body { grid-column: 2; color: var(--ink-2); max-width: 34rem; }
+@media (max-width: 700px) {
+  .post { grid-template-columns: 1fr; }
+  .post__body { grid-column: 1; }
+}

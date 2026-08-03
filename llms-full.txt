@@ -114,7 +114,7 @@ A free, capped early list. Founding families receive 10% off any 2027 date, firs
 
 ## Links
 - Home: https://thelaurelroom.ca
-- Story and journal: https://thelaurelroom.ca/about.html
-- The five looks: https://thelaurelroom.ca/gallery.html
-- Pricing: https://thelaurelroom.ca/packages.html
-- Plan an event: https://thelaurelroom.ca/contact.html
+- Story and journal: https://thelaurelroom.ca/story/
+- The five looks: https://thelaurelroom.ca/looks/
+- Pricing: https://thelaurelroom.ca/pricing/
+- Plan an event: https://thelaurelroom.ca/plan-your-event/

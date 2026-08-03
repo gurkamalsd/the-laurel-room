@@ -212,8 +212,35 @@
       step.focus({ preventScroll: true });
     };
 
+    // Fire once, the moment we first hold a name and an email, so that someone who
+    // abandons at step 3 or 4 is still a lead we can answer rather than a silence.
+    let partialSent = false;
+    const sendPartial = () => {
+      if (partialSent) return;
+      const name = form.querySelector('input[name="name"]')?.value?.trim();
+      const email = form.querySelector('input[name="email"]')?.value?.trim();
+      if (!name || !email) return;
+      partialSent = true;
+      const data = {
+        access_key: form.querySelector('input[name="access_key"]')?.value,
+        subject: 'Partial enquiry — The Laurel Room',
+        from_name: 'The Laurel Room Website',
+        name, email,
+        phone: form.querySelector('input[name="phone"]')?.value || '',
+        event_type: form.querySelector('input[name="event_type"]:checked')?.value || '',
+        note: 'Started the enquiry form and reached step 3. May not have finished.'
+      };
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(data),
+        keepalive: true
+      }).catch(() => { /* never block the visitor on this */ });
+    };
+
     nextBtn?.addEventListener('click', () => {
       if (!validateStep()) return;
+      sendPartial();
       if (current < steps.length - 1) { current += 1; render(); focusStep(); }
       form.closest('.plan')?.scrollIntoView(scrollOpts);
     });
@@ -226,13 +253,17 @@
         : d.toLocaleDateString('en-CA', { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' });
     };
 
-    const rateIndexFor = value => {
+    // Two day tiers only: Fri/Sat/Sun is the weekend rate, Mon–Thu the weekday one.
+    // Returns 1 weekend, 0 weekday, -1 when no date has been chosen yet.
+    const tierFor = value => {
       if (!value) return -1;
       const day = new Date(`${value}T12:00:00`).getDay();
-      if (day === 6) return 2;              // Saturday
-      if (day === 5 || day === 0) return 1; // Friday & Sunday
-      return 0;                             // Mon–Thu
+      return (day === 5 || day === 6 || day === 0) ? 1 : 0;
     };
+    const dayName = value => value
+      ? new Date(`${value}T12:00:00`).toLocaleDateString('en-CA', { weekday: 'long' })
+      : '';
+    const money = n => `$${n.toLocaleString()}`;
 
     const updateSummary = () => {
       if (!summary) return;
@@ -251,17 +282,23 @@
       set('guest_count', val('guest_count') ? `${val('guest_count')} guests` : '');
       set('package', val('package'));
 
+      // Always a band, never a single figure — the room isn't leased, so a precise
+      // number would be a promise we can't keep.
       const estimateEl = summary.querySelector('[data-estimate]');
       if (!estimateEl) return;
       const pkg = form.querySelector('input[name="package"]:checked');
-      const rates = pkg?.dataset.rates?.split(',').map(Number);
-      if (rates && rates.length === 3) {
-        const idx = rateIndexFor(dateVal);
-        estimateEl.textContent = idx >= 0
-          ? `$${rates[idx].toLocaleString()}`
-          : `$${rates[0].toLocaleString()}–$${rates[2].toLocaleString()}`;
+      const r = pkg?.dataset.rates?.split(',').map(Number); // [wdLow, wdHigh, weLow, weHigh]
+      if (r && r.length === 4) {
+        const tier = tierFor(dateVal);
+        if (tier === 1) {
+          estimateEl.textContent = `${dayName(dateVal)}, roughly ${money(r[2])}–${money(r[3])} plus HST`;
+        } else if (tier === 0) {
+          estimateEl.textContent = `${dayName(dateVal)}, roughly ${money(r[0])}–${money(r[1])} plus HST`;
+        } else {
+          estimateEl.textContent = `${money(r[0])}–${money(r[3])} plus HST, depending on the day`;
+        }
       } else if (pkg) {
-        estimateEl.textContent = 'We’ll talk it through';
+        estimateEl.textContent = 'We’ll work it out together';
       } else {
         estimateEl.textContent = '';
       }
