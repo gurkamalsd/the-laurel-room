@@ -10,6 +10,44 @@
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const scrollOpts = { behavior: prefersReduced ? 'auto' : 'smooth', block: 'start' };
 
+  /* ---------- Attribution: where did this lead come from? ----------
+     First touch wins: the page someone landed on, the site that sent them,
+     and any campaign tags survive in sessionStorage while they browse, so
+     the form they eventually submit still knows how the visit started. */
+  const attribution = (() => {
+    const KEY = 'tlr_visit';
+    let visit = {};
+    try { visit = JSON.parse(sessionStorage.getItem(KEY)) || {}; } catch { /* fresh visit */ }
+
+    if (!visit.landing_page) {
+      visit.landing_page = location.pathname;
+      const ref = document.referrer;
+      if (ref && !ref.includes(location.hostname)) visit.referrer = ref;
+      const params = new URLSearchParams(location.search);
+      ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'ref', 'gclid', 'fbclid'].forEach(k => {
+        const v = params.get(k);
+        if (v) visit[k] = v.slice(0, 200);
+      });
+      try { sessionStorage.setItem(KEY, JSON.stringify(visit)); } catch { /* storage off — still works for this page */ }
+    }
+
+    return () => ({ source: location.pathname, ...visit });
+  })();
+
+  // Mirror the attribution into hidden inputs so a plain FormData submit carries it.
+  const stampAttribution = form => {
+    Object.entries(attribution()).forEach(([name, value]) => {
+      let input = form.querySelector(`input[type="hidden"][name="${name}"]`);
+      if (!input) {
+        input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = name;
+        form.append(input);
+      }
+      input.value = value;
+    });
+  };
+
   /* ---------- Navigation: mobile overlay with focus containment ---------- */
   const initNav = () => {
     const nav = document.querySelector('[data-nav]');
@@ -107,6 +145,7 @@
   /* ---------- Founding families capture ---------- */
   const initCapture = () => {
     document.querySelectorAll('form[data-capture]').forEach(form => {
+      stampAttribution(form);
       form.addEventListener('submit', async e => {
         e.preventDefault();
         const btn = form.querySelector('button[type="submit"]');
@@ -155,6 +194,7 @@
   const initPlanFlow = () => {
     const form = document.getElementById('plan-form');
     if (!form) return;
+    stampAttribution(form);
 
     const steps = Array.from(form.querySelectorAll('[data-step]'));
     const dots = Array.from(form.querySelectorAll('[data-step-dot]'));
@@ -228,7 +268,8 @@
         name, email,
         phone: form.querySelector('input[name="phone"]')?.value || '',
         event_type: form.querySelector('input[name="event_type"]:checked')?.value || '',
-        note: 'Started the enquiry form and reached step 3. May not have finished.'
+        note: 'Started the enquiry form and reached step 3. May not have finished.',
+        ...attribution()
       };
       fetch('https://api.web3forms.com/submit', {
         method: 'POST',
