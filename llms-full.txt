@@ -77,13 +77,21 @@ Design directions chosen before a space is signed. Any one of them is included w
 ## Events it is for
 The room is being made for: mehndi nights and sangeets, nikkahs and intimate weddings, baby showers, bridal showers, aqiqahs and naming ceremonies, milestone birthdays, engagement parties, Diwali and Eid gatherings, corporate days and off-sites.
 
+Each of the six main event types has a dedicated page with an hour-by-hour timeline inside its booking block, the vendor categories that event needs, honest total-cost arithmetic (room band plus catering per head plus decor), and event-specific FAQs:
+- Mehndi and sangeet nights (evening block, The Mehndi Night $3,000–$4,200): https://thelaurelroom.ca/mehndi-and-sangeet/
+- Nikkahs and intimate weddings (one block or the full day): https://thelaurelroom.ca/nikkah-and-intimate-weddings/
+- Baby and bridal showers (daytime block, The Morning Celebration $1,400–$2,000): https://thelaurelroom.ca/baby-and-bridal-showers/
+- Aqiqahs, naming ceremonies and christenings (mornings): https://thelaurelroom.ca/aqiqah-and-naming-ceremonies/
+- Milestone birthdays, quinceañeras, sweet sixteens, retirements (evenings): https://thelaurelroom.ca/birthdays-and-milestones/
+- Corporate events and offsites (Mon–Thu blocks, The Corporate Retreat $1,100–$1,500, The Short Block $900–$1,200): https://thelaurelroom.ca/corporate-and-offsites/
+
 ## Frequently asked questions
 
 ### What does bring your own caterer mean?
 You choose the caterer. Any caterer, any cuisine — halal, South Asian, Caribbean, Filipino, East African, whatever your family actually eats. There is no in-house menu, no food minimum, and no surcharge for bringing outside food. Somewhere for a caterer to warm and plate is on the requirements list for any space The Laurel Room signs.
 
 ### Can we serve alcohol?
-Yes. You arrange a Special Occasion Permit through the AGCO and a Smart Serve-certified server pours. The venue walks you through the process.
+Yes, with the right paperwork. A rented hall is not a "private place" under Ontario law, so serving alcohol at a private event needs a Special Occasion Permit — $50 a day if drinks are not sold, $150 a day if they are — applied for online through iAGCO, usually issued within a day or two, with municipal notice needed roughly 30 days ahead for some events. A Smart Serve-certified server pours, and evening events serving alcohol carry security at $50 an hour. The venue walks clients through the process.
 
 ### What do the styled packages include?
 Your choice of the five looks: linens and napkins, place settings, centrepieces, a backdrop dressed to match, and lighting in that look's colour, plus full setup and teardown.
@@ -101,7 +109,7 @@ DJs and dhol are welcome. Evening bookings end at 11 PM; overtime runs $175/hr.
 Yes. Bring your own decorator, or take a styled package and have it handled.
 
 ### What are the deposit and refund terms?
-They will be published when the 2027 calendar opens. Founding families are told first.
+Published in full on the pricing page. In short: a $250 fully refundable reservation fee holds a date until the lease is signed; then a 25% retainer, 50% of the balance at 90 days, the rest at 14 days. A refundable damage deposit of $500–$750 comes back within seven business days. Cancellation runs from retainer-only beyond 180 days to 100% inside 90 days, with one free date transfer if asked more than 120 days out.
 
 ## Founder — Khushbu Dhahan
 Khushbu Dhahan founded The Laurel Room after years of searching for a room that didn't exist. Her career is in government program delivery — operations, budgets, compliance — which is the operational backbone she brings to running a venue. As a mother planning her own family's celebrations, she repeatedly ran into the same gap: nothing in Brampton for 50 to 125 guests that was beautiful, allowed outside catering, and was affordable enough to book without stress. The Laurel Room is her answer to that gap.
@@ -114,7 +122,17 @@ A free early list, capped at 30 dates. Founding families lock their price at the
 
 ## Links
 - Home: https://thelaurelroom.ca
-- Story and journal: https://thelaurelroom.ca/story/
-- The five looks: https://thelaurelroom.ca/looks/
 - Pricing: https://thelaurelroom.ca/pricing/
+- Outside catering explained: https://thelaurelroom.ca/outside-catering/
+- Why 50 to 125 guests: https://thelaurelroom.ca/50-to-125-guests/
 - Plan an event: https://thelaurelroom.ca/plan-your-event/
+- Mehndi and sangeet: https://thelaurelroom.ca/mehndi-and-sangeet/
+- Nikkah and intimate weddings: https://thelaurelroom.ca/nikkah-and-intimate-weddings/
+- Baby and bridal showers: https://thelaurelroom.ca/baby-and-bridal-showers/
+- Aqiqah and naming ceremonies: https://thelaurelroom.ca/aqiqah-and-naming-ceremonies/
+- Birthdays and milestones: https://thelaurelroom.ca/birthdays-and-milestones/
+- Corporate and offsites: https://thelaurelroom.ca/corporate-and-offsites/
+- Story: https://thelaurelroom.ca/story/
+- Journal: https://thelaurelroom.ca/journal/
+- The five looks: https://thelaurelroom.ca/looks/
+- Privacy: https://thelaurelroom.ca/privacy/
