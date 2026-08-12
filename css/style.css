@@ -1008,3 +1008,11 @@ input[type="date"].input { min-height: 3rem; }
   .post { grid-template-columns: 1fr; }
   .post__body { grid-column: 1; }
 }
+
+/* ---------- Footer: second row of event links ---------- */
+.footer__links--events {
+  margin-left: 0;
+  margin-top: -1rem;
+  margin-bottom: 2rem;
+  width: 100%;
+}
